@@ -138,10 +138,10 @@ public class _1LogicD extends Application {
 		back.setOnAction(a -> {
 
 			cat.switchToScene1(a, application.Mathematics.MathResult.scV, languageChange);
-			MathResultCheck.correct=0;
+	timeLine.stop();	MathResultCheck.correct=0;
 			MathResultCheck.percent=0;
 			MathResultCheck.result=0;
-			switchingQuestionForEasyLogicAdult.point=-1;
+			switchingQuestionForDiffLogicAdult.point=-1;
 		});
 		backArrow.setFitWidth(40);
 		backArrow.setFitHeight(30);
