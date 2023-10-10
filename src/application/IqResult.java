@@ -2,7 +2,11 @@ package application;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
+import javafx.animation.ParallelTransition;
+import javafx.animation.PauseTransition;
+import javafx.animation.ScaleTransition;
 import javafx.animation.Timeline;
+import javafx.animation.TranslateTransition;
 import javafx.application.Application;
 import javafx.beans.binding.Bindings;
 import javafx.beans.binding.BooleanBinding;
@@ -42,13 +46,22 @@ public class IqResult{
 	Image Arrow = new Image("IqResult/home.png");
 	Image brain = new Image("IqResult/brain.png");
 	Image brainR = new Image("IqResult/brainR.png");
-
+	Image eaistein = new Image("Profile/Koala.png");
+	Image cele1 = new Image("IqFive/cele1.png");
+	Image cele2 = new Image("IqFive/cele2.png");
+	Image notiMM = new Image("IqFive/notiKoala.png");
 	
 	ImageView backArrow = new ImageView(Arrow);
 	ImageView brainImg = new ImageView(brain);
 	ImageView brainRImg = new ImageView(brainR);
+	ImageView eaisteinImg = new ImageView(eaistein);
+	ImageView cele1Img = new ImageView(cele1);
+	ImageView cele2Img = new ImageView(cele2);
+	ImageView notiMMImg = new ImageView(notiMM);
 	
 	StackPane root;
+	StackPane noti;
+	
 	StackPane rectangle1 = new StackPane();
 	StackPane rectangle2 = new StackPane();
 	StackPane r1 = new StackPane();
@@ -75,6 +88,7 @@ public class IqResult{
 		this.languageChange = languageChange;
 		root = new StackPane();
 		root.setStyle("-fx-background-color: #2385C4");
+		notification();
 		elements();
 		lan_change();
 		// Retrieve the stage from the event source
@@ -173,7 +187,7 @@ public class IqResult{
 		StackPane.setAlignment(brainImg, Pos.BOTTOM_LEFT);
 		StackPane.setAlignment(brainRImg, Pos.BOTTOM_RIGHT);
 		
-		root.getChildren().addAll(brainImg,brainRImg,back,rectangle1,rectangle2);
+		root.getChildren().addAll(brainImg,brainRImg,back,rectangle1,rectangle2,noti);
 	}
 	private void incicate() {
 	
@@ -233,8 +247,69 @@ public class IqResult{
 		}else if(percentValue<=20 && percentValue>=10) {
 			r3Label.setText("AVERAGE IQ");
 		}else {
+			showNoti();
+			BooleanHolder b = new BooleanHolder();
+			b.setBoolFive(true);
 			r3Label.setText("LOW IQ");
 		}
+	}
+	private void notification() {
+		noti = new StackPane();
+		noti.setMaxWidth(613);
+		noti.setMaxHeight(141);
+		StackPane.setAlignment(noti, Pos.TOP_CENTER);
+		StackPane.setMargin(noti, new Insets(-200, 0, 0, 0));
+		noti.getStyleClass().add("noti");
+		noti.setVisible(false);
+
+		Button award = new Button();
+		award.setMaxSize(100, 100);
+		award.setStyle("-fx-background-color: #FFCC00; -fx-background-radius: 50%;");
+		StackPane.setAlignment(award, Pos.CENTER_LEFT);
+		StackPane.setMargin(award, new Insets(0, 0, 0, 25));
+
+		eaisteinImg.setFitWidth(55);
+		eaisteinImg.setFitHeight(70);
+		award.setGraphic(eaisteinImg);
+
+		StackPane.setAlignment(cele1Img, Pos.BOTTOM_LEFT);
+		StackPane.setMargin(cele1Img, new Insets(0, 0, 15, 140));
+
+		StackPane.setAlignment(cele2Img, Pos.TOP_RIGHT);
+		StackPane.setMargin(cele2Img, new Insets(15, 50, 0, 0));
+
+		noti.getChildren().addAll(award, cele1Img, cele2Img,notiMMImg);
+	}
+	private void showNoti() {
+		System.out.println("win tal");
+		noti.setVisible(true);
+		TranslateTransition down = new TranslateTransition();
+		down.setByY(200);
+		down.setDuration(Duration.seconds(1));
+		down.setNode(noti);
+
+		PauseTransition pause = new PauseTransition();
+		pause.setDuration(Duration.seconds(4));
+
+		ScaleTransition shake = new ScaleTransition();
+		shake.setNode(noti);
+		shake.setToX(0.9);
+		shake.setToY(0.9);
+		shake.setAutoReverse(true);
+		shake.setCycleCount(4);
+		shake.setDuration(Duration.seconds(1));
+
+		ParallelTransition pt = new ParallelTransition();
+		pt.getChildren().addAll(pause, shake);
+
+		TranslateTransition up = new TranslateTransition();
+		up.setByY(-200);
+		up.setDuration(Duration.seconds(1));
+		up.setNode(noti);
+
+		down.setOnFinished(e -> pt.play());
+		pause.setOnFinished(e -> up.play());
+		down.play();
 	}
 	private void lan_change() {
 		result = new Label();
@@ -274,6 +349,36 @@ public class IqResult{
 			if (nonesense == true) {
 				
 			}
+			excellent.setText("EXCELLENT!!");
+			Font quest_font = Font.loadFont(getClass().getResourceAsStream("/PoppinB.ttf"), 24);
+			excellent.setFont(quest_font);
+			
+			Font quest_font1 = Font.loadFont(getClass().getResourceAsStream("/Poppin.ttf"), 40);
+			result_filter();
+			result.setTextFill(Color.WHITE);
+			result.setFont(quest_font1);
+			StackPane.setAlignment(result, Pos.CENTER);
+			StackPane.setMargin(result, new Insets(0,0,70,200));
+			if(!r1.getChildren().contains(result)) {
+				r1.getChildren().add(result);
+			}
+			Font quest_font2 = Font.loadFont(getClass().getResourceAsStream("/Poppin.ttf"), 30);
+			r2Label.setFont(quest_font2);
+			r2Label.setTextFill(Color.WHITE);
+			r2Label.setText("IQ RESULT:");
+			if(!r2.getChildren().contains(r2Label)) {
+				r2.getChildren().add(r2Label);
+			}
+	
+			Font quest_font3 = Font.loadFont(getClass().getResourceAsStream("/PoppinB.ttf"), 30);
+			r3Label.setFont(quest_font3);
+			r3Label.setTextFill(Color.WHITE);
+				r3.getChildren().add(r3Label);
+			
+
+			rectangle1.getChildren().add(excellent);
+			root.getChildren().addAll(result);
+
 			root.getChildren().addAll();
 		}
 	}

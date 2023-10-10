@@ -1,9 +1,14 @@
 package application.Mathematics;
 
+import application.BooleanHolder;
 import application.IqQuestions;
 import application.IqResultCheck;
 import javafx.animation.KeyFrame;
+import javafx.animation.ParallelTransition;
+import javafx.animation.PauseTransition;
+import javafx.animation.ScaleTransition;
 import javafx.animation.Timeline;
+import javafx.animation.TranslateTransition;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
@@ -61,6 +66,10 @@ public class _5MathD extends Application {
 	Image wroMM = new Image("Math/wrongMM.png");
 	Image qEng = new Image("Math/MathQ/_5MathQ.png");
 	Image qMM = new Image("Math/MathQ/_5MathQMM.png");
+	Image eaistein = new Image("Profile/fire_brain.png");
+	Image cele1 = new Image("IqFive/cele1.png");
+	Image cele2 = new Image("IqFive/cele2.png");
+	Image notiMM = new Image("IqFive/notifire.png");
 	
 	Image a1 = new Image("Math/5MathAns/a1.png");
 	Image a2 = new Image("Math/5MathAns/a2.png");
@@ -78,6 +87,10 @@ public class _5MathD extends Application {
 	ImageView wroMMImg = new ImageView(wroMM);
 	ImageView qEngImg = new ImageView(qEng);
 	ImageView qMMImg = new ImageView(qMM);
+	ImageView eaisteinImg = new ImageView(eaistein);
+	ImageView cele1Img = new ImageView(cele1);
+	ImageView cele2Img = new ImageView(cele2);
+	ImageView notiMMImg = new ImageView(notiMM);
 	
 	ImageView a1Img = new ImageView(a1);
 	ImageView a2Img = new ImageView(a2);
@@ -85,6 +98,8 @@ public class _5MathD extends Application {
 	ImageView a4Img = new ImageView(a4);
 	
 	StackPane root;
+	StackPane noti;
+	
 	StackPane rectangle1 = new StackPane();
 	StackPane rectangle2 = new StackPane();
 	
@@ -99,7 +114,7 @@ public class _5MathD extends Application {
 		this.languageChange = languageChange;
 		root = new StackPane();
 		root.setStyle("-fx-background-color: #F79630");
-		
+		notification();
 		Counting();
 		elements();
 		lan_change();
@@ -208,7 +223,7 @@ public class _5MathD extends Application {
 		StackPane.setAlignment(brainImg, Pos.TOP_RIGHT);
 		StackPane.setAlignment(boyImg, Pos.BOTTOM_LEFT);
 		
-		root.getChildren().addAll( back,rectangle1,b1,b2,b3,b4,rectangle2,forward,teacherImg,brainImg,boyImg);
+		root.getChildren().addAll( back,rectangle1,b1,b2,b3,b4,rectangle2,forward,teacherImg,brainImg,boyImg,noti);
 	}
 	void Counting() {
 		Button over = new Button();
@@ -254,6 +269,79 @@ public class _5MathD extends Application {
 		
 		root.getChildren().addAll(timer,clockImg);
 	}
+	private void notification() {
+		noti = new StackPane();
+		noti.setMaxWidth(613);
+		noti.setMaxHeight(141);
+		StackPane.setAlignment(noti, Pos.TOP_CENTER);
+		StackPane.setMargin(noti, new Insets(-200, 0, 0, 0));
+		noti.getStyleClass().add("noti");
+		noti.setVisible(false);
+
+		Button award = new Button();
+		award.setMaxSize(100, 100);
+		award.setStyle("-fx-background-color: #FFCC00; -fx-background-radius: 50%;");
+		StackPane.setAlignment(award, Pos.CENTER_LEFT);
+		StackPane.setMargin(award, new Insets(0, 0, 0, 25));
+
+		eaisteinImg.setFitWidth(55);
+		eaisteinImg.setFitHeight(70);
+		award.setGraphic(eaisteinImg);
+
+		StackPane.setAlignment(cele1Img, Pos.BOTTOM_LEFT);
+		StackPane.setMargin(cele1Img, new Insets(0, 0, 15, 140));
+
+		StackPane.setAlignment(cele2Img, Pos.TOP_RIGHT);
+		StackPane.setMargin(cele2Img, new Insets(15, 50, 0, 0));
+
+		noti.getChildren().addAll(award, cele1Img, cele2Img,notiMMImg);
+	}
+
+	private void showNoti(ActionEvent ea) {
+		noti.setVisible(true);
+		TranslateTransition down = new TranslateTransition();
+		down.setByY(200);
+		down.setDuration(Duration.seconds(1));
+		down.setNode(noti);
+
+		PauseTransition pause = new PauseTransition();
+		pause.setDuration(Duration.seconds(4));
+
+		ScaleTransition shake = new ScaleTransition();
+		shake.setNode(noti);
+		shake.setToX(0.9);
+		shake.setToY(0.9);
+		shake.setAutoReverse(true);
+		shake.setCycleCount(4);
+		shake.setDuration(Duration.seconds(1));
+
+		ParallelTransition pt = new ParallelTransition();
+		pt.getChildren().addAll(pause, shake);
+
+		TranslateTransition up = new TranslateTransition();
+		up.setByY(-200);
+		up.setDuration(Duration.seconds(1));
+		up.setNode(noti);
+
+		down.setOnFinished(e -> pt.play());
+		pause.setOnFinished(e -> up.play());
+		down.play();
+		up.setOnFinished(e -> {
+			if(checker) {
+				MathResultCheck.check();
+			}
+			timeLine.stop();
+			rectangle1.getChildren().clear();
+			rectangle2.getChildren().clear();
+			switchingQuestionForDiffMath.switchToQuestions(ea, languageChange, root);
+			System.out.println(mark);
+			b1.setDisable(false);
+			b2.setDisable(false);
+			b3.setDisable(false);
+			b4.setDisable(false);
+		});
+	}
+
 	private void lan_change() {
 		if (languageChange) {
 			qMMImg.setVisible(false);
@@ -339,17 +427,8 @@ public class _5MathD extends Application {
 		}
 	}
 	private void clickForward(ActionEvent e) {
-		if(checker) {
-			MathResultCheck.check();
-		}
-		timeLine.stop();
-		rectangle1.getChildren().clear();
-		rectangle2.getChildren().clear();
-		switchingQuestionForDiffMath.switchToQuestions(e, languageChange, root);
-		System.out.println(mark);
-		b1.setDisable(false);
-		b2.setDisable(false);
-		b3.setDisable(false);
-		b4.setDisable(false);
+		showNoti(e);
+		BooleanHolder b = new BooleanHolder();
+		b.setBoolTwo(true);
 	}
 }

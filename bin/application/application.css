@@ -167,6 +167,10 @@
     -fx-background-color:#00275B;
     -fx-background-radius:28;
 }
+.rootAT-profile{
+    -fx-background-color:BLACK;
+    -fx-background-radius:28;
+}
 .profile-under{
 	-fx-background-color:#FFF86B;
 	-fx-background-radius:58;
@@ -177,6 +181,8 @@
 .middle-ch-bgA{
 	-fx-background-color:#E0E3E5;
 	-fx-background-radius:25px;
+}
+.cancelHand{
 	-fx-cursor:hand;
 }
 

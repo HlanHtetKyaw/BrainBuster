@@ -201,6 +201,8 @@ public class IqFive {
 			String input = ans.getText();
 			if (!input.isEmpty()) {
 				if (Integer.parseInt(input) == 120) {
+					BooleanHolder b = new BooleanHolder();
+					b.setBool(true);
 					showNoti(e);
 					IqResultCheck.check();
 				}else {

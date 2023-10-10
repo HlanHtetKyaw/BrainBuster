@@ -68,7 +68,17 @@ public class Category {
 	Image Pyramid = new Image("pyramid.png");
 	Image Rookie = new Image("rookie.png");
 	Image Cele = new Image("celeRope.png");
-
+	Image eaistein = new Image("Profile/eaistein.png");
+	Image idea = new Image("Profile/idea.png");
+	Image fire = new Image("Profile/fire_brain.png");
+	Image supBoy = new Image("Profile/supBoy.png");
+	Image koala = new Image("Profile/koala.png");
+	
+	ImageView ideaImg = new ImageView(idea);
+	ImageView fireImg = new ImageView(fire);
+	ImageView supBoyImg = new ImageView(supBoy);
+	ImageView koalaImg = new ImageView(koala);
+	
 	ImageView langText = new ImageView(Lang);
 	ImageView backArrow = new ImageView(Arrow);
 	ImageView boyStand = new ImageView(Boy);
@@ -90,6 +100,7 @@ public class Category {
 	ImageView pyramidImg = new ImageView(Pyramid);
 	ImageView rookieImg = new ImageView(Rookie);
 	ImageView celeImg = new ImageView(Cele);
+	ImageView eaisteinImg = new ImageView(eaistein);
 
 	StackPane root;
 
@@ -158,9 +169,36 @@ int selectValue;
 		rookieImg = new ImageView(Rookie);
 		rookieImg.setFitWidth(55);
 		rookieImg.setFitHeight(77);
-
-		profile.setGraphic(rookieImg);
-
+		
+		eaisteinImg.setFitHeight(73);
+		eaisteinImg.setFitWidth(61);
+		
+		ideaImg.setFitWidth(63);
+		ideaImg.setFitHeight(72);
+		fireImg.setFitWidth(53);
+		fireImg.setFitHeight(59);
+		koalaImg.setFitWidth(68);
+		koalaImg.setFitHeight(65);
+		
+		BooleanHolder b = new BooleanHolder();
+		switch(b.getInt()) {
+		case 0:profile.setGraphic(rookieImg);
+			break;
+		case 66:profile.setGraphic(rookieImg);
+			break;
+		case 73:profile.setGraphic(eaisteinImg);profile.setStyle("-fx-background-color:" + "#EFE400");
+			break;
+		case 72:profile.setGraphic(ideaImg);
+			break;
+		case 59:profile.setGraphic(fireImg);
+			break;
+		case 64:profile.setGraphic(supBoyImg);
+			break;
+		case 65:profile.setGraphic(koalaImg);
+			break;
+		default:
+			System.out.println("no error");
+		}
 		root.getChildren().addAll(name, profile);
 	}
 
@@ -424,6 +462,15 @@ int selectValue;
 				Ach.setFill(Color.WHITE);
 			} else {
 				ach_in_button.setGraphic(m_Ach);
+			}
+		});
+		ach_button.setOnAction(e->{
+			Stage news = new Stage();
+			AchievementController ac = new AchievementController();
+			try {
+				ac.start(news, languageChange);
+			} catch (Exception a) {
+
 			}
 		});
 		StackPane.setAlignment(ach_button, Pos.CENTER_RIGHT);

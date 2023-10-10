@@ -84,7 +84,7 @@ public class Main extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		lanSwap = pre.getBoolean(memory, false);
+		lanSwap = pre.getBoolean(memory, true);
 		this.primaryStage = primaryStage;
 		root = new StackPane();
 		scene = new Scene(root,1366,766);

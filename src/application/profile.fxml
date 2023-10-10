@@ -64,46 +64,211 @@
                               <Image url="@../Profile/eaistein.png" />
                            </image>
                         </ImageView>
+                        <ImageView fx:id="lockOne" fitHeight="63.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Profile/lock.png" />
+                           </image>
+                        </ImageView>
                      </children>
                   </StackPane>
-                  <StackPane onMouseClicked="#choose" prefHeight="150.0" prefWidth="200.0" styleClass="middle-ch-bg" stylesheets="@application.css" GridPane.columnIndex="2">
+                  <StackPane fx:id="two" onMouseClicked="#choose" prefHeight="150.0" prefWidth="200.0" styleClass="middle-ch-bg" stylesheets="@application.css" GridPane.columnIndex="2">
                      <children>
                         <ImageView fitHeight="72.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../Profile/idea.png" />
                            </image>
                         </ImageView>
-                     </children>
-                  </StackPane>
-                  <StackPane onMouseClicked="#choose" prefHeight="150.0" prefWidth="200.0" styleClass="middle-ch-bg" stylesheets="@application.css" GridPane.columnIndex="3">
-                     <children>
-                        <ImageView fitHeight="72.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="lockTwo" fitHeight="63.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../Profile/fire_brain.png" />
+                              <Image url="@../Profile/lock.png" />
                            </image>
                         </ImageView>
                      </children>
                   </StackPane>
-                  <StackPane onMouseClicked="#choose" prefHeight="150.0" prefWidth="200.0" styleClass="middle-ch-bg" stylesheets="@application.css" GridPane.rowIndex="1" />
-                  <StackPane onMouseClicked="#choose" prefHeight="150.0" prefWidth="200.0" styleClass="middle-ch-bg" stylesheets="@application.css" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <StackPane onMouseClicked="#choose" prefHeight="150.0" prefWidth="200.0" styleClass="middle-ch-bg" stylesheets="@application.css" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                  <StackPane onMouseClicked="#choose" prefHeight="150.0" prefWidth="200.0" styleClass="middle-ch-bg" stylesheets="@application.css" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-                  <StackPane onMouseClicked="#choose" prefHeight="150.0" prefWidth="200.0" styleClass="middle-ch-bg" stylesheets="@application.css" GridPane.rowIndex="2" />
-                  <StackPane onMouseClicked="#choose" prefHeight="150.0" prefWidth="200.0" styleClass="middle-ch-bg" stylesheets="@application.css" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <StackPane onMouseClicked="#choose" prefHeight="150.0" prefWidth="200.0" styleClass="middle-ch-bg" stylesheets="@application.css" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                  <StackPane onMouseClicked="#choose" prefHeight="150.0" prefWidth="200.0" styleClass="middle-ch-bg" stylesheets="@application.css" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-                  <StackPane onMouseClicked="#choose" prefHeight="150.0" prefWidth="200.0" styleClass="middle-ch-bg" stylesheets="@application.css" GridPane.rowIndex="3" />
-                  <StackPane onMouseClicked="#choose" prefHeight="150.0" prefWidth="200.0" styleClass="middle-ch-bg" stylesheets="@application.css" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                  <StackPane onMouseClicked="#choose" prefHeight="150.0" prefWidth="200.0" styleClass="middle-ch-bg" stylesheets="@application.css" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-                  <StackPane onMouseClicked="#choose" prefHeight="150.0" prefWidth="200.0" styleClass="middle-ch-bg" stylesheets="@application.css" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-                  <StackPane onMouseClicked="#choose" prefHeight="150.0" prefWidth="200.0" styleClass="middle-ch-bg" stylesheets="@application.css" GridPane.rowIndex="4" />
-                  <StackPane onMouseClicked="#choose" prefHeight="150.0" prefWidth="200.0" styleClass="middle-ch-bg" stylesheets="@application.css" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                  <StackPane onMouseClicked="#choose" prefHeight="150.0" prefWidth="200.0" styleClass="middle-ch-bg" stylesheets="@application.css" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-                  <StackPane onMouseClicked="#choose" prefHeight="150.0" prefWidth="200.0" styleClass="middle-ch-bg" stylesheets="@application.css" GridPane.columnIndex="3" GridPane.rowIndex="4" />
-                  <StackPane onMouseClicked="#choose" prefHeight="150.0" prefWidth="200.0" styleClass="middle-ch-bg" stylesheets="@application.css" GridPane.rowIndex="5" />
-                  <StackPane onMouseClicked="#choose" prefHeight="150.0" prefWidth="200.0" styleClass="middle-ch-bg" stylesheets="@application.css" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                  <StackPane onMouseClicked="#choose" prefHeight="150.0" prefWidth="200.0" styleClass="middle-ch-bg" stylesheets="@application.css" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-                  <StackPane onMouseClicked="#choose" prefHeight="150.0" prefWidth="200.0" styleClass="middle-ch-bg" stylesheets="@application.css" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                  <StackPane fx:id="three" onMouseClicked="#choose" prefHeight="150.0" prefWidth="200.0" styleClass="middle-ch-bg" stylesheets="@application.css" GridPane.columnIndex="3">
+                     <children>
+                        <ImageView fitHeight="59.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Profile/fire_brain.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="lockThree" fitHeight="63.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Profile/lock.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </StackPane>
+                  <StackPane fx:id="four" onMouseClicked="#choose" prefHeight="150.0" prefWidth="200.0" styleClass="middle-ch-bg" stylesheets="@application.css" GridPane.rowIndex="1">
+                     <children>
+                        <ImageView fitHeight="64.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Profile/supBoy.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="lockFour" fitHeight="63.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Profile/lock.png" />
+                           </image>
+                        </ImageView>
+                     </children></StackPane>
+                  <StackPane fx:id="five" onMouseClicked="#choose" prefHeight="150.0" prefWidth="200.0" styleClass="middle-ch-bg" stylesheets="@application.css" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <children>
+                        <ImageView fitHeight="65.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Profile/koala.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="lockFive" fitHeight="63.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Profile/lock.png" />
+                           </image>
+                        </ImageView>
+                     </children></StackPane>
+                  <StackPane fx:id="_1cs" onMouseClicked="#choose" prefHeight="150.0" prefWidth="200.0" styleClass="middle-ch-bg" stylesheets="@application.css" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <children>
+                        <ImageView fitHeight="71.0" fitWidth="84.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Profile/comingSoon.png" />
+                           </image>
+                        </ImageView>
+                     </children></StackPane>
+                  <StackPane fx:id="_2cs" onMouseClicked="#choose" prefHeight="150.0" prefWidth="200.0" styleClass="middle-ch-bg" stylesheets="@application.css" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                     <children>
+                        <ImageView fitHeight="71.0" fitWidth="84.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Profile/comingSoon.png" />
+                           </image>
+                        </ImageView>
+                     </children></StackPane>
+                  <StackPane fx:id="_3cs" onMouseClicked="#choose" prefHeight="150.0" prefWidth="200.0" styleClass="middle-ch-bg" stylesheets="@application.css" GridPane.rowIndex="2">
+                     <children>
+                        <ImageView fitHeight="71.0" fitWidth="84.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Profile/comingSoon.png" />
+                           </image>
+                        </ImageView>
+                     </children></StackPane>
+                  <StackPane fx:id="_4cs" onMouseClicked="#choose" prefHeight="150.0" prefWidth="200.0" styleClass="middle-ch-bg" stylesheets="@application.css" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <children>
+                        <ImageView fitHeight="71.0" fitWidth="84.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Profile/comingSoon.png" />
+                           </image>
+                        </ImageView>
+                     </children></StackPane>
+                  <StackPane fx:id="_5cs" onMouseClicked="#choose" prefHeight="150.0" prefWidth="200.0" styleClass="middle-ch-bg" stylesheets="@application.css" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <children>
+                        <ImageView fitHeight="71.0" fitWidth="84.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Profile/comingSoon.png" />
+                           </image>
+                        </ImageView>
+                     </children></StackPane>
+                  <StackPane fx:id="_6cs" onMouseClicked="#choose" prefHeight="150.0" prefWidth="200.0" styleClass="middle-ch-bg" stylesheets="@application.css" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                     <children>
+                        <ImageView fitHeight="71.0" fitWidth="84.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Profile/comingSoon.png" />
+                           </image>
+                        </ImageView>
+                     </children></StackPane>
+                  <StackPane fx:id="_7cs" onMouseClicked="#choose" prefHeight="150.0" prefWidth="200.0" styleClass="middle-ch-bg" stylesheets="@application.css" GridPane.rowIndex="3">
+                     <children>
+                        <ImageView fitHeight="71.0" fitWidth="84.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Profile/comingSoon.png" />
+                           </image>
+                        </ImageView>
+                     </children></StackPane>
+                  <StackPane fx:id="_8cs" onMouseClicked="#choose" prefHeight="150.0" prefWidth="200.0" styleClass="middle-ch-bg" stylesheets="@application.css" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <children>
+                        <ImageView fitHeight="71.0" fitWidth="84.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Profile/comingSoon.png" />
+                           </image>
+                        </ImageView>
+                     </children></StackPane>
+                  <StackPane fx:id="_9cs" onMouseClicked="#choose" prefHeight="150.0" prefWidth="200.0" styleClass="middle-ch-bg" stylesheets="@application.css" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                     <children>
+                        <ImageView fitHeight="71.0" fitWidth="84.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Profile/comingSoon.png" />
+                           </image>
+                        </ImageView>
+                     </children></StackPane>
+                  <StackPane fx:id="_10cs" onMouseClicked="#choose" prefHeight="150.0" prefWidth="200.0" styleClass="middle-ch-bg" stylesheets="@application.css" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                     <children>
+                        <ImageView fitHeight="71.0" fitWidth="84.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Profile/comingSoon.png" />
+                           </image>
+                        </ImageView>
+                     </children></StackPane>
+                  <StackPane fx:id="_11cs" onMouseClicked="#choose" prefHeight="150.0" prefWidth="200.0" styleClass="middle-ch-bg" stylesheets="@application.css" GridPane.rowIndex="4">
+                     <children>
+                        <ImageView fitHeight="71.0" fitWidth="84.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Profile/comingSoon.png" />
+                           </image>
+                        </ImageView>
+                     </children></StackPane>
+                  <StackPane fx:id="_12cs" onMouseClicked="#choose" prefHeight="150.0" prefWidth="200.0" styleClass="middle-ch-bg" stylesheets="@application.css" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <children>
+                        <ImageView fitHeight="71.0" fitWidth="84.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Profile/comingSoon.png" />
+                           </image>
+                        </ImageView>
+                     </children></StackPane>
+                  <StackPane fx:id="_13cs" onMouseClicked="#choose" prefHeight="150.0" prefWidth="200.0" styleClass="middle-ch-bg" stylesheets="@application.css" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                     <children>
+                        <ImageView fitHeight="71.0" fitWidth="84.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Profile/comingSoon.png" />
+                           </image>
+                        </ImageView>
+                     </children></StackPane>
+                  <StackPane fx:id="_14cs" onMouseClicked="#choose" prefHeight="150.0" prefWidth="200.0" styleClass="middle-ch-bg" stylesheets="@application.css" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                     <children>
+                        <ImageView fitHeight="71.0" fitWidth="84.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Profile/comingSoon.png" />
+                           </image>
+                        </ImageView>
+                     </children></StackPane>
+                  <StackPane fx:id="_15cs" onMouseClicked="#choose" prefHeight="150.0" prefWidth="200.0" styleClass="middle-ch-bg" stylesheets="@application.css" GridPane.rowIndex="5">
+                     <children>
+                        <ImageView fitHeight="71.0" fitWidth="84.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Profile/comingSoon.png" />
+                           </image>
+                        </ImageView>
+                     </children></StackPane>
+                  <StackPane fx:id="_16cs" onMouseClicked="#choose" prefHeight="150.0" prefWidth="200.0" styleClass="middle-ch-bg" stylesheets="@application.css" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <children>
+                        <ImageView fitHeight="71.0" fitWidth="84.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Profile/comingSoon.png" />
+                           </image>
+                        </ImageView>
+                     </children></StackPane>
+                  <StackPane fx:id="_17cs" onMouseClicked="#choose" prefHeight="150.0" prefWidth="200.0" styleClass="middle-ch-bg" stylesheets="@application.css" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                     <children>
+                        <ImageView fitHeight="71.0" fitWidth="84.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Profile/comingSoon.png" />
+                           </image>
+                        </ImageView>
+                     </children></StackPane>
+                  <StackPane fx:id="_18cs" onMouseClicked="#choose" prefHeight="150.0" prefWidth="200.0" styleClass="middle-ch-bg" stylesheets="@application.css" GridPane.columnIndex="3" GridPane.rowIndex="5">
+                     <children>
+                        <ImageView fitHeight="71.0" fitWidth="84.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Profile/comingSoon.png" />
+                           </image>
+                        </ImageView>
+                     </children></StackPane>
                </children>
                <padding>
                   <Insets left="30.0" right="30.0" />
