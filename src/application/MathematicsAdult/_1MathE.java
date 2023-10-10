@@ -130,7 +130,11 @@ public class _1MathE extends Application {
 		back.setPrefSize(60, 60);
 		back.setOnAction(a -> {
 
-			cat.switchToScene1(a, 1, languageChange);
+			cat.switchToScene1(a, application.Mathematics.MathResult.scV, languageChange);
+			MathResultCheck.correct=0;
+			MathResultCheck.percent=0;
+			MathResultCheck.result=0;
+			switchingQuestionForEasyMathA.point=-1;
 		});
 		backArrow.setFitWidth(40);
 		backArrow.setFitHeight(30);
