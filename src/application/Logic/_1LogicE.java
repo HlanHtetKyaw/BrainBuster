@@ -128,7 +128,7 @@ public class _1LogicE extends Application {
 			MathResultCheck.correct=0;
 			MathResultCheck.percent=0;
 			MathResultCheck.result=0;
-			switchingQuestionForEasyLogic.point=-1;;
+			switchingQuestionForEasyLogic.point=-1;
 		});
 		backArrow.setFitWidth(40);
 		backArrow.setFitHeight(30);
