@@ -137,9 +137,9 @@ public class IqFifteen{
 			timeLine.stop();
 			rectangle.getChildren().clear();
 			IqQuestions.switchToIqQuestions(e, languageChange,root);
-			MathResultCheck.correct=0;
-			MathResultCheck.percent=0;
-			MathResultCheck.result=0;
+			IqResultCheck.correct=0;
+			IqResultCheck.percent=0;
+			IqResultCheck.result=0;
 			IqQuestions.point=-1;
 		});
 		b2.setMaxSize(230, 66);

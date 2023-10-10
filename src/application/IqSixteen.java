@@ -134,9 +134,9 @@ public class IqSixteen{
 			rt.setAngle(0);
 			rt1.setAngle(0);
 			rt2.setAngle(0);
-			MathResultCheck.correct=0;
-			MathResultCheck.percent=0;
-			MathResultCheck.result=0;
+			IqResultCheck.correct=0;
+			IqResultCheck.percent=0;
+			IqResultCheck.result=0;
 			IqQuestions.point=-1;
 		});
 		backArrow.setFitWidth(40);

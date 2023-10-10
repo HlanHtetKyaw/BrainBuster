@@ -117,6 +117,9 @@ public class IqSix {
 			Category cat = new Category();
 			cat.switchToScene1(a, application.Mathematics.MathResult.scV, languageChange);
 			timeLine.stop();
+			IqResultCheck.correct=0;
+			IqResultCheck.percent=0;
+			IqResultCheck.result=0;
 			rectangle.getChildren().clear();
 		});
 		backArrow.setFitWidth(40);

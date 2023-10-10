@@ -119,9 +119,9 @@ public class IqTwenty{
 			cat.switchToScene1(a, application.Mathematics.MathResult.scV, languageChange);
 			rectangle.getChildren().clear();
 			timeLine.stop();
-			MathResultCheck.correct=0;
-			MathResultCheck.percent=0;
-			MathResultCheck.result=0;
+			IqResultCheck.correct=0;
+			IqResultCheck.percent=0;
+			IqResultCheck.result=0;
 			IqQuestions.point=-1;
 		});
 		backArrow.setFitWidth(40);
