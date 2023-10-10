@@ -162,5 +162,22 @@
     -fx-background-color: #A1C5C4;
     -fx-background-radius: 25px;
 }
+/*proflie root */
+.rootA-profile{
+    -fx-background-color:#00275B;
+    -fx-background-radius:28;
+}
+.profile-under{
+	-fx-background-color:#FFF86B;
+	-fx-background-radius:58;
+}
+.profileA-middle{
+	-fx-background-color:#00275B;
+}
+.middle-ch-bgA{
+	-fx-background-color:#E0E3E5;
+	-fx-background-radius:25px;
+	-fx-cursor:hand;
+}
 
 
