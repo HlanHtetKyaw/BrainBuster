@@ -127,12 +127,31 @@ public class _1MathE extends Application {
 		back.getStyleClass().add("lets_start");
 		back.setPrefSize(60, 60);
 		back.setOnAction(a -> {
-
+			rectangle1.getChildren().clear();
+			rectangle2.getChildren().clear();
 			cat.switchToScene1(a, application.Mathematics.MathResult.scV, languageChange);
 			MathResultCheck.correct=0;
 			MathResultCheck.percent=0;
 			MathResultCheck.result=0;
 			switchingQuestionForEasyMath.point=-1;
+			
+			application.Mathematics.switchingQuestionForDiffMath.check.clear();
+			application.Mathematics.switchingQuestionForDiffMath.checker = true;
+			
+			application.Mathematics.switchingQuestionForEasyMath.check.clear();
+			application.Mathematics.switchingQuestionForEasyMath.checker = true;
+			
+			application.Mathematics.switchingQuestionForNormalMath.check.clear();
+			application.Mathematics.switchingQuestionForNormalMath.checker=true;
+			
+			application.MathematicsAdult.switchingQuestionForDiffMathA.check.clear();
+			application.MathematicsAdult.switchingQuestionForDiffMathA.checker = true;
+			
+			application.MathematicsAdult.switchingQuestionForEasyMathA.check.clear();
+			application.MathematicsAdult.switchingQuestionForEasyMathA.checker = true;
+			
+			application.MathematicsAdult.switchingQuestionForNormalMathA.check.clear();
+			application.MathematicsAdult.switchingQuestionForNormalMathA.checker=true;
 		});
 		backArrow.setFitWidth(40);
 		backArrow.setFitHeight(30);
@@ -220,7 +239,9 @@ public class _1MathE extends Application {
 			tryagainL.setTextFill(Color.WHITE);
 			tryagain.setGraphic(tryagainL);
 			
-			rectangle1.getChildren().add(qEngImg);
+			if(!rectangle1.getChildren().contains(qEngImg)) {
+				rectangle1.getChildren().add(qEngImg);
+			}
 			
 			Font b_font = Font.loadFont(getClass().getResourceAsStream("/Poppin.ttf"), 30);
 			b1Label.setText("35");

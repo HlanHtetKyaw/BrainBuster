@@ -110,6 +110,12 @@ public class _5MathD extends Application {
 	int mark=0;
 	
 	public void switchToDifficulty(ActionEvent event, boolean languageChange,StackPane proot) {
+		b1.setDisable(false);
+		b2.setDisable(false);
+		b3.setDisable(false);
+		b4.setDisable(false);
+		forward.setDisable(false);
+		
 		remain_counter = Counter;
 		this.languageChange = languageChange;
 		root = new StackPane();
@@ -163,6 +169,25 @@ public class _5MathD extends Application {
 			MathResultCheck.percent=0;
 			MathResultCheck.result=0;
 			switchingQuestionForDiffMath.point=-1;
+			rectangle1.getChildren().clear();
+			rectangle2.getChildren().clear();
+			application.Mathematics.switchingQuestionForDiffMath.check.clear();
+			application.Mathematics.switchingQuestionForDiffMath.checker = true;
+			
+			application.Mathematics.switchingQuestionForEasyMath.check.clear();
+			application.Mathematics.switchingQuestionForEasyMath.checker = true;
+			
+			application.Mathematics.switchingQuestionForNormalMath.check.clear();
+			application.Mathematics.switchingQuestionForNormalMath.checker=true;
+			
+			application.MathematicsAdult.switchingQuestionForDiffMathA.check.clear();
+			application.MathematicsAdult.switchingQuestionForDiffMathA.checker = true;
+			
+			application.MathematicsAdult.switchingQuestionForEasyMathA.check.clear();
+			application.MathematicsAdult.switchingQuestionForEasyMathA.checker = true;
+			
+			application.MathematicsAdult.switchingQuestionForNormalMathA.check.clear();
+			application.MathematicsAdult.switchingQuestionForNormalMathA.checker=true;
 		});
 		backArrow.setFitWidth(40);
 		backArrow.setFitHeight(30);
@@ -298,6 +323,12 @@ public class _5MathD extends Application {
 	}
 
 	private void showNoti(ActionEvent ea) {
+		timeLine.stop();
+		b1.setDisable(true);
+		b2.setDisable(true);
+		b3.setDisable(true);
+		b4.setDisable(true);
+		forward.setDisable(true);
 		noti.setVisible(true);
 		TranslateTransition down = new TranslateTransition();
 		down.setByY(200);

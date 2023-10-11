@@ -137,6 +137,8 @@ public class IqFourteen{
 			IqResultCheck.percent=0;
 			IqResultCheck.result=0;
 			IqQuestions.point=-1;
+			IqQuestions.checker = true;
+			IqQuestions.check.clear();
 		});
 		backArrow.setFitWidth(40);
 		backArrow.setFitHeight(30);
@@ -222,8 +224,8 @@ public class IqFourteen{
 		circleImg = new ImageView(circle);
 		StackPane.setAlignment(circleImg, Pos.BOTTOM_LEFT);
 
-		root.getChildren().addAll( back, rectangle, ans, recImg, doodleImg, plusImg, circleImg,
-				submit, timer,clockImg,quesImg);
+		root.getChildren().addAll( back, ans, recImg, doodleImg, plusImg, circleImg,
+				submit, timer,clockImg,quesImg,rectangle);
 	}
 
 	void lan_click() {

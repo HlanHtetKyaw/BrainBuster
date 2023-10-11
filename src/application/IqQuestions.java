@@ -36,12 +36,14 @@ public class IqQuestions {
 	
 	static Random random = new Random();
 	public static int point = -1;
-	static List<Integer> check = new ArrayList<>();
+	public static List<Integer> check = new ArrayList<>();
 	static boolean checker = true;
 
 	static void switchToIqQuestions(ActionEvent e, boolean languageChange,StackPane proot) {
 		point++;
+		System.out.println("checker "+checker);
 		if (checker == true) {
+			System.out.println("do thisssssssssss");
 			int maxNumber = NOQ; // Maximum number to generate
 			int numberOfQ = NOQ; // Number of unique random numbers to generate
 
@@ -51,6 +53,7 @@ public class IqQuestions {
 				int randomNumber = random.nextInt(maxNumber) + 1;
 				if (!check.contains(randomNumber)) {
 					check.add(randomNumber);
+					System.out.println("ran num: "+randomNumber);
 				}
 			}
 
@@ -67,6 +70,7 @@ public class IqQuestions {
 			}
 		}
 		try {
+			System.out.println("//////point//////"+point);
 			switch (check.get(point)) {
 			case 1:
 				System.out.println("Iq one");

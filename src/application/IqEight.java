@@ -126,6 +126,8 @@ public class IqEight{
 			IqResultCheck.percent=0;
 			IqResultCheck.result=0;
 			IqQuestions.point=-1;
+			IqQuestions.checker = true;
+			IqQuestions.check.clear();
 		});
 		backArrow.setFitWidth(40);
 		backArrow.setFitHeight(30);

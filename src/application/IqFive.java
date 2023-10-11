@@ -157,6 +157,8 @@ public class IqFive {
 			IqResultCheck.percent=0;
 			IqResultCheck.result=0;
 			IqQuestions.point=-1;
+			IqQuestions.checker = true;
+			IqQuestions.check.clear();
 		});
 		backArrow.setFitWidth(40);
 		backArrow.setFitHeight(30);
@@ -203,6 +205,7 @@ public class IqFive {
 				if (Integer.parseInt(input) == 120) {
 					BooleanHolder b = new BooleanHolder();
 					b.setBool(true);
+					submit.setDisable(true);
 					showNoti(e);
 					IqResultCheck.check();
 				}else {

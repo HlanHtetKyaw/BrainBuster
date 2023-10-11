@@ -61,7 +61,7 @@ public class IqTwo{
 	Image clock = new Image("IqTwo/clock.png");
 	Image girl = new Image("IqTwo/girl.png");
 	Image pencil = new Image("IqTwo/pencil.png");
-	Image iqTwoMM = new Image("IqTwo/iqTwoMM.png");
+	Image iqTwoMM = new Image("IqTwo/IqTwoMM.png");
 	Image a1 = new Image("IqTwo/a1.png");
 	Image a2 = new Image("IqTwo/a2.png");
 	Image a3 = new Image("IqTwo/a3.png");
@@ -155,6 +155,8 @@ public class IqTwo{
 			IqResultCheck.percent=0;
 			IqResultCheck.result=0;
 			IqQuestions.point=-1;
+			IqQuestions.checker = true;
+			IqQuestions.check.clear();
 		});
 		backArrow.setFitWidth(40);
 		backArrow.setFitHeight(30);

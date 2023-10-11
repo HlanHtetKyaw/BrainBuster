@@ -48,7 +48,7 @@
 
 /*name button */
 .name {
-    -fx-background-color: #3662EF;
+    -fx-background-color: white;
     -fx-background-radius: 50px;
     -fx-border-radius: 200;
     -fx-cursor:hand;

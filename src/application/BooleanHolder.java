@@ -40,11 +40,6 @@ public class BooleanHolder {
 		pre6.putInt(p1, num);
 	}
 	public boolean getBool() {
-//		pre.putBoolean(memory, false);
-//		pre2.putBoolean(memory2, false);
-//		pre3.putBoolean(memory3, false);
-//		pre4.putBoolean(memory4, false);
-//		pre5.putBoolean(memory5, false);
 
 		LockOne = pre.getBoolean(memory, false);
 		return LockOne;

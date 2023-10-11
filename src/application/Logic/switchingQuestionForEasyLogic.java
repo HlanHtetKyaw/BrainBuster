@@ -18,8 +18,8 @@ public class switchingQuestionForEasyLogic {
 	static int NOQ = 5;
 	static Random random = new Random();
 	static int point = -1;
-	static List<Integer> check = new ArrayList<>();
-	static boolean checker = true;
+	public static List<Integer> check = new ArrayList<>();
+	public static boolean checker = true;
 
 	public static void switchToQuestions(ActionEvent e, boolean languageChange,StackPane proot) {
 		point++;

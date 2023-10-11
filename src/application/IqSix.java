@@ -120,7 +120,9 @@ public class IqSix {
 			IqResultCheck.correct=0;
 			IqResultCheck.percent=0;
 			IqResultCheck.result=0;
+			IqQuestions.checker = true;
 			rectangle.getChildren().clear();
+			IqQuestions.check.clear();
 		});
 		backArrow.setFitWidth(40);
 		backArrow.setFitHeight(30);

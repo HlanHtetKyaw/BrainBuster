@@ -102,6 +102,10 @@ public class _5LogicD extends Application {
 	int mark=0;
 	
 	public void switchToDifficulty(ActionEvent event, boolean languageChange,StackPane proot) {
+		b1.setDisable(false);
+		b2.setDisable(false);
+		b3.setDisable(false);
+		forward.setDisable(false);
 		remain_counter = Counter;
 		this.languageChange = languageChange;
 		root = new StackPane();
@@ -157,6 +161,21 @@ public class _5LogicD extends Application {
 			MathResultCheck.percent=0;
 			MathResultCheck.result=0;
 			switchingQuestionForDiffLogicAdult.point=-1;
+			application.Logic.switchingQuestionForDiffLogic.check.clear();
+			application.Logic.switchingQuestionForDiffLogic.checker=true;
+			application.Logic.switchingQuestionForNormalLogic.check.clear();
+			application.Logic.switchingQuestionForNormalLogic.checker=true;
+			application.Logic.switchingQuestionForEasyLogic.check.clear();
+			application.Logic.switchingQuestionForEasyLogic.checker=true;
+			
+			application.LogicAdult.switchingQuestionForDiffLogicAdult.check.clear();
+			application.LogicAdult.switchingQuestionForDiffLogicAdult.checker=true;
+			application.LogicAdult.switchingQuestionForNormalLogicAdult.check.clear();
+			application.LogicAdult.switchingQuestionForNormalLogicAdult.checker=true;
+			application.LogicAdult.switchingQuestionForEasyLogicAdult.check.clear();
+			application.LogicAdult.switchingQuestionForEasyLogicAdult.checker=true;
+			rectangle1.getChildren().clear();
+			rectangle2.getChildren().clear();
 		});
 		backArrow.setFitWidth(40);
 		backArrow.setFitHeight(30);
@@ -284,6 +303,9 @@ public class _5LogicD extends Application {
 	}
 
 	private void showNoti(ActionEvent ea) {
+		b1.setDisable(true);
+		b2.setDisable(true);
+		b3.setDisable(true);
 		noti.setVisible(true);
 		TranslateTransition down = new TranslateTransition();
 		down.setByY(200);
@@ -376,7 +398,9 @@ public class _5LogicD extends Application {
 		}
 	}
 	private void clickForward(ActionEvent e) {
+		timeLine.stop();
 		showNoti(e);
+		forward.setDisable(true);
 		BooleanHolder b = new BooleanHolder();
 		b.setBoolThree(true);
 	}

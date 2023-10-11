@@ -116,6 +116,12 @@ public class IqFifteen{
 			cat.switchToScene1(a, application.Mathematics.MathResult.scV, languageChange);
 			timeLine.stop();
 			rectangle.getChildren().clear();
+			IqResultCheck.correct=0;
+			IqResultCheck.percent=0;
+			IqResultCheck.result=0;
+			IqQuestions.point=-1;
+			IqQuestions.checker = true;
+			IqQuestions.check.clear();
 		});
 		backArrow.setFitWidth(40);
 		backArrow.setFitHeight(30);
@@ -137,10 +143,6 @@ public class IqFifteen{
 			timeLine.stop();
 			rectangle.getChildren().clear();
 			IqQuestions.switchToIqQuestions(e, languageChange,root);
-			IqResultCheck.correct=0;
-			IqResultCheck.percent=0;
-			IqResultCheck.result=0;
-			IqQuestions.point=-1;
 		});
 		b2.setMaxSize(230, 66);
 		b2.setOnAction(e->{

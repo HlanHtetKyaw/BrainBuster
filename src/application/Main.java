@@ -67,7 +67,9 @@ public class Main extends Application {
 	Image Question = new Image("question.png");
 	Image Moon = new Image("moon.png");
 	Image Rain = new Image("rain.png");
-
+	Image icon = new Image("logo.png");
+	Image icon1 = new Image("icon16.png");
+	
 	ImageView mainText = new ImageView(MainText);
 	ImageView centerText = new ImageView(CenterText);
 	ImageView letsText = new ImageView(Lets);
@@ -79,11 +81,13 @@ public class Main extends Application {
 	ImageView questionImg = new ImageView(Question);
 	ImageView moonImg = new ImageView(Moon);
 	ImageView rainImg = new ImageView(Rain);
-
+	ImageView iconImg = new ImageView(icon);
 	Category cat = new Category();
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
+		primaryStage.getIcons().addAll(icon,icon1);
+		primaryStage.setTitle("Brain Buster");
 		lanSwap = pre.getBoolean(memory, true);
 		this.primaryStage = primaryStage;
 		root = new StackPane();

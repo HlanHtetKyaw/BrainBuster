@@ -47,7 +47,7 @@ public class IqFour {
 	Label choose = new Label();
 
 	Image Arrow = new Image("arrow.png");
-	Image ruler = new Image("iqFour/ruler.png");
+	Image ruler = new Image("IqFour/ruler.png");
 	Image clock = new Image("IqFour/clock.png");
 	Image ease = new Image("IqFour/ease.png");
 	Image markers = new Image("IqFour/markers.png");
@@ -129,6 +129,8 @@ public class IqFour {
 			IqResultCheck.percent=0;
 			IqResultCheck.result=0;
 			IqQuestions.point=-1;
+			IqQuestions.checker = true;
+			IqQuestions.check.clear();
 		});
 		backArrow.setFitWidth(40);
 		backArrow.setFitHeight(30);

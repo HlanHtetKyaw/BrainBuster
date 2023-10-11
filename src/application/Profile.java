@@ -264,7 +264,7 @@ public class Profile extends Application {
 			 four.setDisable(true);
 		 }
 		 
-		 if(b.getBoolTwo()) {
+		 if(b.getBoolFive()) {
 			 lockFive.setVisible(false);
 			 five.setDisable(false);
 		 }else {

@@ -55,7 +55,7 @@ public class IqEleven{
 	Label quest = new Label();
 
 	Image Arrow = new Image("arrow.png");
-	Image lightbulb = new Image("IqEleven/lightbulb.png");
+	Image lightbulb = new Image("IqEleven/lightBulb.png");
 	Image bottom = new Image("IqEleven/bottom.png");
 	Image clock = new Image("IqEleven/clock.png");
 	Image haha = new Image("IqEleven/haha.png");
@@ -152,6 +152,8 @@ public class IqEleven{
 			IqResultCheck.percent=0;
 			IqResultCheck.result=0;
 			IqQuestions.point=-1;
+			IqQuestions.checker = true;
+			IqQuestions.check.clear();
 		});
 		backArrow.setFitWidth(40);
 		backArrow.setFitHeight(30);

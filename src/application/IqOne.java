@@ -40,14 +40,14 @@ public class IqOne {
 	Image Lang = new Image("lang.png");
 	Image Arrow = new Image("arrow.png");
 	Image time = new Image("IqOne/timer.png");
-	Image IqOneEng = new Image("IqOne/IqOneTEng.png");
+	Image IqOneEng = new Image("IqOne/iqOneTEng.png");
 	Image flowerOne = new Image("IqOne/flowerOne.png");
 	Image flowerTwo = new Image("IqOne/flowerTwo.png");
 	Image flowerG = new Image("IqOne/flowerG.png");
 	Image flowerB = new Image("IqOne/flowerB.png");
 	Image yesMM = new Image("IqOne/yesMM.png");
 	Image noMM = new Image("IqOne/noMM.png");
-	Image iqMM = new Image("IqONe/IqOneMM.png");
+	Image iqMM = new Image("IqOne/IqOneMM.png");
 	
 	ImageView backArrow = new ImageView(Arrow);
 	ImageView timeImg = new ImageView(time);
@@ -117,6 +117,8 @@ public class IqOne {
 			IqResultCheck.percent=0;
 			IqResultCheck.result=0;
 			IqQuestions.point=-1;
+			IqQuestions.checker = true;
+			IqQuestions.check.clear();
 		});
 		backArrow.setFitWidth(40);
 		backArrow.setFitHeight(30);

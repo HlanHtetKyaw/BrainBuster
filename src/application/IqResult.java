@@ -46,7 +46,7 @@ public class IqResult{
 	Image Arrow = new Image("IqResult/home.png");
 	Image brain = new Image("IqResult/brain.png");
 	Image brainR = new Image("IqResult/brainR.png");
-	Image eaistein = new Image("Profile/Koala.png");
+	Image eaistein = new Image("Profile/koala.png");
 	Image cele1 = new Image("IqFive/cele1.png");
 	Image cele2 = new Image("IqFive/cele2.png");
 	Image notiMM = new Image("IqFive/notiKoala.png");
@@ -136,6 +136,8 @@ public class IqResult{
 			IqResultCheck.correct=0;
 			IqResultCheck.percent=0;
 			IqResultCheck.result=0;
+			IqQuestions.checker = true;
+			IqQuestions.check.clear();
 		});
 		backArrow.setFitWidth(40);
 		backArrow.setFitHeight(40);

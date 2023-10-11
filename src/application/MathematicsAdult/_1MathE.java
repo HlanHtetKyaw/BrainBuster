@@ -135,6 +135,16 @@ public class _1MathE extends Application {
 			MathResultCheck.percent=0;
 			MathResultCheck.result=0;
 			switchingQuestionForEasyMathA.point=-1;
+			application.MathematicsAdult.switchingQuestionForDiffMathA.check.clear();
+			application.MathematicsAdult.switchingQuestionForDiffMathA.checker = true;
+			
+			application.MathematicsAdult.switchingQuestionForEasyMathA.check.clear();
+			application.MathematicsAdult.switchingQuestionForEasyMathA.checker = true;
+			
+			application.MathematicsAdult.switchingQuestionForNormalMathA.check.clear();
+			application.MathematicsAdult.switchingQuestionForNormalMathA.checker=true;
+			rectangle1.getChildren().clear();
+			rectangle2.getChildren().clear();
 		});
 		backArrow.setFitWidth(40);
 		backArrow.setFitHeight(30);
@@ -222,7 +232,10 @@ public class _1MathE extends Application {
 			tryagainL.setTextFill(Color.WHITE);
 			tryagain.setGraphic(tryagainL);
 			
-			rectangle1.getChildren().add(qEngImg);
+			if(!rectangle1.getChildren().contains(qEngImg)) {
+				rectangle1.getChildren().add(qEngImg);
+			}
+			
 			
 			Font b_font = Font.loadFont(getClass().getResourceAsStream("/Poppin.ttf"), 30);
 			b1Label.setText("2");

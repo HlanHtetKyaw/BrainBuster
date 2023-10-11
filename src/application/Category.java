@@ -1,14 +1,18 @@
 package application;
 
+import java.util.Optional;
+
 import javafx.animation.ParallelTransition;
 import javafx.animation.RotateTransition;
 import javafx.animation.ScaleTransition;
 import javafx.animation.TranslateTransition;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
@@ -18,6 +22,9 @@ import javafx.scene.text.Text;
 import javafx.scene.transform.Rotate;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import javafx.scene.*;
+import javafx.scene.control.*;
+import javafx.scene.control.Alert.*;
 
 public class Category {
 
@@ -101,7 +108,7 @@ public class Category {
 	ImageView rookieImg = new ImageView(Rookie);
 	ImageView celeImg = new ImageView(Cele);
 	ImageView eaisteinImg = new ImageView(eaistein);
-
+	ImageView restartImg = new ImageView(new Image("Profile/restart.png"));
 	StackPane root;
 
 	boolean languageChange;
@@ -144,7 +151,7 @@ int selectValue;
 		profile.getStyleClass().add("circular-button");
 		profile.setPrefSize(125, 125);
 		StackPane.setAlignment(profile, Pos.TOP_RIGHT);
-		StackPane.setMargin(profile, new Insets(25, 450, 0, 0));
+		StackPane.setMargin(profile, new Insets(25, 330, 0, 0));
 		profile.setOnAction(e -> {
 			Stage news = new Stage();
 			Profile p = new Profile();
@@ -156,16 +163,31 @@ int selectValue;
 		});
 		name = new Button();
 		name.getStyleClass().add("name");
-		name.setPrefSize(375, 75);
-		StackPane.setAlignment(name, Pos.TOP_RIGHT);
-		StackPane.setMargin(name, new Insets(55, 150, 0, 0));
+		name.setPrefSize(70,70);
+		StackPane.setAlignment(name, Pos.BOTTOM_LEFT);
+		StackPane.setMargin(name, new Insets(0, 0, 60, 200));
+		name.setGraphic(restartImg);
+		name.setOnAction(e->{
+			Alert alert = new Alert(AlertType.CONFIRMATION);
+	        alert.setTitle("Alert");
+	        alert.setHeaderText("Restart the app\n"
+	        		+ "This process will make you lose all of your progress..");
+	        alert.setContentText("Are you sure you want to proceed?");
 
-		Text test = new Text("Rookie");
-		Font Mathematics_font = Font.loadFont(getClass().getResourceAsStream("/PoppinB.ttf"), 26);
-		test.setFont(Mathematics_font);
-		test.setFill(Color.WHITE);
-		name.setGraphic(test);
-
+	        Optional<ButtonType> result = alert.showAndWait();
+	        if (result.isPresent() && result.get() == ButtonType.OK){
+	        	BooleanHolder b = new BooleanHolder();
+	        	b.setInt(66);
+	    		b.pre.putBoolean(b.memory, false);
+	    		b.pre2.putBoolean(b.memory2, false);
+	    		b.pre3.putBoolean(b.memory3, false);
+	    		b.pre4.putBoolean(b.memory4, false);
+	    		b.pre5.putBoolean(b.memory5, false);
+	            Platform.exit();
+	        } else {
+	           alert.close();
+	        }
+		});
 		rookieImg = new ImageView(Rookie);
 		rookieImg.setFitWidth(55);
 		rookieImg.setFitHeight(77);
@@ -261,7 +283,7 @@ int selectValue;
 		moonImg.setFitWidth(128);
 		moonImg.setFitHeight(116);
 		StackPane.setAlignment(moonImg, Pos.BOTTOM_CENTER);
-		StackPane.setMargin(moonImg, new Insets(0, 450, 50, 0));
+		StackPane.setMargin(moonImg, new Insets(0, 550, 50, 0));
 		RotateTransition rotateMoon = new RotateTransition();
 		rotateMoon.setByAngle(-360);
 		rotateMoon.setDuration(Duration.seconds(20));
@@ -354,6 +376,7 @@ int selectValue;
 			Difficulty d = new Difficulty();
 			d.switchToDifficulty(event, languageChange,root,true,selectValue);
 			application.Mathematics.MathResult.modeFilter(true);
+			root.getChildren().clear();
 		});
 		root.getChildren().addAll(math_button);
 	}

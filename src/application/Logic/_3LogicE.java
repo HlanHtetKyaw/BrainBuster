@@ -128,7 +128,22 @@ public class _3LogicE extends Application {
 			MathResultCheck.correct=0;
 			MathResultCheck.percent=0;
 			MathResultCheck.result=0;
-			switchingQuestionForEasyLogic.point=-1;;
+			switchingQuestionForEasyLogic.point=-1;
+			application.Logic.switchingQuestionForDiffLogic.check.clear();
+			application.Logic.switchingQuestionForDiffLogic.checker=true;
+			application.Logic.switchingQuestionForNormalLogic.check.clear();
+			application.Logic.switchingQuestionForNormalLogic.checker=true;
+			application.Logic.switchingQuestionForEasyLogic.check.clear();
+			application.Logic.switchingQuestionForEasyLogic.checker=true;
+			
+			application.LogicAdult.switchingQuestionForDiffLogicAdult.check.clear();
+			application.LogicAdult.switchingQuestionForDiffLogicAdult.checker=true;
+			application.LogicAdult.switchingQuestionForNormalLogicAdult.check.clear();
+			application.LogicAdult.switchingQuestionForNormalLogicAdult.checker=true;
+			application.LogicAdult.switchingQuestionForEasyLogicAdult.check.clear();
+			application.LogicAdult.switchingQuestionForEasyLogicAdult.checker=true;
+			rectangle1.getChildren().clear();
+			rectangle2.getChildren().clear();
 		});
 		backArrow.setFitWidth(40);
 		backArrow.setFitHeight(30);
