@@ -1,5 +1,6 @@
 package application.Mathematics;
 
+import application.Category;
 import application.IqQuestions;
 import application.IqResultCheck;
 import javafx.application.Application;
@@ -128,7 +129,7 @@ public class _2MathE extends Application {
 		back.setPrefSize(60, 60);
 		back.setOnAction(a -> {
 
-			cat.switchToScene1(a, application.Mathematics.MathResult.scV, languageChange);
+			Category.switchToScene1(a, application.Mathematics.MathResult.scV, languageChange);
 			MathResultCheck.correct=0;
 			MathResultCheck.percent=0;
 			MathResultCheck.result=0;

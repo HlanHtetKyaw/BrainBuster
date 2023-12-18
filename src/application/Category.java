@@ -28,97 +28,98 @@ import javafx.scene.control.Alert.*;
 
 public class Category {
 
-	Scene scene1;
-	Stage currentStage;
-	Stage s;
+	static Scene scene1;
+	static Stage currentStage;
+	static Stage s;
 	Scene sc;
 
-	Button back;
-	Button lan_button;
-	Button math_button;
-	Button math_in_button;
-	Button lg_button;
-	Button lg_in_button;
-	Button iq_button;
-	Button iq_in_button;
-	Button ach_button;
-	Button ach_in_button;
+	static Button back;
+	static Button lan_button;
+	static Button math_button;
+	static Button math_in_button;
+	static Button lg_button;
+	static Button lg_in_button;
+	static Button iq_button;
+	static Button iq_in_button;
+	static Button ach_button;
+	static Button ach_in_button;
 	public static Button profile;
-	Button name;
+	static Button name;
 
-	Text Myanmar;
-	Text English;
-	Text Lan;
-	Text Math;
-	Text Logic;
-	Text IQ;
-	Text Ach;
+	static Text Myanmar;
+	static Text English;
+	static Text Lan;
+	static Text Math;
+	static Text Logic;
+	static Text IQ;
+	static Text Ach;
 
-	Image Lang = new Image("lang.png");
-	Image Arrow = new Image("arrow.png");
-	Image Boy = new Image("boy.png");
-	Image Girl = new Image("girl.png");
-	Image Flat = new Image("flat.png");
-	Image G_board = new Image("greenBoard.png");
-	Image CatText = new Image("catText.png");
-	Image CatTextM = new Image("catTextM.png");
-	Image M_Math = new Image("m_math.png");
-	Image M_Logic = new Image("m_logic.png");
-	Image M_IQ = new Image("m_iq.png");
-	Image M_Ach = new Image("m_ach.png");
-	Image M_MathB = new Image("m_mathB.png");
-	Image M_LogicB = new Image("m_logicB.png");
-	Image M_IQB = new Image("m_iqB.png");
-	Image M_AchB = new Image("m_achB.png");
-	Image Moon = new Image("moon.png");
-	Image Cone = new Image("cone.png");
-	Image Pyramid = new Image("pyramid.png");
-	Image Rookie = new Image("rookie.png");
-	Image Cele = new Image("celeRope.png");
-	Image eaistein = new Image("Profile/eaistein.png");
-	Image idea = new Image("Profile/idea.png");
-	Image fire = new Image("Profile/fire_brain.png");
-	Image supBoy = new Image("Profile/supBoy.png");
-	Image koala = new Image("Profile/koala.png");
+	static Image Lang = new Image("lang.png");
+	static Image Arrow = new Image("arrow.png");
+	static Image Boy = new Image("boy.png");
+	static Image Girl = new Image("girl.png");
+	static Image Flat = new Image("flat.png");
+	static Image G_board = new Image("greenBoard.png");
+	static Image CatText = new Image("catText.png");
+	static Image CatTextM = new Image("catTextM.png");
+	static Image M_Math = new Image("m_math.png");
+	static Image M_Logic = new Image("m_logic.png");
+	static Image M_IQ = new Image("m_iq.png");
+	static Image M_Ach = new Image("m_ach.png");
+	static Image M_MathB = new Image("m_mathB.png");
+	static Image M_LogicB = new Image("m_logicB.png");
+	static Image M_IQB = new Image("m_iqB.png");
+	static Image M_AchB = new Image("m_achB.png");
+	static Image Moon = new Image("moon.png");
+	static Image Cone = new Image("cone.png");
+	static Image Pyramid = new Image("pyramid.png");
+	static Image Rookie = new Image("rookie.png");
+	static Image Cele = new Image("celeRope.png");
+	static Image eaistein = new Image("Profile/eaistein.png");
+	static Image idea = new Image("Profile/idea.png");
+	static Image fire = new Image("Profile/fire_brain.png");
+	static Image supBoy = new Image("Profile/supBoy.png");
+	static Image koala = new Image("Profile/koala.png");
 	
-	ImageView ideaImg = new ImageView(idea);
-	ImageView fireImg = new ImageView(fire);
-	ImageView supBoyImg = new ImageView(supBoy);
-	ImageView koalaImg = new ImageView(koala);
+	static ImageView ideaImg = new ImageView(idea);
+	static ImageView fireImg = new ImageView(fire);
+	static ImageView supBoyImg = new ImageView(supBoy);
+	static ImageView koalaImg = new ImageView(koala);
 	
-	ImageView langText = new ImageView(Lang);
-	ImageView backArrow = new ImageView(Arrow);
-	ImageView boyStand = new ImageView(Boy);
-	ImageView girlStand = new ImageView(Girl);
-	ImageView flat = new ImageView(Flat);
-	ImageView gBoard = new ImageView(G_board);
-	ImageView catText = new ImageView(CatText);
-	ImageView catTextM = new ImageView(CatTextM);
-	ImageView m_Math = new ImageView(M_Math);
-	ImageView m_Logic = new ImageView(M_Logic);
-	ImageView m_IQ = new ImageView(M_IQ);
-	ImageView m_Ach = new ImageView(M_Ach);
-	ImageView m_MathB = new ImageView(M_MathB);
-	ImageView m_LogicB = new ImageView(M_LogicB);
-	ImageView m_IQB = new ImageView(M_IQB);
-	ImageView m_AchB = new ImageView(M_AchB);
-	ImageView moonImg = new ImageView(Moon);
-	ImageView coneImg = new ImageView(Cone);
-	ImageView pyramidImg = new ImageView(Pyramid);
-	ImageView rookieImg = new ImageView(Rookie);
-	ImageView celeImg = new ImageView(Cele);
-	ImageView eaisteinImg = new ImageView(eaistein);
-	ImageView restartImg = new ImageView(new Image("Profile/restart.png"));
-	StackPane root;
+	static ImageView langText = new ImageView(Lang);
+	static ImageView backArrow = new ImageView(Arrow);
+	static ImageView boyStand = new ImageView(Boy);
+	static ImageView girlStand = new ImageView(Girl);
+	static ImageView flat = new ImageView(Flat);
+	static ImageView gBoard = new ImageView(G_board);
+	static ImageView catText = new ImageView(CatText);
+	static ImageView catTextM = new ImageView(CatTextM);
+	static ImageView m_Math = new ImageView(M_Math);
+	static ImageView m_Logic = new ImageView(M_Logic);
+	static ImageView m_IQ = new ImageView(M_IQ);
+	static ImageView m_Ach = new ImageView(M_Ach);
+	static ImageView m_MathB = new ImageView(M_MathB);
+	static ImageView m_LogicB = new ImageView(M_LogicB);
+	static ImageView m_IQB = new ImageView(M_IQB);
+	static ImageView m_AchB = new ImageView(M_AchB);
+	static ImageView moonImg = new ImageView(Moon);
+	static ImageView coneImg = new ImageView(Cone);
+	static ImageView pyramidImg = new ImageView(Pyramid);
+	static ImageView rookieImg = new ImageView(Rookie);
+	static ImageView celeImg = new ImageView(Cele);
+	static ImageView eaisteinImg = new ImageView(eaistein);
+	static ImageView restartImg = new ImageView(new Image("Profile/restart.png"));
+	static StackPane root;
 
-	boolean languageChange;
-	boolean nonesense = false;
+	static boolean languageChange;
+	static boolean nonesense = false;
 	
-int selectValue;
-	public void switchToScene1(ActionEvent event, int SelectValue, boolean lanSwap) {
+static int selectValue;
+	public static void switchToScene1(ActionEvent event, int SelectValue, boolean lanSwap) {
+		System.gc();
 		languageChange = lanSwap;
 		application.Mathematics.MathResult.scV = SelectValue;
-		this.selectValue = SelectValue;
+		selectValue = SelectValue;
 		root = new StackPane();
 		root.setStyle("-fx-background-color: #F79630");
 		profile();
@@ -133,12 +134,12 @@ int selectValue;
 		scene1 = new Scene(root);
 		currentStage.setWidth(currentStage.getWidth());
 		currentStage.setHeight(currentStage.getHeight());
-		scene1.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+		scene1.getStylesheets().add(Category.class.getResource("application.css").toExternalForm());
 		currentStage.setScene(scene1);
 		currentStage.show();
 	}
 
-	private void back(ActionEvent event) {
+	private static void back(ActionEvent event) {
 		s = currentStage;
 		currentStage.setHeight(s.getHeight());
 		currentStage.setWidth(s.getWidth());
@@ -146,7 +147,7 @@ int selectValue;
 		currentStage.show();
 	}
 
-	private void profile() {
+	private static void profile() {
 		profile = new Button();
 		profile.getStyleClass().add("circular-button");
 		profile.setPrefSize(125, 125);
@@ -224,7 +225,7 @@ int selectValue;
 		root.getChildren().addAll(name, profile);
 	}
 
-	private void elements() {
+	private static void elements() {
 		back = new Button();
 		back.getStyleClass().add("lets_start");
 		back.setPrefSize(60, 60);
@@ -336,12 +337,12 @@ int selectValue;
 				pyramidImg);
 	}
 
-	void lan_click() {
+	static void lan_click() {
 		languageChange = !languageChange;
 		lan_change();
 	}
 
-	private void mathematics() {
+	private static void mathematics() {
 		math_in_button = new Button();
 		math_in_button.setPrefSize(410, 65);
 		math_in_button.getStyleClass().add("category_in_button");
@@ -381,7 +382,7 @@ int selectValue;
 		root.getChildren().addAll(math_button);
 	}
 
-	private void logic() {
+	private static void logic() {
 		lg_in_button = new Button();
 		lg_in_button.setPrefSize(410, 65);
 		lg_in_button.getStyleClass().add("category_in_button");
@@ -422,7 +423,7 @@ int selectValue;
 		root.getChildren().addAll(lg_button);
 	}
 
-	private void iq_test() {
+	private static void iq_test() {
 		iq_in_button = new Button();
 		iq_in_button.setPrefSize(410, 65);
 		iq_in_button.getStyleClass().add("category_in_button");
@@ -459,7 +460,7 @@ int selectValue;
 		root.getChildren().addAll(iq_button);
 	}
 
-	private void achievement() {
+	private static void achievement() {
 		ach_in_button = new Button();
 		ach_in_button.setPrefSize(410, 65);
 		ach_in_button.getStyleClass().add("category_in_button");
@@ -502,7 +503,7 @@ int selectValue;
 		root.getChildren().addAll(ach_button);
 	}
 
-	private void lan_change() {
+	private static void lan_change() {
 		if (languageChange) {
 			langText.setVisible(false);
 			catTextM.setVisible(false);
@@ -512,20 +513,20 @@ int selectValue;
 			m_Ach.setVisible(false);
 
 			Lan = new Text("Language:");
-			Font lan_font = Font.loadFont(getClass().getResourceAsStream("/PoppinB.ttf"), 20);
+			Font lan_font = Font.loadFont(Category.class.getResourceAsStream("/PoppinB.ttf"), 20);
 			Lan.setFont(lan_font);
 			Lan.setFill(Color.WHITE);
 			StackPane.setAlignment(Lan, Pos.TOP_LEFT);
 			StackPane.setMargin(Lan, new Insets(105, 0, 0, 90));
 
 			English = new Text("ENG");
-			Font English_font = Font.loadFont(getClass().getResourceAsStream("/PoppinB.ttf"), 20);
+			Font English_font = Font.loadFont(Category.class.getResourceAsStream("/PoppinB.ttf"), 20);
 			English.setFont(English_font);
 			English.setFill(Color.WHITE);
 			lan_button.setGraphic(English);
 
 			Math = new Text("MATHEMATICS");
-			Font Mathematics_font = Font.loadFont(getClass().getResourceAsStream("/Poppin.ttf"), 23);
+			Font Mathematics_font = Font.loadFont(Category.class.getResourceAsStream("/Poppin.ttf"), 23);
 			Math.setFont(Mathematics_font);
 			Math.setFill(Color.WHITE);
 			math_in_button.setGraphic(Math);
@@ -569,7 +570,7 @@ int selectValue;
 			StackPane.setMargin(langText, new Insets(110, 0, 0, 70));
 
 			Myanmar = new Text("Myan");
-			Font English_font = Font.loadFont(getClass().getResourceAsStream("/PoppinB.ttf"), 20);
+			Font English_font = Font.loadFont(Category.class.getResourceAsStream("/PoppinB.ttf"), 20);
 			Myanmar.setFont(English_font);
 			Myanmar.setFill(Color.WHITE);
 			lan_button.setGraphic(Myanmar);

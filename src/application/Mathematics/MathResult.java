@@ -1,6 +1,7 @@
 package application.Mathematics;
 
 import application.BooleanHolder;
+import application.Category;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.ParallelTransition;
@@ -28,6 +29,7 @@ import javafx.util.*;
 import javafx.scene.control.*;
 
 public class MathResult extends Application{
+	Category cat = new Category();
 	
 	Scene scene1;
 	Stage currentStage;
@@ -102,7 +104,7 @@ public class MathResult extends Application{
 	Button diffDis = new Button();
 	
 	ProgressIndicator pi = new ProgressIndicator();
-	double targetValue;
+	static double targetValue;
 	
 	boolean languageChange;
 	boolean nonesense = false;
@@ -113,7 +115,7 @@ public class MathResult extends Application{
 		s2 = String.valueOf(MathResultCheck.getPercent());
 		
 		targetValue = Double.parseDouble(s);
-		
+		System.out.println(targetValue);
 		this.languageChange = languageChange;
 		root = new StackPane();
 		root.setStyle("-fx-background-color: #66676D");
@@ -175,6 +177,7 @@ public class MathResult extends Application{
 	}
 	/*This is only for developing part*/
 	public static int scV;
+	
 	private void elements() {
 		back = new Button();
 		back.getStyleClass().add("lets_startR");
@@ -182,14 +185,16 @@ public class MathResult extends Application{
 		back.setOnAction(a -> {
 			rectangle1.getChildren().clear();
 			rectangle2.getChildren().clear();
-			application.Category cat = new application.Category();
-			cat.switchToScene1(a, scV, languageChange);
+			//application.Category cat = new application.Category();
+			Category.switchToScene1(a, scV, languageChange);
 			rectangle1.getChildren().clear();
 			rectangle2.getChildren().clear();
 			rectangle1.getChildren().removeAll();
 			MathResultCheck.correct=0;
 			MathResultCheck.percent=0;
 			MathResultCheck.result=0;
+			targetValue = 0;
+			System.out.println(targetValue);
 			application.Mathematics.switchingQuestionForDiffMath.check.clear();
 			application.Mathematics.switchingQuestionForDiffMath.checker = true;
 			
@@ -278,7 +283,7 @@ public class MathResult extends Application{
 		
 		pi.getStyleClass().add("cpi");
 		pi.setMaxSize(290, 290);
-        Duration duration = Duration.seconds(2); // Animation duration (in this case, 3 seconds)
+        Duration duration = Duration.seconds(2); // Animation duration (in this case, 2 seconds)
         System.out.println("Target value: "+targetValue);
         // Create a Timeline to animate the ProgressIndicator to the target value
         Timeline timeline = new Timeline(

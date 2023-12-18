@@ -10,7 +10,7 @@ public class MathResultCheck {
 		System.out.println("result: "+correct);
 	}
 	static double getScore() {
-		correct = (correct/5) * 100;
+		correct = (correct/6) * 100;
 		percent = correct;
 		correct = correct/100;
 		return correct;
