@@ -3,11 +3,11 @@ import javafx.stage.*;
 import javafx.application.*;
 import javafx.event.ActionEvent;
 import javafx.scene.layout.StackPane;
-public class _6MathE extends Application{
+public class _6MathN extends Application{
 public void start(Stage stage) throws Exception {
-	_0CommonEz c = new _0CommonEz();
-	
+	_0CommonNor c = new _0CommonNor();
 	c.setQEng("Math/MathQ/_6MathQ.png");
+	
 	c.a1Eng = "1/2";
 	c.a2Eng = "1";
 	c.a3Eng = "1/3";
@@ -36,7 +36,7 @@ public void start(Stage stage) throws Exception {
 	c.start(stage);
 }
 public void switchToDifficulty(ActionEvent ea,boolean languageChange,StackPane sp) {
-	_0CommonEz c = new _0CommonEz();
+	_0CommonNor c = new _0CommonNor();
 	c.setQEng("Math/MathQ/_6MathQ.png");
 	
 	c.a1Eng = "1/2";
@@ -49,7 +49,7 @@ public void switchToDifficulty(ActionEvent ea,boolean languageChange,StackPane s
 	c.setA2MM("Math/6MathAns/a2.png");
 	c.setA3MM("Math/6MathAns/a3.png");
 	c.setA4MM("Math/6MathAns/a4.png");
-
+	
 	c.b1.setOnAction(e->{
 		c.clickWrong();
 	});

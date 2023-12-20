@@ -1,6 +1,5 @@
 package application.Mathematics;
 
-import application.Category;
 import application.IqQuestions;
 import application.IqResultCheck;
 import javafx.application.Application;
@@ -19,8 +18,7 @@ import javafx.stage.Stage;
 import javafx.scene.*;
 import javafx.scene.control.*;
 
-public class _0Common extends Application {
-	boolean checker = false;
+public class _0CommonNor extends Application {
 	Scene scene1;
 	Stage currentStage;
 	Stage s;
@@ -28,14 +26,12 @@ public class _0Common extends Application {
 
 	Button back;
 	Button forward = new Button();
-	Button tryagain = new Button();
 	
 	Button b1 = new Button();
 	Button b2 = new Button();
 	Button b3 = new Button();
 	Button b4 = new Button();
 	
-	Label tryagainL = new Label();
 	Label b1Label = new Label();
 	Label b2Label = new Label();
 	Label b3Label = new Label();
@@ -50,9 +46,9 @@ public class _0Common extends Application {
 	Image wro = new Image("Math/wrong.png");
 	Image corMM = new Image("Math/correctMM.png");
 	Image wroMM = new Image("Math/wrongMM.png");
-	Image tryAgain = new Image("Math/TryagainMM.png");
-	/***********************************************/
+	/********************************************/
 	String qEngPath = "Math/MathQ/_2MathQ.png";
+	String qMMPath = "Math/MathQ/_2MathQMM.png";
 	String a1MMPath = "Math/2MathAns/a1.png";
 	String a2MMPath = "Math/2MathAns/a1.png";
 	String a3MMPath = "Math/2MathAns/a1.png";
@@ -64,13 +60,13 @@ public class _0Common extends Application {
 	
 	Image qEng = new Image(qEngPath);
 	
-	Image qMM = new Image("Math/MathQ/_2MathQMM.png");
+	Image qMM = new Image(qMMPath);
 	
 	Image a1 = new Image(a1MMPath);
 	Image a2 = new Image(a2MMPath);
 	Image a3 = new Image(a3MMPath);
 	Image a4 = new Image(a4MMPath);
-	/***********************************************/
+	/*******************************************/
 	ImageView backArrow = new ImageView(Arrow);
 	ImageView forwImg = new ImageView(forw);
 	ImageView teacherImg = new ImageView(teacher);
@@ -80,8 +76,7 @@ public class _0Common extends Application {
 	ImageView wroImg = new ImageView(wro);
 	ImageView corMMImg = new ImageView(corMM);
 	ImageView wroMMImg = new ImageView(wroMM);
-	ImageView tryAgainImg = new ImageView(tryAgain);
-	/***********************************************/
+	
 	ImageView qEngImg = new ImageView(qEng);
 	ImageView qMMImg = new ImageView(qMM);
 	
@@ -89,13 +84,13 @@ public class _0Common extends Application {
 	ImageView a2Img = new ImageView(a2);
 	ImageView a3Img = new ImageView(a3);
 	ImageView a4Img = new ImageView(a4);
-	/***********************************************/
+	
 	StackPane root;
 	StackPane rectangle1 = new StackPane();
 	StackPane rectangle2 = new StackPane();
 	
 	application.Category cat = new application.Category();
-	boolean languageChange = true;
+	boolean languageChange=true;
 	boolean nonesense = false;
 	
 	int mark=0;
@@ -103,6 +98,11 @@ public class _0Common extends Application {
 		this.qEngPath = pathQEng;
 		qEng = new Image(qEngPath);
 		qEngImg = new ImageView(qEng);
+	}
+	public void setQMM(String pathQMM) {
+		this.qMMPath = pathQMM;
+		qMM = new Image(qMMPath);
+		qMMImg = new ImageView(qMM);
 	}
 	public void setA1MM(String patha1MM) {
 		this.a1MMPath = patha1MM;
@@ -165,12 +165,13 @@ public class _0Common extends Application {
 		back.getStyleClass().add("lets_start");
 		back.setPrefSize(60, 60);
 		back.setOnAction(a -> {
-
-			Category.switchToScene1(a, application.Mathematics.MathResult.scV, languageChange);
+			rectangle1.getChildren().clear();
+			rectangle2.getChildren().clear();
+			cat.switchToScene1(a, application.Mathematics.MathResult.scV, languageChange);
 			MathResultCheck.correct=0;
 			MathResultCheck.percent=0;
 			MathResultCheck.result=0;
-			switchingQuestionForEasyMath.point=-1;
+			switchingQuestionForNormalMath.point=-1;
 			application.Mathematics.switchingQuestionForDiffMath.check.clear();
 			application.Mathematics.switchingQuestionForDiffMath.checker = true;
 			
@@ -188,8 +189,6 @@ public class _0Common extends Application {
 			
 			application.MathematicsAdult.switchingQuestionForNormalMathA.check.clear();
 			application.MathematicsAdult.switchingQuestionForNormalMathA.checker=true;
-			rectangle1.getChildren().clear();
-			rectangle2.getChildren().clear();
 		});
 		backArrow.setFitWidth(40);
 		backArrow.setFitHeight(30);
@@ -228,32 +227,22 @@ public class _0Common extends Application {
 		
 		b4.getStyleClass().add("bBut");
 		
-
 		forward.setMaxSize(74,74);
 		forward.setGraphic(forwImg);
 		forward.getStyleClass().add("forward");
 		forward.setOnAction(e->{
 			clickForward(e);
 		});
-		StackPane.setMargin(forward, new Insets(0,0,-400,850));
-		
-		tryagain.setDisable(true);
-		tryagain.setMaxSize(118,40);
-		tryagain.getStyleClass().add("forward");
-		tryagain.setOnAction(e->{
-			clickTryAgain();
-		});
-		StackPane.setMargin(tryagain, new Insets(0,0,-400,600));
+		StackPane.setMargin(forward, new Insets(0,0,-400,600));
 		
 		StackPane.setAlignment(teacherImg, Pos.BOTTOM_RIGHT);
 		StackPane.setAlignment(brainImg, Pos.TOP_RIGHT);
 		StackPane.setAlignment(boyImg, Pos.BOTTOM_LEFT);
 		
-		root.getChildren().addAll( back,rectangle1,b1,b2,b3,b4,rectangle2,forward,tryagain,teacherImg,brainImg,boyImg);
+		root.getChildren().addAll( back,rectangle1,b1,b2,b3,b4,rectangle2,forward,teacherImg,brainImg,boyImg);
 	}
 	private void lan_change() {
 		if (languageChange) {
-			tryAgainImg.setVisible(false);
 			qMMImg.setVisible(false);
 			a1Img.setVisible(false);
 			a2Img.setVisible(false);
@@ -263,11 +252,7 @@ public class _0Common extends Application {
 			wroMMImg.setVisible(false);
 			
 			Font quest_font = Font.loadFont(getClass().getResourceAsStream("/PoppinB.ttf"), 15);
-			tryagainL.setText("Try Again");
-			tryagainL.setFont(quest_font);
-			tryagainL.setTextFill(Color.WHITE);
-			tryagain.setGraphic(tryagainL);
-			
+
 			if(!rectangle1.getChildren().contains(qEngImg)) {
 				rectangle1.getChildren().add(qEngImg);
 			}
@@ -298,7 +283,6 @@ public class _0Common extends Application {
 			nonesense = true;
 		} else {
 			if (nonesense == true) {
-				tryAgainImg.setVisible(true);
 				qMMImg.setVisible(true);
 				a1Img.setVisible(true);
 				a2Img.setVisible(true);
@@ -307,7 +291,6 @@ public class _0Common extends Application {
 				corMMImg.setVisible(true);
 				wroMMImg.setVisible(true);
 			}
-			tryagain.setGraphic(tryAgainImg);
 			rectangle1.getChildren().add(qMMImg);
 			b1.setGraphic(a1Img);
 			b2.setGraphic(a2Img);
@@ -317,14 +300,14 @@ public class _0Common extends Application {
 			root.getChildren().addAll();
 		}
 	}
-	private void clickCommon() {
-		tryagain.setDisable(false);
+	public void clickCommon() {
 		forward.setDisable(false);
 		b1.setDisable(true);
 		b2.setDisable(true);
 		b3.setDisable(true);
 		b4.setDisable(true);
 	}
+	boolean checker = false;
 	public void clickCorrect() {
 		checker = true;
 		clickCommon();
@@ -345,23 +328,13 @@ public class _0Common extends Application {
 			rectangle2.getChildren().add(wroMMImg);
 		}
 	}
-	private void clickTryAgain() {
-		checker = false;
-		rectangle2.getChildren().clear();
-		mark = 0;
-		tryagain.setDisable(true);
-		b1.setDisable(false);
-		b2.setDisable(false);
-		b3.setDisable(false);
-		b4.setDisable(false);
-	}
-	private void clickForward(ActionEvent e) {
+	public void clickForward(ActionEvent e) {
 		if(checker) {
 			MathResultCheck.check();
 		}
 		rectangle1.getChildren().clear();
 		rectangle2.getChildren().clear();
-		switchingQuestionForEasyMath.switchToQuestions(e, languageChange, root);
+		switchingQuestionForNormalMath.switchToQuestions(e, languageChange, root);
 		System.out.println(mark);
 		b1.setDisable(false);
 		b2.setDisable(false);

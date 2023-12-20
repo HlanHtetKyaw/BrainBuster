@@ -14,8 +14,9 @@ public class switchingQuestionForNormalMath {
 	static _3MathN threeMath = new _3MathN();
 	static _4MathN fourMath = new _4MathN();
 	static _5MathN fiveMath = new _5MathN();
+	static _6MathN sixMath = new _6MathN();
 	
-	static int NOQ = 5;
+	static int NOQ = 6;
 	static Random random = new Random();
 	static int point = -1;
 	static List<Integer> check = new ArrayList<>();
@@ -60,6 +61,8 @@ public class switchingQuestionForNormalMath {
 			case 4:fourMath.switchToDifficulty(e, languageChange, proot);
 				break;
 			case 5:fiveMath.switchToDifficulty(e, languageChange, proot);
+				break;
+			case 6:sixMath.switchToDifficulty(e, languageChange, proot);
 				break;
 			default:
 				System.out.println("error generated");
