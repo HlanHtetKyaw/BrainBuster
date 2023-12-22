@@ -59,7 +59,6 @@ public class _0CommonNor extends Application {
 	String a4Eng = "100";
 	
 	Image qEng = new Image(qEngPath);
-	
 	Image qMM = new Image(qMMPath);
 	
 	Image a1 = new Image(a1MMPath);

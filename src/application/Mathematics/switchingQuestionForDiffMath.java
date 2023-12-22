@@ -14,6 +14,7 @@ public class switchingQuestionForDiffMath {
 	static _3MathD threeMath = new _3MathD();
 	static _4MathD fourMath = new _4MathD();
 	static _5MathD fiveMath = new _5MathD();
+	static _6MathD sixMath = new _6MathD();
 	
 	static int NOQ = 5;
 	static Random random = new Random();
@@ -60,6 +61,8 @@ public class switchingQuestionForDiffMath {
 			case 4:fourMath.switchToDifficulty(e, languageChange, proot);
 				break;
 			case 5:fiveMath.switchToDifficulty(e, languageChange, proot);
+				break;
+			case 6:sixMath.switchToDifficulty(e, languageChange, proot);
 				break;
 			default:
 				System.out.println("error generated");
