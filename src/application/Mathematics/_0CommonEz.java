@@ -96,7 +96,7 @@ public class _0CommonEz extends Application {
 	StackPane rectangle2 = new StackPane();
 	
 	application.Category cat = new application.Category();
-	boolean languageChange = false;
+	boolean languageChange = true;
 	boolean nonesense = false;
 	
 	int mark=0;

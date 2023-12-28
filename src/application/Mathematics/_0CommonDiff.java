@@ -100,7 +100,7 @@ public class _0CommonDiff extends Application {
 	StackPane rectangle2 = new StackPane();
 	
 	application.Category cat = new application.Category();
-	boolean languageChange=true;
+	boolean languageChange;
 	boolean nonesense = false;
 	
 	int mark=0;
