@@ -33,7 +33,7 @@ import javafx.util.Duration;
 public class Main extends Application {
 	public Preferences pre = Preferences.userRoot().node(this.getClass().getName());
 	String memory = "1";
-
+	public static int selectValue;
 	Stage primaryStage;
 	public static Scene scene;
 	StackPane root;
@@ -83,7 +83,7 @@ public class Main extends Application {
 	ImageView rainImg = new ImageView(Rain);
 	ImageView iconImg = new ImageView(icon);
 	Category cat = new Category();
-
+	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		primaryStage.getIcons().addAll(icon,icon1);
@@ -309,8 +309,8 @@ public class Main extends Application {
 
 		// Optional: Handle the Select button click event
 		if (result.isPresent() && result.get() == selectButton) {
-			int selectValue = ageBox.getValue();
-			cat.switchToScene1(event, selectValue, lanSwap);
+			selectValue = ageBox.getValue();
+			Category.switchToScene1(event, selectValue, lanSwap);
 		}
 	}
 

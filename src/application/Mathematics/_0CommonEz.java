@@ -3,6 +3,8 @@ package application.Mathematics;
 import application.Category;
 import application.IqQuestions;
 import application.IqResultCheck;
+import application.Main;
+import application.MathematicsAdult.switchingQuestionForEasyMathA;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
@@ -30,10 +32,10 @@ public class _0CommonEz extends Application {
 	Button forward = new Button();
 	Button tryagain = new Button();
 	
-	Button b1 = new Button();
-	Button b2 = new Button();
-	Button b3 = new Button();
-	Button b4 = new Button();
+	public Button b1 = new Button();
+	public Button b2 = new Button();
+	public Button b3 = new Button();
+	public Button b4 = new Button();
 	
 	Label tryagainL = new Label();
 	Label b1Label = new Label();
@@ -58,10 +60,10 @@ public class _0CommonEz extends Application {
 	String a2MMPath = "Math/2MathAns/a1.png";
 	String a3MMPath = "Math/2MathAns/a1.png";
 	String a4MMPath = "Math/2MathAns/a1.png";
-	String a1Eng = "100";
-	String a2Eng = "100";
-	String a3Eng = "100";
-	String a4Eng = "100";
+	public String a1Eng = "100";
+	public String a2Eng = "100";
+	public String a3Eng = "100";
+	public String a4Eng = "100";
 	
 	Image qEng = new Image(qEngPath);
 	
@@ -367,7 +369,13 @@ public class _0CommonEz extends Application {
 		}
 		rectangle1.getChildren().clear();
 		rectangle2.getChildren().clear();
-		switchingQuestionForEasyMath.switchToQuestions(e, languageChange, root);
+		if(Main.selectValue<=18 && Main.selectValue>=12) {
+			
+			switchingQuestionForEasyMathA.switchToQuestions(e, languageChange, root);
+		}else {
+			
+			switchingQuestionForEasyMath.switchToQuestions(e, languageChange, root);
+		}
 		System.out.println(mark);
 		b1.setDisable(false);
 		b2.setDisable(false);

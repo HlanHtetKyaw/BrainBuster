@@ -15,8 +15,13 @@ public class switchingQuestionForEasyMathA {
 	static _3MathE threeMath = new _3MathE();
 	static _4MathE fourMath = new _4MathE();
 	static _5MathE fiveMath = new _5MathE();
+	static _6MathE sixMath = new _6MathE();
+	static _7MathE sevenMath = new _7MathE();
+	static _8MathE eightMath = new _8MathE();
+	static _9MathE nineMath = new _9MathE();
+	static _10MathE tenMath = new _10MathE();
 	
-	static int NOQ = 5;
+	static int NOQ = 10;
 	static Random random = new Random();
 	static int point = -1;
 	public static List<Integer> check = new ArrayList<>();
@@ -39,9 +44,10 @@ public class switchingQuestionForEasyMathA {
 
 			// Shuffle the list to get random order
 			Collections.shuffle(check);
+		
 			checker = false;
 		}
-		if (point == NOQ) {
+		if (point == 5) {
 			checker = true;
 			point = -1;
 			if (conditionToStopLoop()) {
@@ -61,6 +67,16 @@ public class switchingQuestionForEasyMathA {
 			case 4:fourMath.switchToDifficulty(e, languageChange, proot);
 				break;
 			case 5:fiveMath.switchToDifficulty(e, languageChange, proot);
+				break;
+			case 6:sixMath.switchToDifficulty(e, languageChange, proot);
+				break;
+			case 7:sevenMath.switchToDifficulty(e, languageChange, proot);
+				break;
+			case 8:eightMath.switchToDifficulty(e, languageChange, proot);
+				break;
+			case 9:nineMath.switchToDifficulty(e, languageChange, proot);
+				break;
+			case 10:tenMath.switchToDifficulty(e, languageChange, proot);
 				break;
 			default:
 				System.out.println("error generated");

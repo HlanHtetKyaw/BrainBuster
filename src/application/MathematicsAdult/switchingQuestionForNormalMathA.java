@@ -15,8 +15,13 @@ public class switchingQuestionForNormalMathA {
 	static _3MathN threeMath = new _3MathN();
 	static _4MathN fourMath = new _4MathN();
 	static _5MathN fiveMath = new _5MathN();
+	static _6MathN sixMath = new _6MathN();
+	static _7MathN sevenMath = new _7MathN();
+	static _8MathN eightMath = new _8MathN();
+	static _9MathN nineMath = new _9MathN();
+	static _10MathN tenMath = new _10MathN();
 	
-	static int NOQ = 5;
+	static int NOQ = 10;
 	static Random random = new Random();
 	static int point = -1;
 	public static List<Integer> check = new ArrayList<>();
@@ -39,9 +44,10 @@ public class switchingQuestionForNormalMathA {
 
 			// Shuffle the list to get random order
 			Collections.shuffle(check);
+
 			checker = false;
 		}
-		if (point == NOQ) {
+		if (point == 5) {
 			checker = true;
 			point = -1;
 			if (conditionToStopLoop()) {
@@ -61,6 +67,16 @@ public class switchingQuestionForNormalMathA {
 			case 4:fourMath.switchToDifficulty(e, languageChange, proot);
 				break;
 			case 5:fiveMath.switchToDifficulty(e, languageChange, proot);
+				break;
+			case 6:sixMath.switchToDifficulty(e, languageChange, proot);
+				break;
+			case 7:sevenMath.switchToDifficulty(e, languageChange, proot);
+				break;
+			case 8:eightMath.switchToDifficulty(e, languageChange, proot);
+				break;
+			case 9:nineMath.switchToDifficulty(e, languageChange, proot);
+				break;
+			case 10:tenMath.switchToDifficulty(e, languageChange, proot);
 				break;
 			default:
 				System.out.println("error generated");

@@ -16,14 +16,18 @@ public class switchingQuestionForEasyMath {
 	static _5MathE fiveMath = new _5MathE();
 	static _6MathE sixMath = new _6MathE();
 	static _7MathE sevenMath = new _7MathE();
-	
-	static int NOQ = 7;
+	static _8MathE eightMath = new _8MathE();
+	static _9MathE nineMath = new _9MathE();
+	static _10MathE tenMath = new _10MathE();
+
+
+	static int NOQ = 10;
 	static Random random = new Random();
 	static int point = -1;
 	static List<Integer> check = new ArrayList<>();
 	static boolean checker = true;
 
-	public static void switchToQuestions(ActionEvent e, boolean languageChange,StackPane proot) {
+	public static void switchToQuestions(ActionEvent e, boolean languageChange, StackPane proot) {
 		point++;
 		if (checker == true) {
 			int maxNumber = NOQ; // Maximum number to generate
@@ -40,9 +44,10 @@ public class switchingQuestionForEasyMath {
 
 			// Shuffle the list to get random order
 			Collections.shuffle(check);
+
 			checker = false;
 		}
-		if (point == NOQ) {
+		if (point == 5) {
 			checker = true;
 			point = -1;
 			if (conditionToStopLoop()) {
@@ -52,20 +57,38 @@ public class switchingQuestionForEasyMath {
 			}
 		}
 		try {
+			
 			switch (check.get(point)) {
-			case 1:oneMath.switchToDifficulty(e, languageChange, proot);
+			
+			case 1:
+				oneMath.switchToDifficulty(e, languageChange, proot);
 				break;
-			case 2:twoMath.switchToDifficulty(e, languageChange, proot);
+			case 2:
+				twoMath.switchToDifficulty(e, languageChange, proot);
 				break;
-			case 3:threeMath.switchToDifficulty(e, languageChange, proot);
+			case 3:
+				threeMath.switchToDifficulty(e, languageChange, proot);
 				break;
-			case 4:fourMath.switchToDifficulty(e, languageChange, proot);
+			case 4:
+				fourMath.switchToDifficulty(e, languageChange, proot);
 				break;
-			case 5:fiveMath.switchToDifficulty(e, languageChange, proot);
+			case 5:
+				fiveMath.switchToDifficulty(e, languageChange, proot);
 				break;
-			case 6:sixMath.switchToDifficulty(e, languageChange, proot);
+			case 6:
+				sixMath.switchToDifficulty(e, languageChange, proot);
 				break;
-			case 7:sevenMath.switchToDifficulty(e, languageChange, proot);
+			case 7:
+				sevenMath.switchToDifficulty(e, languageChange, proot);
+				break;
+			case 8:
+				eightMath.switchToDifficulty(e, languageChange, proot);
+				break;
+			case 9:
+				nineMath.switchToDifficulty(e, languageChange, proot);
+				break;
+			case 10:
+				tenMath.switchToDifficulty(e, languageChange, proot);
 				break;
 			default:
 				System.out.println("error generated");
@@ -74,6 +97,7 @@ public class switchingQuestionForEasyMath {
 			ea.printStackTrace();
 		}
 	}
+
 	public static boolean conditionToStopLoop() {
 
 		return true;

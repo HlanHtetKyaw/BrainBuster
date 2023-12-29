@@ -2,6 +2,9 @@ package application.Mathematics;
 
 import application.IqQuestions;
 import application.IqResultCheck;
+import application.Main;
+import application.MathematicsAdult.switchingQuestionForEasyMathA;
+import application.MathematicsAdult.switchingQuestionForNormalMathA;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
@@ -26,17 +29,17 @@ public class _0CommonNor extends Application {
 
 	Button back;
 	Button forward = new Button();
-	
-	Button b1 = new Button();
-	Button b2 = new Button();
-	Button b3 = new Button();
-	Button b4 = new Button();
-	
+
+	public Button b1 = new Button();
+	public Button b2 = new Button();
+	public Button b3 = new Button();
+	public Button b4 = new Button();
+
 	Label b1Label = new Label();
 	Label b2Label = new Label();
 	Label b3Label = new Label();
 	Label b4Label = new Label();
-	
+
 	Image Arrow = new Image("arrow.png");
 	Image forw = new Image("Math/forward.png");
 	Image teacher = new Image("Math/teacher.png");
@@ -53,14 +56,14 @@ public class _0CommonNor extends Application {
 	String a2MMPath = "Math/2MathAns/a1.png";
 	String a3MMPath = "Math/2MathAns/a1.png";
 	String a4MMPath = "Math/2MathAns/a1.png";
-	String a1Eng = "100";
-	String a2Eng = "100";
-	String a3Eng = "100";
-	String a4Eng = "100";
-	
+	public String a1Eng = "100";
+	public String a2Eng = "100";
+	public String a3Eng = "100";
+	public String a4Eng = "100";
+
 	Image qEng = new Image(qEngPath);
 	Image qMM = new Image(qMMPath);
-	
+
 	Image a1 = new Image(a1MMPath);
 	Image a2 = new Image(a2MMPath);
 	Image a3 = new Image(a3MMPath);
@@ -75,55 +78,62 @@ public class _0CommonNor extends Application {
 	ImageView wroImg = new ImageView(wro);
 	ImageView corMMImg = new ImageView(corMM);
 	ImageView wroMMImg = new ImageView(wroMM);
-	
+
 	ImageView qEngImg = new ImageView(qEng);
 	ImageView qMMImg = new ImageView(qMM);
-	
+
 	ImageView a1Img = new ImageView(a1);
 	ImageView a2Img = new ImageView(a2);
 	ImageView a3Img = new ImageView(a3);
 	ImageView a4Img = new ImageView(a4);
-	
+
 	StackPane root;
 	StackPane rectangle1 = new StackPane();
 	StackPane rectangle2 = new StackPane();
-	
+
 	application.Category cat = new application.Category();
 	boolean languageChange;
 	boolean nonesense = false;
-	
-	int mark=0;
+
+	int mark = 0;
+
 	public void setQEng(String pathQEng) {
 		this.qEngPath = pathQEng;
 		qEng = new Image(qEngPath);
 		qEngImg = new ImageView(qEng);
 	}
+
 	public void setQMM(String pathQMM) {
 		this.qMMPath = pathQMM;
 		qMM = new Image(qMMPath);
 		qMMImg = new ImageView(qMM);
 	}
+
 	public void setA1MM(String patha1MM) {
 		this.a1MMPath = patha1MM;
 		a1 = new Image(a1MMPath);
 		a1Img = new ImageView(a1);
 	}
+
 	public void setA2MM(String patha2MM) {
 		this.a2MMPath = patha2MM;
 		a2 = new Image(a2MMPath);
 		a2Img = new ImageView(a2);
 	}
+
 	public void setA3MM(String patha3MM) {
 		this.a3MMPath = patha3MM;
 		a3 = new Image(a3MMPath);
 		a3Img = new ImageView(a3);
 	}
+
 	public void setA4MM(String patha4MM) {
 		this.a4MMPath = patha4MM;
 		a4 = new Image(a4MMPath);
 		a4Img = new ImageView(a4);
 	}
-	public void switchToDifficulty(ActionEvent event, boolean languageChange,StackPane proot) {
+
+	public void switchToDifficulty(ActionEvent event, boolean languageChange, StackPane proot) {
 		this.languageChange = languageChange;
 		root = new StackPane();
 		root.setStyle("-fx-background-color: #F79630");
@@ -140,8 +150,8 @@ public class _0CommonNor extends Application {
 		currentStage.show();
 		proot.getChildren().clear();
 	}
-	
-	/*This is only for developing part*/
+
+	/* This is only for developing part */
 	public void start(Stage primaryStage) throws Exception {
 		root = new StackPane();
 		root.setStyle("-fx-background-color: #F79630");
@@ -157,7 +167,7 @@ public class _0CommonNor extends Application {
 	public static void main(String[] args) {
 		launch(args);
 	}
-	/*This is only for developing part*/
+	/* This is only for developing part */
 
 	private void elements() {
 		back = new Button();
@@ -167,27 +177,27 @@ public class _0CommonNor extends Application {
 			rectangle1.getChildren().clear();
 			rectangle2.getChildren().clear();
 			cat.switchToScene1(a, application.Mathematics.MathResult.scV, languageChange);
-			MathResultCheck.correct=0;
-			MathResultCheck.percent=0;
-			MathResultCheck.result=0;
-			switchingQuestionForNormalMath.point=-1;
+			MathResultCheck.correct = 0;
+			MathResultCheck.percent = 0;
+			MathResultCheck.result = 0;
+			switchingQuestionForNormalMath.point = -1;
 			application.Mathematics.switchingQuestionForDiffMath.check.clear();
 			application.Mathematics.switchingQuestionForDiffMath.checker = true;
-			
+
 			application.Mathematics.switchingQuestionForEasyMath.check.clear();
 			application.Mathematics.switchingQuestionForEasyMath.checker = true;
-			
+
 			application.Mathematics.switchingQuestionForNormalMath.check.clear();
-			application.Mathematics.switchingQuestionForNormalMath.checker=true;
-			
+			application.Mathematics.switchingQuestionForNormalMath.checker = true;
+
 			application.MathematicsAdult.switchingQuestionForDiffMathA.check.clear();
 			application.MathematicsAdult.switchingQuestionForDiffMathA.checker = true;
-			
+
 			application.MathematicsAdult.switchingQuestionForEasyMathA.check.clear();
 			application.MathematicsAdult.switchingQuestionForEasyMathA.checker = true;
-			
+
 			application.MathematicsAdult.switchingQuestionForNormalMathA.check.clear();
-			application.MathematicsAdult.switchingQuestionForNormalMathA.checker=true;
+			application.MathematicsAdult.switchingQuestionForNormalMathA.checker = true;
 		});
 		backArrow.setFitWidth(40);
 		backArrow.setFitHeight(30);
@@ -195,51 +205,52 @@ public class _0CommonNor extends Application {
 		back.setGraphic(backArrow);
 		StackPane.setAlignment(back, Pos.TOP_LEFT);
 		StackPane.setMargin(back, new Insets(30, 0, 0, 30));// top right bottom left
-		
+
 		rectangle1.setMaxWidth(508);
 		rectangle1.setStyle("-fx-background-color:WHITE; -fx-background-radius:30px;");
 		rectangle1.setMaxHeight(467);
-		StackPane.setMargin(rectangle1, new Insets(0,650,0,0));
-		
+		StackPane.setMargin(rectangle1, new Insets(0, 650, 0, 0));
+
 		rectangle2.setMaxWidth(290);
 		rectangle2.setStyle("-fx-background-color:WHITE; -fx-background-radius:30px;");
 		rectangle2.setMaxHeight(70);
-		StackPane.setMargin(rectangle2, new Insets(0,0,550,600));
-		
-		StackPane.setMargin(b1, new Insets(80,0,450,600));
-		StackPane.setMargin(b2, new Insets(80,0,250,600));
-		StackPane.setMargin(b3, new Insets(80,0,50,600));
-		StackPane.setMargin(b4, new Insets(80,0,-150,600));
-		
+		StackPane.setMargin(rectangle2, new Insets(0, 0, 550, 600));
+
+		StackPane.setMargin(b1, new Insets(80, 0, 450, 600));
+		StackPane.setMargin(b2, new Insets(80, 0, 250, 600));
+		StackPane.setMargin(b3, new Insets(80, 0, 50, 600));
+		StackPane.setMargin(b4, new Insets(80, 0, -150, 600));
+
 		int size1 = 438;
 		int size2 = 65;
 		b1.setMaxSize(size1, size2);
 		b2.setMaxSize(size1, size2);
 		b3.setMaxSize(size1, size2);
 		b4.setMaxSize(size1, size2);
-		
+
 		b1.getStyleClass().add("bBut");
-	
+
 		b2.getStyleClass().add("bBut");
-		
+
 		b3.getStyleClass().add("bBut");
-		
+
 		b4.getStyleClass().add("bBut");
-		
-		forward.setMaxSize(74,74);
+
+		forward.setMaxSize(74, 74);
 		forward.setGraphic(forwImg);
 		forward.getStyleClass().add("forward");
-		forward.setOnAction(e->{
+		forward.setOnAction(e -> {
 			clickForward(e);
 		});
-		StackPane.setMargin(forward, new Insets(0,0,-400,600));
-		
+		StackPane.setMargin(forward, new Insets(0, 0, -400, 600));
+
 		StackPane.setAlignment(teacherImg, Pos.BOTTOM_RIGHT);
 		StackPane.setAlignment(brainImg, Pos.TOP_RIGHT);
 		StackPane.setAlignment(boyImg, Pos.BOTTOM_LEFT);
-		
-		root.getChildren().addAll( back,rectangle1,b1,b2,b3,b4,rectangle2,forward,teacherImg,brainImg,boyImg);
+
+		root.getChildren().addAll(back, rectangle1, b1, b2, b3, b4, rectangle2, forward, teacherImg, brainImg, boyImg);
 	}
+
 	private void lan_change() {
 		if (languageChange) {
 			qMMImg.setVisible(false);
@@ -249,34 +260,34 @@ public class _0CommonNor extends Application {
 			a4Img.setVisible(false);
 			corMMImg.setVisible(false);
 			wroMMImg.setVisible(false);
-			
+
 			Font quest_font = Font.loadFont(getClass().getResourceAsStream("/PoppinB.ttf"), 15);
 
-			if(!rectangle1.getChildren().contains(qEngImg)) {
+			if (!rectangle1.getChildren().contains(qEngImg)) {
 				rectangle1.getChildren().add(qEngImg);
 			}
-			
+
 			Font b_font = Font.loadFont(getClass().getResourceAsStream("/Poppin.ttf"), 30);
 			b1Label.setText(a1Eng);
 			b1Label.setTextFill(Color.BLACK);
 			b1Label.setFont(b_font);
 			b1.setGraphic(b1Label);
-			
+
 			b2Label.setText(a2Eng);
 			b2Label.setTextFill(Color.BLACK);
 			b2Label.setFont(b_font);
 			b2.setGraphic(b2Label);
-			
+
 			b3Label.setText(a3Eng);
 			b3Label.setTextFill(Color.BLACK);
 			b3Label.setFont(b_font);
 			b3.setGraphic(b3Label);
-			
+
 			b4Label.setText(a4Eng);
 			b4Label.setTextFill(Color.BLACK);
 			b4Label.setFont(b_font);
 			b4.setGraphic(b4Label);
-			
+
 			root.getChildren().addAll();
 
 			nonesense = true;
@@ -295,10 +306,11 @@ public class _0CommonNor extends Application {
 			b2.setGraphic(a2Img);
 			b3.setGraphic(a3Img);
 			b4.setGraphic(a4Img);
-			
+
 			root.getChildren().addAll();
 		}
 	}
+
 	public void clickCommon() {
 		forward.setDisable(false);
 		b1.setDisable(true);
@@ -306,34 +318,43 @@ public class _0CommonNor extends Application {
 		b3.setDisable(true);
 		b4.setDisable(true);
 	}
+
 	boolean checker = false;
+
 	public void clickCorrect() {
 		checker = true;
 		clickCommon();
 		mark = 1;
-		if(languageChange) {
+		if (languageChange) {
 			rectangle2.getChildren().add(corImg);
-		}else {
+		} else {
 			rectangle2.getChildren().add(corMMImg);
 		}
 	}
+
 	public void clickWrong() {
 		checker = false;
 		clickCommon();
 		mark = 0;
-		if(languageChange) {
+		if (languageChange) {
 			rectangle2.getChildren().add(wroImg);
-		}else {
+		} else {
 			rectangle2.getChildren().add(wroMMImg);
 		}
 	}
+
 	public void clickForward(ActionEvent e) {
-		if(checker) {
+		if (checker) {
 			MathResultCheck.check();
 		}
 		rectangle1.getChildren().clear();
 		rectangle2.getChildren().clear();
-		switchingQuestionForNormalMath.switchToQuestions(e, languageChange, root);
+		if (Main.selectValue <= 18 && Main.selectValue >= 12) {
+			switchingQuestionForNormalMathA.switchToQuestions(e, languageChange, root);
+		} else {
+
+			switchingQuestionForNormalMath.switchToQuestions(e, languageChange, root);
+		}
 		System.out.println(mark);
 		b1.setDisable(false);
 		b2.setDisable(false);

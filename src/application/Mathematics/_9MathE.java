@@ -7,17 +7,17 @@ public class _9MathE extends Application{
 public void start(Stage stage) throws Exception {
 	_0CommonEz c = new _0CommonEz();
 	
-	c.setQEng("Math/MathQ/_7MathQ.png");
-	c.a1Eng = "A pound of feather";
-	c.a2Eng = "A pound of rocks";
-	c.a3Eng = "A pound of water";
-	c.a4Eng = "None";
+	c.setQEng("Math/MathQ/_9MathQ.png");
+	c.a1Eng = "34";
+	c.a2Eng = "43";
+	c.a3Eng = "0";
+	c.a4Eng = "44";
 	
-	c.setQMM("Math/MathQ/_7MathQMM.png");
-	c.setA1MM("Math/7MathAns/a1.png");
-	c.setA2MM("Math/7MathAns/a2.png");
-	c.setA3MM("Math/7MathAns/a3.png");
-	c.setA4MM("Math/7MathAns/a4.png");
+	c.setQMM("Math/MathQ/_9MathQMM.png");
+	c.setA1MM("Math/9MathAns/a1.png");
+	c.setA2MM("Math/9MathAns/a2.png");
+	c.setA3MM("Math/9MathAns/a3.png");
+	c.setA4MM("Math/9MathAns/a4.png");
 	
 	c.b1.setOnAction(e->{
 		c.clickWrong();
@@ -26,10 +26,10 @@ public void start(Stage stage) throws Exception {
 		c.clickWrong();
 	});
 	c.b3.setOnAction(e->{
-		c.clickWrong();
+		c.clickCorrect();
 	});
 	c.b4.setOnAction(e->{
-		c.clickCorrect();
+		c.clickWrong();
 	});
 	
 	
@@ -38,17 +38,17 @@ public void start(Stage stage) throws Exception {
 public void switchToDifficulty(ActionEvent ea,boolean languageChange,StackPane sp) {
 	_0CommonEz c = new _0CommonEz();
 
-	c.setQEng("Math/MathQ/_7MathQ.png");
-	c.a1Eng = "A pound of feather";
-	c.a2Eng = "A pound of rocks";
-	c.a3Eng = "A pound of water";
-	c.a4Eng = "None";
+	c.setQEng("Math/MathQ/_9MathQ.png");
+	c.a1Eng = "34";
+	c.a2Eng = "43";
+	c.a3Eng = "0";
+	c.a4Eng = "44";
 	
-	c.setQMM("Math/MathQ/_7MathQMM.png");
-	c.setA1MM("Math/7MathAns/a1.png");
-	c.setA2MM("Math/7MathAns/a2.png");
-	c.setA3MM("Math/7MathAns/a3.png");
-	c.setA4MM("Math/7MathAns/a4.png");
+	c.setQMM("Math/MathQ/_9MathQMM.png");
+	c.setA1MM("Math/9MathAns/a1.png");
+	c.setA2MM("Math/9MathAns/a2.png");
+	c.setA3MM("Math/9MathAns/a3.png");
+	c.setA4MM("Math/9MathAns/a4.png");
 	
 	c.b1.setOnAction(e->{
 		c.clickWrong();
@@ -57,11 +57,13 @@ public void switchToDifficulty(ActionEvent ea,boolean languageChange,StackPane s
 		c.clickWrong();
 	});
 	c.b3.setOnAction(e->{
-		c.clickWrong();
-	});
-	c.b4.setOnAction(e->{
 		c.clickCorrect();
 	});
+	c.b4.setOnAction(e->{
+		c.clickWrong();
+	});
+	
+	
 	c.switchToDifficulty(ea, languageChange, sp);
 }
 public static void main(String[]args) {

@@ -115,6 +115,8 @@ public class Category {
 	static boolean nonesense = false;
 	
 static int selectValue;
+public static Object cleanup;
+
 	public static void switchToScene1(ActionEvent event, int SelectValue, boolean lanSwap) {
 		System.gc();
 		languageChange = lanSwap;
@@ -502,7 +504,7 @@ static int selectValue;
 
 		root.getChildren().addAll(ach_button);
 	}
-
+	
 	private static void lan_change() {
 		if (languageChange) {
 			langText.setVisible(false);

@@ -198,6 +198,7 @@ public class MathResult extends Application{
 			application.Mathematics.switchingQuestionForDiffMath.check.clear();
 			application.Mathematics.switchingQuestionForDiffMath.checker = true;
 			
+			
 			application.Mathematics.switchingQuestionForEasyMath.check.clear();
 			application.Mathematics.switchingQuestionForEasyMath.checker = true;
 			
