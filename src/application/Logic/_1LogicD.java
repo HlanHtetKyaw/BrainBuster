@@ -1,5 +1,6 @@
 package application.Logic;
 
+import application.Category;
 import application.IqQuestions;
 import application.IqResultCheck;
 import application.Mathematics.*;
@@ -136,7 +137,7 @@ public class _1LogicD extends Application {
 		back.getStyleClass().add("lets_start");
 		back.setPrefSize(60, 60);
 		back.setOnAction(a -> {
-			cat.switchToScene1(a, application.Mathematics.MathResult.scV, languageChange);
+			Category.switchToScene1(a, application.Mathematics.MathResult.scV, languageChange);
 			timeLine.stop();
 			MathResultCheck.correct=0;
 			MathResultCheck.percent=0;
