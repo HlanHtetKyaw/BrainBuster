@@ -15,6 +15,15 @@ public class _6LogicD extends Application {
 		c.seta1("Logic/6LogicAns/a1.png");
 		c.seta2("Logic/6LogicAns/a2.png");
 		c.seta3("Logic/6LogicAns/a3.png");
+		c.b1.setOnAction(e->{
+			c.clickCorrect();
+		});
+		c.b2.setOnAction(e->{
+			c.clickWrong();
+		});
+		c.b3.setOnAction(e->{
+			c.clickWrong();
+		});
 		c.start(stage);
 	}
 	public void switchToDifficulty(ActionEvent ea,boolean languageChange,StackPane sp) {
@@ -23,6 +32,15 @@ public class _6LogicD extends Application {
 		c.seta1("Logic/6LogicAns/a1.png");
 		c.seta2("Logic/6LogicAns/a2.png");
 		c.seta3("Logic/6LogicAns/a3.png");
+		c.b1.setOnAction(e->{
+			c.clickCorrect();
+		});
+		c.b2.setOnAction(e->{
+			c.clickWrong();
+		});
+		c.b3.setOnAction(e->{
+			c.clickWrong();
+		});
 		c.switchToDifficulty(ea, languageChange, sp);
 	}
 	public static void main(String[] args) {

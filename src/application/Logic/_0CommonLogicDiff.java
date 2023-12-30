@@ -219,17 +219,11 @@ public class _0CommonLogicDiff extends Application {
 		b3.setMaxSize(size1, size2);
 		
 		b1.getStyleClass().add("bBut");
-		b1.setOnAction(e->{
-			
-		});
+
 		b2.getStyleClass().add("bBut");
-		b2.setOnAction(e->{
-			
-		});
+
 		b3.getStyleClass().add("bBut");
-		b3.setOnAction(e->{
-			
-		});
+
 		
 
 		forward.setMaxSize(74,74);
