@@ -29,21 +29,11 @@ public class switchingQuestionForDiffMath {
 	public static void switchToQuestions(ActionEvent e, boolean languageChange,StackPane proot) {
 		point++;
 		if (checker == true) {
-			int maxNumber = NOQ; // Maximum number to generate
-			int numberOfQ = NOQ; // Number of unique random numbers to generate
-
-			Random random = new Random();
-
-			while (check.size() < numberOfQ) {
-				int randomNumber = random.nextInt(maxNumber) + 1;
-				if (!check.contains(randomNumber)) {
-					check.add(randomNumber);
-				}
+			for(int i=1;i<=10;i++) {
+				check.add(i);
 			}
-
 			// Shuffle the list to get random order
 			Collections.shuffle(check);
-
 			checker = false;
 		}
 		if (point == 5) {

@@ -29,7 +29,6 @@ import javafx.util.*;
 import javafx.scene.control.*;
 
 public class MathResult extends Application{
-	Category cat = new Category();
 	
 	Scene scene1;
 	Stage currentStage;
@@ -185,8 +184,7 @@ public class MathResult extends Application{
 		back.setOnAction(a -> {
 			rectangle1.getChildren().clear();
 			rectangle2.getChildren().clear();
-			//application.Category cat = new application.Category();
-			Category.switchToScene1(a, scV, languageChange);
+			
 			rectangle1.getChildren().clear();
 			rectangle2.getChildren().clear();
 			rectangle1.getChildren().removeAll();
@@ -195,38 +193,39 @@ public class MathResult extends Application{
 			MathResultCheck.result=0;
 			targetValue = 0;
 			System.out.println(targetValue);
-			application.Mathematics.switchingQuestionForDiffMath.check.clear();
-			application.Mathematics.switchingQuestionForDiffMath.checker = true;
-			
-			
-			application.Mathematics.switchingQuestionForEasyMath.check.clear();
-			application.Mathematics.switchingQuestionForEasyMath.checker = true;
-			
-			application.Mathematics.switchingQuestionForNormalMath.check.clear();
-			application.Mathematics.switchingQuestionForNormalMath.checker=true;
-			
-			application.MathematicsAdult.switchingQuestionForDiffMathA.check.clear();
-			application.MathematicsAdult.switchingQuestionForDiffMathA.checker = true;
-			
-			application.MathematicsAdult.switchingQuestionForEasyMathA.check.clear();
-			application.MathematicsAdult.switchingQuestionForEasyMathA.checker = true;
-			
-			application.MathematicsAdult.switchingQuestionForNormalMathA.check.clear();
-			application.MathematicsAdult.switchingQuestionForNormalMathA.checker=true;
-			
-			application.Logic.switchingQuestionForDiffLogic.check.clear();
-			application.Logic.switchingQuestionForDiffLogic.checker=true;
-			application.Logic.switchingQuestionForNormalLogic.check.clear();
-			application.Logic.switchingQuestionForNormalLogic.checker=true;
-			application.Logic.switchingQuestionForEasyLogic.check.clear();
-			application.Logic.switchingQuestionForEasyLogic.checker=true;
-			
-			application.LogicAdult.switchingQuestionForDiffLogicAdult.check.clear();
-			application.LogicAdult.switchingQuestionForDiffLogicAdult.checker=true;
-			application.LogicAdult.switchingQuestionForNormalLogicAdult.check.clear();
-			application.LogicAdult.switchingQuestionForNormalLogicAdult.checker=true;
-			application.LogicAdult.switchingQuestionForEasyLogicAdult.check.clear();
-			application.LogicAdult.switchingQuestionForEasyLogicAdult.checker=true;
+//			application.Mathematics.switchingQuestionForDiffMath.check.clear();
+//			application.Mathematics.switchingQuestionForDiffMath.checker = true;
+//			
+//			
+//			application.Mathematics.switchingQuestionForEasyMath.check.clear();
+//			application.Mathematics.switchingQuestionForEasyMath.checker = true;
+//			
+//			application.Mathematics.switchingQuestionForNormalMath.check.clear();
+//			application.Mathematics.switchingQuestionForNormalMath.checker=true;
+//			
+//			application.MathematicsAdult.switchingQuestionForDiffMathA.check.clear();
+//			application.MathematicsAdult.switchingQuestionForDiffMathA.checker = true;
+//			
+//			application.MathematicsAdult.switchingQuestionForEasyMathA.check.clear();
+//			application.MathematicsAdult.switchingQuestionForEasyMathA.checker = true;
+//			
+//			application.MathematicsAdult.switchingQuestionForNormalMathA.check.clear();
+//			application.MathematicsAdult.switchingQuestionForNormalMathA.checker=true;
+//			
+//			application.Logic.switchingQuestionForDiffLogic.check.clear();
+//			application.Logic.switchingQuestionForDiffLogic.checker=true;
+//			application.Logic.switchingQuestionForNormalLogic.check.clear();
+//			application.Logic.switchingQuestionForNormalLogic.checker=true;
+//			application.Logic.switchingQuestionForEasyLogic.check.clear();
+//			application.Logic.switchingQuestionForEasyLogic.checker=true;
+//			
+//			application.LogicAdult.switchingQuestionForDiffLogicAdult.check.clear();
+//			application.LogicAdult.switchingQuestionForDiffLogicAdult.checker=true;
+//			application.LogicAdult.switchingQuestionForNormalLogicAdult.check.clear();
+//			application.LogicAdult.switchingQuestionForNormalLogicAdult.checker=true;
+//			application.LogicAdult.switchingQuestionForEasyLogicAdult.check.clear();
+//			application.LogicAdult.switchingQuestionForEasyLogicAdult.checker=true;
+			Category.switchToScene1(a, scV, languageChange);
 		});
 		backArrow.setFitWidth(40);
 		backArrow.setFitHeight(40);

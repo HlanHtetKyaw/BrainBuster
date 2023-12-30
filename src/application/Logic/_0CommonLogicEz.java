@@ -3,6 +3,9 @@ package application.Logic;
 import application.Category;
 import application.IqQuestions;
 import application.IqResultCheck;
+import application.Main;
+import application.LogicAdult.switchingQuestionForEasyLogicAdult;
+import application.LogicAdult.switchingQuestionForNormalLogicAdult;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
@@ -30,9 +33,9 @@ public class _0CommonLogicEz extends Application {
 	Button forward = new Button();
 	Button tryagain = new Button();
 	
-	Button b1 = new Button();
-	Button b2 = new Button();
-	Button b3 = new Button();
+	public Button b1 = new Button();
+	public Button b2 = new Button();
+	public Button b3 = new Button();
 	
 	Label tryagainL = new Label();
 	
@@ -161,19 +164,16 @@ public class _0CommonLogicEz extends Application {
 			MathResultCheck.percent=0;
 			MathResultCheck.result=0;
 			switchingQuestionForEasyLogic.point=-1;
-			application.Logic.switchingQuestionForDiffLogic.check.clear();
-			application.Logic.switchingQuestionForDiffLogic.checker=true;
-			application.Logic.switchingQuestionForNormalLogic.check.clear();
-			application.Logic.switchingQuestionForNormalLogic.checker=true;
-			application.Logic.switchingQuestionForEasyLogic.check.clear();
-			application.Logic.switchingQuestionForEasyLogic.checker=true;
+
 			
-			application.LogicAdult.switchingQuestionForDiffLogicAdult.check.clear();
-			application.LogicAdult.switchingQuestionForDiffLogicAdult.checker=true;
-			application.LogicAdult.switchingQuestionForNormalLogicAdult.check.clear();
-			application.LogicAdult.switchingQuestionForNormalLogicAdult.checker=true;
-			application.LogicAdult.switchingQuestionForEasyLogicAdult.check.clear();
-			application.LogicAdult.switchingQuestionForEasyLogicAdult.checker=true;
+			if (Main.selectValue <= 18 && Main.selectValue >= 12) {
+				application.LogicAdult.switchingQuestionForEasyLogicAdult.checker=true;
+			} else {
+				application.Logic.switchingQuestionForEasyLogic.checker=true;
+			}
+			
+			
+			
 			rectangle1.getChildren().clear();
 			rectangle2.getChildren().clear();
 		});
@@ -306,7 +306,12 @@ public class _0CommonLogicEz extends Application {
 		}
 		rectangle1.getChildren().clear();
 		rectangle2.getChildren().clear();
-		switchingQuestionForEasyLogic.switchToQuestions(e, languageChange, root);
+		if (Main.selectValue <= 18 && Main.selectValue >= 12) {
+			switchingQuestionForEasyLogicAdult.switchToQuestions(e, languageChange, root);
+		} else {
+			switchingQuestionForEasyLogic.switchToQuestions(e, languageChange, root);
+		}
+		
 		System.out.println(mark);
 		b1.setDisable(false);
 		b2.setDisable(false);

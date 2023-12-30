@@ -3,6 +3,8 @@ package application.Logic;
 import application.Category;
 import application.IqQuestions;
 import application.IqResultCheck;
+import application.Main;
+import application.LogicAdult.switchingQuestionForNormalLogicAdult;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
@@ -19,6 +21,7 @@ import javafx.stage.Stage;
 import javafx.scene.*;
 import javafx.scene.control.*;
 import application.Mathematics.*;
+import application.MathematicsAdult.switchingQuestionForDiffMathA;
 public class _0CommonLogicNor extends Application {
 	Scene scene1;
 	Stage currentStage;
@@ -28,9 +31,9 @@ public class _0CommonLogicNor extends Application {
 	Button back;
 	Button forward = new Button();
 	
-	Button b1 = new Button();
-	Button b2 = new Button();
-	Button b3 = new Button();
+	public Button b1 = new Button();
+	public Button b2 = new Button();
+	public Button b3 = new Button();
 	
 	Image Arrow = new Image("arrow.png");
 	Image forw = new Image("Math/forward.png");
@@ -155,19 +158,16 @@ public class _0CommonLogicNor extends Application {
 			MathResultCheck.percent=0;
 			MathResultCheck.result=0;
 			switchingQuestionForNormalLogic.point=-1;;
-			application.Logic.switchingQuestionForDiffLogic.check.clear();
-			application.Logic.switchingQuestionForDiffLogic.checker=true;
-			application.Logic.switchingQuestionForNormalLogic.check.clear();
-			application.Logic.switchingQuestionForNormalLogic.checker=true;
-			application.Logic.switchingQuestionForEasyLogic.check.clear();
-			application.Logic.switchingQuestionForEasyLogic.checker=true;
 			
-			application.LogicAdult.switchingQuestionForDiffLogicAdult.check.clear();
-			application.LogicAdult.switchingQuestionForDiffLogicAdult.checker=true;
-			application.LogicAdult.switchingQuestionForNormalLogicAdult.check.clear();
-			application.LogicAdult.switchingQuestionForNormalLogicAdult.checker=true;
-			application.LogicAdult.switchingQuestionForEasyLogicAdult.check.clear();
-			application.LogicAdult.switchingQuestionForEasyLogicAdult.checker=true;
+			if (Main.selectValue <= 18 && Main.selectValue >= 12) {
+				application.LogicAdult.switchingQuestionForNormalLogicAdult.checker=true;
+			} else {
+				application.Logic.switchingQuestionForNormalLogic.checker=true;
+			}
+			
+			
+			
+		
 			rectangle1.getChildren().clear();
 			rectangle2.getChildren().clear();
 		});
@@ -278,7 +278,12 @@ public class _0CommonLogicNor extends Application {
 		}
 		rectangle1.getChildren().clear();
 		rectangle2.getChildren().clear();
-		switchingQuestionForNormalLogic.switchToQuestions(e, languageChange, root);
+		if (Main.selectValue <= 18 && Main.selectValue >= 12) {
+			switchingQuestionForNormalLogicAdult.switchToQuestions(e, languageChange, root);
+		} else {
+			switchingQuestionForNormalLogic.switchToQuestions(e, languageChange, root);
+		}
+		
 		System.out.println(mark);
 		b1.setDisable(false);
 		b2.setDisable(false);

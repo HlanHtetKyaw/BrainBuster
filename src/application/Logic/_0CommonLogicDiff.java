@@ -3,6 +3,9 @@ package application.Logic;
 import application.Category;
 import application.IqQuestions;
 import application.IqResultCheck;
+import application.Main;
+import application.LogicAdult.switchingQuestionForDiffLogicAdult;
+import application.LogicAdult.switchingQuestionForEasyLogicAdult;
 import application.Mathematics.*;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -37,9 +40,9 @@ public class _0CommonLogicDiff extends Application {
 	Button timer = new Button();
 	Button forward = new Button();
 	
-	Button b1 = new Button();
-	Button b2 = new Button();
-	Button b3 = new Button();
+	public Button b1 = new Button();
+	public Button b2 = new Button();
+	public Button b3 = new Button();
 	
 	Text timeT = new Text();
 	
@@ -175,19 +178,13 @@ public class _0CommonLogicDiff extends Application {
 			MathResultCheck.percent=0;
 			MathResultCheck.result=0;
 			switchingQuestionForDiffLogic.point=-1;
-			application.Logic.switchingQuestionForDiffLogic.check.clear();
-			application.Logic.switchingQuestionForDiffLogic.checker=true;
-			application.Logic.switchingQuestionForNormalLogic.check.clear();
-			application.Logic.switchingQuestionForNormalLogic.checker=true;
-			application.Logic.switchingQuestionForEasyLogic.check.clear();
-			application.Logic.switchingQuestionForEasyLogic.checker=true;
 			
-			application.LogicAdult.switchingQuestionForDiffLogicAdult.check.clear();
-			application.LogicAdult.switchingQuestionForDiffLogicAdult.checker=true;
-			application.LogicAdult.switchingQuestionForNormalLogicAdult.check.clear();
-			application.LogicAdult.switchingQuestionForNormalLogicAdult.checker=true;
-			application.LogicAdult.switchingQuestionForEasyLogicAdult.check.clear();
-			application.LogicAdult.switchingQuestionForEasyLogicAdult.checker=true;
+			if (Main.selectValue <= 18 && Main.selectValue >= 12) {
+				application.LogicAdult.switchingQuestionForDiffLogicAdult.checker=true;
+			} else {
+				application.Logic.switchingQuestionForDiffLogic.checker=true;
+			}
+			
 			rectangle1.getChildren().clear();
 			rectangle2.getChildren().clear();
 		});
@@ -338,7 +335,12 @@ public class _0CommonLogicDiff extends Application {
 		timeLine.stop();
 		rectangle1.getChildren().clear();
 		rectangle2.getChildren().clear();
-		switchingQuestionForDiffLogic.switchToQuestions(e, languageChange, root);
+		if (Main.selectValue <= 18 && Main.selectValue >= 12) {
+			switchingQuestionForDiffLogicAdult.switchToQuestions(e, languageChange, root);
+		} else {
+			switchingQuestionForDiffLogic.switchToQuestions(e, languageChange, root);
+		}
+		
 		b1.setDisable(false);
 		b2.setDisable(false);
 		b3.setDisable(false);

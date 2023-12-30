@@ -1,5 +1,6 @@
 package application;
 
+import java.io.IOException;
 import java.util.Optional;
 import java.util.prefs.Preferences;
 
@@ -105,9 +106,9 @@ public class Main extends Application {
 	}
 
 	public static void main(String[] args) {
+		
 		launch(args);
 	}
-
 	void styleElements() {
 		Rectangle lineRec = new Rectangle();
 		lineRec.setWidth(413);
