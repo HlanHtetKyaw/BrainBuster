@@ -132,13 +132,7 @@ public class _2MathN extends Application {
 			switchingQuestionForNormalMathA.point=-1;
 			rectangle1.getChildren().clear();
 			rectangle2.getChildren().clear();
-			application.MathematicsAdult.switchingQuestionForDiffMathA.check.clear();
-			application.MathematicsAdult.switchingQuestionForDiffMathA.checker = true;
-			
-			application.MathematicsAdult.switchingQuestionForEasyMathA.check.clear();
-			application.MathematicsAdult.switchingQuestionForEasyMathA.checker = true;
-			
-			application.MathematicsAdult.switchingQuestionForNormalMathA.check.clear();
+		
 			application.MathematicsAdult.switchingQuestionForNormalMathA.checker=true;
 		});
 		backArrow.setFitWidth(40);

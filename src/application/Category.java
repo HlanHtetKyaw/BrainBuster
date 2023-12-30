@@ -118,6 +118,7 @@ static int selectValue;
 public static Object cleanup;
 
 	public static void switchToScene1(ActionEvent event, int SelectValue, boolean lanSwap) {
+		
 		System.gc();
 		languageChange = lanSwap;
 		application.Mathematics.MathResult.scV = SelectValue;
@@ -142,11 +143,13 @@ public static Object cleanup;
 	}
 
 	private static void back(ActionEvent event) {
+		
 		s = currentStage;
 		currentStage.setHeight(s.getHeight());
 		currentStage.setWidth(s.getWidth());
 		currentStage.setScene(Main.scene);
 		currentStage.show();
+		
 	}
 
 	private static void profile() {
@@ -250,6 +253,7 @@ public static Object cleanup;
 		StackPane.setAlignment(flat, Pos.BOTTOM_LEFT);
 		StackPane.setMargin(flat, new Insets(0, 0, 125, 25));
 		TranslateTransition tt0 = new TranslateTransition();
+		tt0.setFromY(0);
 		tt0.setByY(-50);
 		tt0.setCycleCount(TranslateTransition.INDEFINITE);
 		tt0.setAutoReverse(true);
@@ -261,6 +265,7 @@ public static Object cleanup;
 		StackPane.setAlignment(boyStand, Pos.BOTTOM_LEFT);
 		StackPane.setMargin(boyStand, new Insets(0, 0, 140, 35));
 		TranslateTransition tt = new TranslateTransition();
+		tt.setFromY(0);
 		tt.setByY(-50);
 		tt.setCycleCount(TranslateTransition.INDEFINITE);
 		tt.setAutoReverse(true);
@@ -272,6 +277,7 @@ public static Object cleanup;
 		StackPane.setAlignment(girlStand, Pos.CENTER_RIGHT);
 		StackPane.setMargin(girlStand, new Insets(0, 25, 0, 0));
 		TranslateTransition tt1 = new TranslateTransition();
+		tt1.setFromY(0);
 		tt1.setByY(50);
 		tt1.setCycleCount(TranslateTransition.INDEFINITE);
 		tt1.setAutoReverse(true);

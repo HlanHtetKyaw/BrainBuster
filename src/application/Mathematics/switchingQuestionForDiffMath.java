@@ -25,18 +25,24 @@ public class switchingQuestionForDiffMath {
 	static int point = -1;
 	static List<Integer> check = new ArrayList<>();
 	static boolean checker = true;
-
+	
 	public static void switchToQuestions(ActionEvent e, boolean languageChange,StackPane proot) {
 		point++;
 		if (checker == true) {
+			
 			for(int i=1;i<=10;i++) {
-				check.add(i);
+				if(!check.contains(i)) {
+					check.add(i);
+				}	
 			}
 			// Shuffle the list to get random order
 			Collections.shuffle(check);
+		
+			
 			checker = false;
 		}
 		if (point == 5) {
+			
 			checker = true;
 			point = -1;
 			if (conditionToStopLoop()) {
@@ -46,6 +52,7 @@ public class switchingQuestionForDiffMath {
 			}
 		}
 		try {
+			
 			switch (check.get(point)) {
 			case 1:oneMath.switchToDifficulty(e, languageChange, proot);
 				break;

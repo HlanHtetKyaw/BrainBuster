@@ -134,14 +134,10 @@ public class _2MathE extends Application {
 			MathResultCheck.percent=0;
 			MathResultCheck.result=0;
 			switchingQuestionForEasyMathA.point=-1;
-			application.MathematicsAdult.switchingQuestionForDiffMathA.check.clear();
-			application.MathematicsAdult.switchingQuestionForDiffMathA.checker = true;
-			
-			application.MathematicsAdult.switchingQuestionForEasyMathA.check.clear();
+		
 			application.MathematicsAdult.switchingQuestionForEasyMathA.checker = true;
 			
-			application.MathematicsAdult.switchingQuestionForNormalMathA.check.clear();
-			application.MathematicsAdult.switchingQuestionForNormalMathA.checker=true;
+			
 			rectangle1.getChildren().clear();
 			rectangle2.getChildren().clear();
 		});

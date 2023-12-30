@@ -131,8 +131,8 @@ public class Difficulty {
 		back.getStyleClass().add("lets_start");
 		back.setPrefSize(60, 60);
 		back.setOnAction(a -> {
-			Category cat = new Category();
-			cat.switchToScene1(a, application.Mathematics.MathResult.scV, languageChange);
+			
+			Category.switchToScene1(a, application.Mathematics.MathResult.scV, languageChange);
 			root.getChildren().clear();
 		});
 		backArrow.setFitWidth(40);

@@ -31,7 +31,9 @@ public class switchingQuestionForEasyLogicAdult {
 		point++;
 		if (checker == true) {
 			for(int i=1;i<=10;i++) {
-				check.add(i);
+				if(!check.contains(i)) {
+					check.add(i);
+				}	
 			}
 			// Shuffle the list to get random order
 			Collections.shuffle(check);

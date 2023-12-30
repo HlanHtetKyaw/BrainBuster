@@ -130,7 +130,7 @@ public class _5LogicD extends Application {
 	public void start(Stage primaryStage) throws Exception {
 		root = new StackPane();
 		root.setStyle("-fx-background-color: #163349");
-		
+		notification();
 		Counting();
 		elements();
 		lan_change();
@@ -298,6 +298,7 @@ public class _5LogicD extends Application {
 		b2.setDisable(true);
 		b3.setDisable(true);
 		noti.setVisible(true);
+		back.setDisable(true);
 		TranslateTransition down = new TranslateTransition();
 		down.setByY(200);
 		down.setDuration(Duration.seconds(1));

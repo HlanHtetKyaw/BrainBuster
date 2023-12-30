@@ -131,23 +131,10 @@ public class _5MathN extends Application {
 			switchingQuestionForNormalMath.point=-1;
 			rectangle1.getChildren().clear();
 			rectangle2.getChildren().clear();
-			application.Mathematics.switchingQuestionForDiffMath.check.clear();
-			application.Mathematics.switchingQuestionForDiffMath.checker = true;
 			
-			application.Mathematics.switchingQuestionForEasyMath.check.clear();
-			application.Mathematics.switchingQuestionForEasyMath.checker = true;
-			
-			application.Mathematics.switchingQuestionForNormalMath.check.clear();
 			application.Mathematics.switchingQuestionForNormalMath.checker=true;
 			
-			application.MathematicsAdult.switchingQuestionForDiffMathA.check.clear();
-			application.MathematicsAdult.switchingQuestionForDiffMathA.checker = true;
 			
-			application.MathematicsAdult.switchingQuestionForEasyMathA.check.clear();
-			application.MathematicsAdult.switchingQuestionForEasyMathA.checker = true;
-			
-			application.MathematicsAdult.switchingQuestionForNormalMathA.check.clear();
-			application.MathematicsAdult.switchingQuestionForNormalMathA.checker=true;
 		});
 		backArrow.setFitWidth(40);
 		backArrow.setFitHeight(30);

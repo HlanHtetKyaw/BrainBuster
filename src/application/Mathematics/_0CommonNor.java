@@ -181,23 +181,18 @@ public class _0CommonNor extends Application {
 			MathResultCheck.percent = 0;
 			MathResultCheck.result = 0;
 			switchingQuestionForNormalMath.point = -1;
-			application.Mathematics.switchingQuestionForDiffMath.check.clear();
-			application.Mathematics.switchingQuestionForDiffMath.checker = true;
+			
+			if (Main.selectValue <= 18 && Main.selectValue >= 12) {
+				application.MathematicsAdult.switchingQuestionForNormalMathA.checker = true;
+			} else {
+				application.Mathematics.switchingQuestionForNormalMath.checker = true;
+			}
+			
+			
 
-			application.Mathematics.switchingQuestionForEasyMath.check.clear();
-			application.Mathematics.switchingQuestionForEasyMath.checker = true;
 
-			application.Mathematics.switchingQuestionForNormalMath.check.clear();
-			application.Mathematics.switchingQuestionForNormalMath.checker = true;
-
-			application.MathematicsAdult.switchingQuestionForDiffMathA.check.clear();
-			application.MathematicsAdult.switchingQuestionForDiffMathA.checker = true;
-
-			application.MathematicsAdult.switchingQuestionForEasyMathA.check.clear();
-			application.MathematicsAdult.switchingQuestionForEasyMathA.checker = true;
-
-			application.MathematicsAdult.switchingQuestionForNormalMathA.check.clear();
-			application.MathematicsAdult.switchingQuestionForNormalMathA.checker = true;
+			
+			
 		});
 		backArrow.setFitWidth(40);
 		backArrow.setFitHeight(30);
