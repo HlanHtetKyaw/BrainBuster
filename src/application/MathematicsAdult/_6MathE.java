@@ -3,6 +3,7 @@ import javafx.stage.*;
 import javafx.application.*;
 import javafx.event.ActionEvent;
 import javafx.scene.layout.StackPane;
+import application.Category;
 import application.Mathematics.*;
 
 public class _6MathE{
@@ -23,15 +24,19 @@ c.setQEng("Math/MathQ/_6MathQA.png");
 	c.setA4MM("Math/6MathAnsAdult/a4.png");
 	
 	c.b1.setOnAction(e->{
+		Category.clickSound.playCorrectSound();
 		c.clickCorrect();
 	});
 	c.b2.setOnAction(e->{
+		Category.clickSound.playWrongSound();
 		c.clickWrong();
 	});
 	c.b3.setOnAction(e->{
+		Category.clickSound.playWrongSound();
 		c.clickWrong();
 	});
 	c.b4.setOnAction(e->{
+		Category.clickSound.playWrongSound();
 		c.clickWrong();
 	});
 	c.switchToDifficulty(ea, languageChange, sp);

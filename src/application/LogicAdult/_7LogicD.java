@@ -1,5 +1,6 @@
 package application.LogicAdult;
 
+import application.Category;
 import application.Logic._0CommonLogicDiff;
 import javafx.application.*;
 import javafx.event.ActionEvent;
@@ -34,12 +35,15 @@ public class _7LogicD extends Application {
 		c.seta2("Logic/7LogicAnsA/a2.png");
 		c.seta3("Logic/7LogicAnsA/a3.png");
 		c.b1.setOnAction(e->{
+			Category.clickSound.playWrongSound();
 			c.clickWrong();
 		});
 		c.b2.setOnAction(e->{
+			Category.clickSound.playCorrectSound();
 			c.clickCorrect();
 		});
 		c.b3.setOnAction(e->{
+			Category.clickSound.playWrongSound();
 			c.clickWrong();
 		});
 		

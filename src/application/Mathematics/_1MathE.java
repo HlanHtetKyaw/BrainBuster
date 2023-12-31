@@ -128,6 +128,7 @@ public class _1MathE extends Application {
 		back.getStyleClass().add("lets_start");
 		back.setPrefSize(60, 60);
 		back.setOnAction(a -> {
+			Category.clickSound.playClickSound();
 			rectangle1.getChildren().clear();
 			rectangle2.getChildren().clear();
 			Category.switchToScene1(a, application.Mathematics.MathResult.scV, languageChange);
@@ -170,18 +171,22 @@ public class _1MathE extends Application {
 		
 		b1.getStyleClass().add("bBut");
 		b1.setOnAction(e->{
+			Category.clickSound.playCorrectSound();
 			clickCorrect();
 		});
 		b2.getStyleClass().add("bBut");
 		b2.setOnAction(e->{
+			Category.clickSound.playWrongSound();
 			clickWrong();
 		});
 		b3.getStyleClass().add("bBut");
 		b3.setOnAction(e->{
+			Category.clickSound.playWrongSound();
 			clickWrong();
 		});
 		b4.getStyleClass().add("bBut");
 		b4.setOnAction(e->{
+			Category.clickSound.playWrongSound();
 			clickWrong();
 		});
 		

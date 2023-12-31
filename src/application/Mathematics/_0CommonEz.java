@@ -1,5 +1,5 @@
 package application.Mathematics;
-
+import application.Sound;
 import application.Category;
 import application.IqQuestions;
 import application.IqResultCheck;
@@ -100,7 +100,7 @@ public class _0CommonEz extends Application {
 	application.Category cat = new application.Category();
 	boolean languageChange = true;
 	boolean nonesense = false;
-	
+	static Sound sound = new Sound();
 	int mark=0;
 	public void setQEng(String pathQEng) {
 		this.qEngPath = pathQEng;
@@ -173,7 +173,7 @@ public class _0CommonEz extends Application {
 		back.getStyleClass().add("lets_start");
 		back.setPrefSize(60, 60);
 		back.setOnAction(a -> {
-
+			Category.clickSound.playClickSound();
 			Category.switchToScene1(a, application.Mathematics.MathResult.scV, languageChange);
 			MathResultCheck.correct=0;
 			MathResultCheck.percent=0;
@@ -241,6 +241,7 @@ public class _0CommonEz extends Application {
 		forward.setGraphic(forwImg);
 		forward.getStyleClass().add("forward");
 		forward.setOnAction(e->{
+			Category.clickSound.playClickSound();
 			clickForward(e);
 		});
 		StackPane.setMargin(forward, new Insets(0,0,-400,850));
@@ -249,6 +250,7 @@ public class _0CommonEz extends Application {
 		tryagain.setMaxSize(118,40);
 		tryagain.getStyleClass().add("forward");
 		tryagain.setOnAction(e->{
+			Category.clickSound.playClickSound();
 			clickTryAgain();
 		});
 		StackPane.setMargin(tryagain, new Insets(0,0,-400,600));

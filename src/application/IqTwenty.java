@@ -115,8 +115,8 @@ public class IqTwenty{
 		back.getStyleClass().add("lets_start");
 		back.setPrefSize(60, 60);
 		back.setOnAction(a -> {
-			Category cat = new Category();
-			cat.switchToScene1(a, application.Mathematics.MathResult.scV, languageChange);
+			Category.clickSound.playClickSound();
+			Category.switchToScene1(a, application.Mathematics.MathResult.scV, languageChange);
 			rectangle.getChildren().clear();
 			timeLine.stop();
 			IqResultCheck.correct=0;
@@ -154,6 +154,7 @@ public class IqTwenty{
 		b1.getStyleClass().add("choiceButTw");
 		b1.setGraphic(b1Img);
 		b1.setOnAction(e->{
+			Category.clickSound.playClickSound();
 			timeLine.stop();
 			IqQuestions.switchToIqQuestions(e, languageChange,root);
 			rectangle.getChildren().clear();
@@ -162,6 +163,7 @@ public class IqTwenty{
 		
 		b2.setMaxSize(200, 170);
 		b2.setOnAction(e->{
+			Category.clickSound.playClickSound();
 			IqResultCheck.check();
 			timeLine.stop();
 			IqQuestions.switchToIqQuestions(e, languageChange,root);
@@ -175,6 +177,7 @@ public class IqTwenty{
 		b3.getStyleClass().add("choiceButTw");
 		b3.setGraphic(b3Img);
 		b3.setOnAction(e->{
+			Category.clickSound.playClickSound();
 			timeLine.stop();
 			IqQuestions.switchToIqQuestions(e, languageChange,root);
 			rectangle.getChildren().clear();

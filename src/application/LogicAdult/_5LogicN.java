@@ -1,5 +1,6 @@
 package application.LogicAdult;
 
+import application.Category;
 import application.IqQuestions;
 import application.IqResultCheck;
 import javafx.application.Application;
@@ -117,7 +118,7 @@ public class _5LogicN extends Application {
 		back.getStyleClass().add("lets_start");
 		back.setPrefSize(60, 60);
 		back.setOnAction(a -> {
-
+			Category.clickSound.playClickSound();
 			cat.switchToScene1(a, application.Mathematics.MathResult.scV, languageChange);
 			MathResultCheck.correct=0;
 			MathResultCheck.percent=0;
@@ -159,14 +160,17 @@ public class _5LogicN extends Application {
 		
 		b1.getStyleClass().add("bBut");
 		b1.setOnAction(e->{
+			Category.clickSound.playWrongSound();
 			clickWrong();
 		});
 		b2.getStyleClass().add("bBut");
 		b2.setOnAction(e->{
+			Category.clickSound.playCorrectSound();
 			clickCorrect();
 		});
 		b3.getStyleClass().add("bBut");
 		b3.setOnAction(e->{
+			Category.clickSound.playWrongSound();
 			clickWrong();
 		});
 		

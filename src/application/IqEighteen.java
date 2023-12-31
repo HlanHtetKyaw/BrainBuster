@@ -113,8 +113,8 @@ public class IqEighteen{
 		back.getStyleClass().add("lets_start");
 		back.setPrefSize(60, 60);
 		back.setOnAction(a -> {
-			Category cat = new Category();
-			cat.switchToScene1(a, application.Mathematics.MathResult.scV, languageChange);
+			Category.clickSound.playClickSound();
+			Category.switchToScene1(a, application.Mathematics.MathResult.scV, languageChange);
 			timeLine.stop();
 			sq.stop();
 			boatImg.setTranslateX(0);
@@ -145,6 +145,7 @@ public class IqEighteen{
 		b1.setMaxSize(230, 66);
 		b1.setOnAction(e->{
 			timeLine.stop();
+			Category.clickSound.playClickSound();
 			IqQuestions.switchToIqQuestions(e, languageChange,root);
 			sq.stop();
 			boatImg.setTranslateX(0);
@@ -152,6 +153,7 @@ public class IqEighteen{
 		b2.setMaxSize(230, 66);
 		b2.setOnAction(e->{
 			timeLine.stop();
+			Category.clickSound.playClickSound();
 			IqResultCheck.check();
 			IqQuestions.switchToIqQuestions(e, languageChange,root);
 			sq.stop();
@@ -160,6 +162,7 @@ public class IqEighteen{
 		b3.setMaxSize(230, 66);
 		b3.setOnAction(e->{
 			timeLine.stop();
+			Category.clickSound.playClickSound();
 			IqQuestions.switchToIqQuestions(e, languageChange,root);
 			sq.stop();
 			boatImg.setTranslateX(0);

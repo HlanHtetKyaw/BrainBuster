@@ -109,9 +109,9 @@ public class IqOne {
 		back = new Button();
 		back.getStyleClass().add("lets_start");
 		back.setPrefSize(60, 60);
-		Category cat = new Category();
+		
 		back.setOnAction(a -> {
-			cat.switchToScene1(a, application.Mathematics.MathResult.scV, languageChange);
+			Category.switchToScene1(a, application.Mathematics.MathResult.scV, languageChange);
 			timeLine.stop();
 			IqResultCheck.correct=0;
 			IqResultCheck.percent=0;
@@ -153,6 +153,7 @@ public class IqOne {
 		yes.getStyleClass().add("yesBut");
 		yes.setMaxSize(230, 115);
 		yes.setOnAction(e->{
+			Category.clickSound.playClickSound();
 			timeLine.stop();
 			IqQuestions.switchToIqQuestions(e, languageChange,root);
 		});
@@ -162,6 +163,7 @@ public class IqOne {
 		no.setMaxSize(230, 115);
 		StackPane.setMargin(no, new Insets(400, -700, 0, 0));
 		no.setOnAction(e -> {
+			Category.clickSound.playClickSound();
 			IqResultCheck.check();
 			timeLine.stop();
 			IqQuestions.switchToIqQuestions(e, languageChange,root);		

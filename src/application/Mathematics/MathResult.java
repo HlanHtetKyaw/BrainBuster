@@ -182,6 +182,7 @@ public class MathResult extends Application{
 		back.getStyleClass().add("lets_startR");
 		back.setPrefSize(60, 60);
 		back.setOnAction(a -> {
+			Category.clickSound.playClickSound();
 			rectangle1.getChildren().clear();
 			rectangle2.getChildren().clear();
 			

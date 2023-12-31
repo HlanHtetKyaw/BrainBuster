@@ -147,9 +147,10 @@ public class IqFive {
 		back = new Button();
 		back.getStyleClass().add("lets_start");
 		back.setPrefSize(60, 60);
-		Category cat = new Category();
+		
 		back.setOnAction(a -> {
-			cat.switchToScene1(a, application.Mathematics.MathResult.scV, languageChange);
+			Category.clickSound.playClickSound();
+			Category.switchToScene1(a, application.Mathematics.MathResult.scV, languageChange);
 			timeLine.stop();
 			parallelTransition.stop();
 			carImg.setTranslateX(0);
@@ -199,6 +200,7 @@ public class IqFive {
 		submit.setMaxSize(125, 50);
 		StackPane.setMargin(submit, new Insets(200, 0, 0, 500));
 		submit.setOnAction(e -> {
+			Category.clickSound.playClickSound();
 			timeLine.stop();
 			String input = ans.getText();
 			if (!input.isEmpty()) {

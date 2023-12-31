@@ -155,8 +155,8 @@ public class IqSeven extends Application{
 		back.getStyleClass().add("lets_start");
 		back.setPrefSize(60, 60);
 		back.setOnAction(a -> {
-			Category cat = new Category();
-			cat.switchToScene1(a, application.Mathematics.MathResult.scV, languageChange);
+			
+			Category.switchToScene1(a, application.Mathematics.MathResult.scV, languageChange);
 			timeLine.stop();
 			rectangle.getChildren().clear();
 			IqResultCheck.correct=0;
@@ -305,7 +305,9 @@ public class IqSeven extends Application{
 		dBut7A.setOnMouseExited(e->{
 			dBut8.setGraphic(QuestionImg);
 		});
+		
 		dBut7A.setOnAction(e->{
+			Category.clickSound.playClickSound();
 			IqResultCheck.check();
 			timeLine.stop();
 			rectangle.getChildren().clear();
@@ -314,36 +316,42 @@ public class IqSeven extends Application{
 		
 		dBut0A.setGraphic(Q5AImg);
 		dBut0A.setOnAction(e->{
+			Category.clickSound.playClickSound();
 			timeLine.stop();
 			rectangle.getChildren().clear();
 			IqQuestions.switchToIqQuestions(e, languageChange,root);
 		});
 		dBut1A.setGraphic(Q2AImg);
 		dBut1A.setOnAction(e->{
+			Category.clickSound.playClickSound();
 			timeLine.stop();
 			rectangle.getChildren().clear();
 			IqQuestions.switchToIqQuestions(e, languageChange,root);
 		});
 		dBut2A.setGraphic(Q3AImg);
 		dBut2A.setOnAction(e->{
+			Category.clickSound.playClickSound();
 			timeLine.stop();
 			rectangle.getChildren().clear();
 			IqQuestions.switchToIqQuestions(e, languageChange,root);
 		});
 		dBut3A.setGraphic(Q7AImg);
 		dBut3A.setOnAction(e->{
+			Category.clickSound.playClickSound();
 			timeLine.stop();
 			rectangle.getChildren().clear();
 			IqQuestions.switchToIqQuestions(e, languageChange,root);
 		});
 		dBut4A.setGraphic(Q4AImg);
 		dBut4A.setOnAction(e->{
+			Category.clickSound.playClickSound();
 			timeLine.stop();
 			rectangle.getChildren().clear();
 			IqQuestions.switchToIqQuestions(e, languageChange,root);
 		});
 		dBut5A.setGraphic(A5Img);
 		dBut5A.setOnAction(e->{
+			Category.clickSound.playClickSound();
 			timeLine.stop();
 			rectangle.getChildren().clear();
 			IqQuestions.switchToIqQuestions(e, languageChange,root);

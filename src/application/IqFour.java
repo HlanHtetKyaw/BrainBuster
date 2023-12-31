@@ -120,9 +120,10 @@ public class IqFour {
 		back = new Button();
 		back.getStyleClass().add("lets_start");
 		back.setPrefSize(60, 60);
-		Category cat = new Category();
+		
 		back.setOnAction(a -> {
-			cat.switchToScene1(a, application.Mathematics.MathResult.scV, languageChange);
+			Category.clickSound.playClickSound();
+			Category.switchToScene1(a, application.Mathematics.MathResult.scV, languageChange);
 			timeLine.stop();
 			rectangle.getChildren().clear();
 			IqResultCheck.correct=0;
@@ -159,6 +160,7 @@ public class IqFour {
 		StackPane.setAlignment(b1, Pos.TOP_LEFT);
 		StackPane.setMargin(b1, new Insets(25, 0, 0, 25));
 		b1.setOnAction(e -> {
+			Category.clickSound.playClickSound();
 			IqQuestions.switchToIqQuestions(e, languageChange,root);
 			timeLine.stop();
 			rectangle.getChildren().clear();
@@ -169,6 +171,7 @@ public class IqFour {
 		StackPane.setAlignment(b2, Pos.CENTER_LEFT);
 		StackPane.setMargin(b2, new Insets(0, 0, 0, 25));
 		b2.setOnAction(e -> {
+			Category.clickSound.playClickSound();
 			IqQuestions.switchToIqQuestions(e, languageChange,root);
 			timeLine.stop();
 			rectangle.getChildren().clear();
@@ -180,6 +183,7 @@ public class IqFour {
 		StackPane.setAlignment(b3, Pos.CENTER_RIGHT);
 		StackPane.setMargin(b3, new Insets(0, 25, 0, 0));
 		b3.setOnAction(e -> {
+			Category.clickSound.playClickSound();
 			IqQuestions.switchToIqQuestions(e, languageChange,root);
 			timeLine.stop();
 			rectangle.getChildren().clear();
@@ -188,6 +192,7 @@ public class IqFour {
 		
 		b4.setMaxSize(83, 77);
 		b4.setOnAction(e -> {
+			Category.clickSound.playClickSound();
 			IqResultCheck.check();
 			timeLine.stop();
 			IqQuestions.switchToIqQuestions(e, languageChange,root);

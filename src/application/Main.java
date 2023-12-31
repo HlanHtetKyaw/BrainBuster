@@ -4,6 +4,9 @@ import java.io.IOException;
 import java.util.Optional;
 import java.util.prefs.Preferences;
 
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+
 import javafx.animation.ParallelTransition;
 import javafx.animation.RotateTransition;
 import javafx.animation.ScaleTransition;
@@ -85,6 +88,8 @@ public class Main extends Application {
 	ImageView iconImg = new ImageView(icon);
 	Category cat = new Category();
 	
+	Sound clickSound = new Sound();
+	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		primaryStage.getIcons().addAll(icon,icon1);
@@ -106,7 +111,7 @@ public class Main extends Application {
 	}
 
 	public static void main(String[] args) {
-		
+		Category.clickSound.playBgSound();
 		launch(args);
 	}
 	void styleElements() {
@@ -231,6 +236,8 @@ public class Main extends Application {
 		lets_start.setPrefSize(180, 83);
 		StackPane.setMargin(lets_start, new Insets(500, 0, 0, 90));
 		lets_start.setOnAction(event -> {
+			
+			clickSound.playClickSound();
 			AgeAccept(event);
 		});
 		root.getChildren().add(lets_start);
@@ -311,6 +318,7 @@ public class Main extends Application {
 		// Optional: Handle the Select button click event
 		if (result.isPresent() && result.get() == selectButton) {
 			selectValue = ageBox.getValue();
+			clickSound.playClickSound();
 			Category.switchToScene1(event, selectValue, lanSwap);
 		}
 	}
@@ -321,7 +329,7 @@ public class Main extends Application {
 		Eng.setPrefSize(78, 39);
 		StackPane.setAlignment(Eng, Pos.TOP_LEFT);
 		StackPane.setMargin(Eng, new Insets(100, 0, 0, 210));
-		Eng.setOnAction(event -> LanClick());
+		Eng.setOnAction(event -> {LanClick();clickSound.playClickSound();});
 		// root.getChildren().add(Eng);
 	}
 

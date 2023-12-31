@@ -1,4 +1,5 @@
 package application.Mathematics;
+import application.Category;
 import javafx.event.ActionEvent;
 import javafx.scene.layout.StackPane;
 public class _10MathD{
@@ -20,15 +21,19 @@ public void switchToDifficulty(ActionEvent ea,boolean languageChange,StackPane s
 	c.setA4MM("Math/10MathAns/a4.png");
 	
 	c.b1.setOnAction(e->{
+		Category.clickSound.playCorrectSound();
 		c.clickCorrect();
 	});
 	c.b2.setOnAction(e->{
+		Category.clickSound.playWrongSound();
 		c.clickWrong();
 	});
 	c.b3.setOnAction(e->{
+		Category.clickSound.playWrongSound();
 		c.clickWrong();
 	});
 	c.b4.setOnAction(e->{
+		Category.clickSound.playWrongSound();
 		c.clickWrong();
 	});
 	

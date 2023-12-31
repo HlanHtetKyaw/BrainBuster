@@ -114,8 +114,8 @@ public class IqThirteen{
 		back.getStyleClass().add("lets_start");
 		back.setPrefSize(60, 60);
 		back.setOnAction(a -> {
-			Category cat = new Category();
-			cat.switchToScene1(a, application.Mathematics.MathResult.scV, languageChange);
+			Category.clickSound.playClickSound();
+			Category.switchToScene1(a, application.Mathematics.MathResult.scV, languageChange);
 			timeLine.stop();
 			rectangle.getChildren().clear();
 			IqResultCheck.correct=0;
@@ -144,6 +144,7 @@ public class IqThirteen{
 		b1.getStyleClass().add("choiceButTh");
 		b1.setGraphic(b1Img);
 		b1.setOnAction(e->{
+			Category.clickSound.playClickSound();
 			timeLine.stop();
 			IqQuestions.switchToIqQuestions(e, languageChange,root);
 			rectangle.getChildren().clear();
@@ -154,6 +155,7 @@ public class IqThirteen{
 		b2.getStyleClass().add("choiceButTh");
 		b2.setGraphic(b2Img);
 		b2.setOnAction(e->{
+			Category.clickSound.playClickSound();
 			timeLine.stop();
 			IqQuestions.switchToIqQuestions(e, languageChange,root);
 			rectangle.getChildren().clear();
@@ -164,6 +166,7 @@ public class IqThirteen{
 		b3.getStyleClass().add("choiceButTh");
 		b3.setGraphic(b3Img);
 		b3.setOnAction(e->{
+			Category.clickSound.playClickSound();
 			timeLine.stop();
 			IqQuestions.switchToIqQuestions(e, languageChange,root);
 			rectangle.getChildren().clear();
@@ -174,6 +177,7 @@ public class IqThirteen{
 		b4.getStyleClass().add("choiceButTh");
 		b4.setGraphic(b4Img);
 		b4.setOnAction(e->{
+			Category.clickSound.playClickSound();
 			IqResultCheck.check();
 			timeLine.stop();
 			IqQuestions.switchToIqQuestions(e, languageChange,root);

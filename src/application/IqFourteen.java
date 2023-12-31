@@ -128,9 +128,10 @@ public class IqFourteen{
 		back = new Button();
 		back.getStyleClass().add("lets_start");
 		back.setPrefSize(60, 60);
-		Category cat = new Category();
+		
 		back.setOnAction(a -> {
-			cat.switchToScene1(a, application.Mathematics.MathResult.scV, languageChange);
+			Category.clickSound.playClickSound();
+			Category.switchToScene1(a, application.Mathematics.MathResult.scV, languageChange);
 			timeLine.stop();
 			rectangle.getChildren().clear();
 			IqResultCheck.correct=0;
@@ -195,6 +196,7 @@ public class IqFourteen{
 		submit.setMaxSize(125, 50);
 		StackPane.setMargin(submit, new Insets(300, 0, 0, 300));
 		submit.setOnAction(e -> {
+			Category.clickSound.playClickSound();
 			String a = ans.getText();
 			System.out.println(a);
 			if(a.equals("BB") || a.equals("bb") || a.equals("B") || a.equals("b")) {

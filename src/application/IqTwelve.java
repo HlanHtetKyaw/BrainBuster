@@ -113,8 +113,8 @@ public class IqTwelve{
 		back.getStyleClass().add("lets_start");
 		back.setPrefSize(60, 60);
 		back.setOnAction(a -> {
-			Category cat = new Category();
-			cat.switchToScene1(a, application.Mathematics.MathResult.scV, languageChange);
+			Category.clickSound.playClickSound();
+			Category.switchToScene1(a, application.Mathematics.MathResult.scV, languageChange);
 			timeLine.stop();
 			rectangle.getChildren().clear();
 			IqResultCheck.correct=0;
@@ -150,12 +150,14 @@ public class IqTwelve{
 		
 		b1.setMaxSize(360, 65);
 		b1.setOnAction(e->{
+			Category.clickSound.playClickSound();
 			timeLine.stop();
 			rectangle.getChildren().clear();
 			IqQuestions.switchToIqQuestions(e, languageChange, root);
 		});
 		b2.setMaxSize(360, 65);
 		b2.setOnAction(e->{
+			Category.clickSound.playClickSound();
 			IqResultCheck.check();
 			timeLine.stop();
 			rectangle.getChildren().clear();
@@ -163,6 +165,7 @@ public class IqTwelve{
 		});
 		b3.setMaxSize(360, 65);
 		b3.setOnAction(e->{
+			Category.clickSound.playClickSound();
 			timeLine.stop();
 			rectangle.getChildren().clear();
 			IqQuestions.switchToIqQuestions(e, languageChange, root);

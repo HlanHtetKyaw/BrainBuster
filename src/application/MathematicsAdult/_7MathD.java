@@ -2,6 +2,7 @@ package application.MathematicsAdult;
 
 import javafx.event.ActionEvent;
 import javafx.scene.layout.StackPane;
+import application.Category;
 import application.Mathematics.*;
 
 public class _7MathD {
@@ -23,15 +24,19 @@ public class _7MathD {
 		c.setA4MM("Math/7MathAnsAdult/a4.png");
 
 		c.b1.setOnAction(e -> {
+			Category.clickSound.playWrongSound();
 			c.clickWrong();
 		});
 		c.b2.setOnAction(e -> {
+			Category.clickSound.playWrongSound();
 			c.clickWrong();
 		});
 		c.b3.setOnAction(e -> {
+			Category.clickSound.playCorrectSound();
 			c.clickCorrect();
 		});
 		c.b4.setOnAction(e -> {
+			Category.clickSound.playWrongSound();
 			c.clickWrong();
 		});
 

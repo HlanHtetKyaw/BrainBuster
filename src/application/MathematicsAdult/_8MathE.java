@@ -1,6 +1,7 @@
 package application.MathematicsAdult;
 
 import javafx.stage.*;
+import application.Category;
 import application.Mathematics.*;
 import javafx.application.*;
 import javafx.event.ActionEvent;
@@ -54,15 +55,19 @@ public class _8MathE extends Application {
 		c.setA4MM("Math/8MathAnsAdult/a4.png");
 
 		c.b1.setOnAction(e -> {
+			Category.clickSound.playWrongSound();
 			c.clickWrong();
 		});
 		c.b2.setOnAction(e -> {
+			Category.clickSound.playWrongSound();
 			c.clickWrong();
 		});
 		c.b3.setOnAction(e -> {
+			Category.clickSound.playWrongSound();
 			c.clickWrong();
 		});
 		c.b4.setOnAction(e -> {
+			Category.clickSound.playCorrectSound();
 			c.clickCorrect();
 		});
 

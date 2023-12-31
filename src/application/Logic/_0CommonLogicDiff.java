@@ -4,6 +4,7 @@ import application.Category;
 import application.IqQuestions;
 import application.IqResultCheck;
 import application.Main;
+import application.Sound;
 import application.LogicAdult.switchingQuestionForDiffLogicAdult;
 import application.LogicAdult.switchingQuestionForEasyLogicAdult;
 import application.Mathematics.*;
@@ -96,6 +97,8 @@ public class _0CommonLogicDiff extends Application {
 	
 	int mark=0;
 	
+	static Sound sound = new Sound();
+	
 	public void setQEng(String pathQEng) {
 		this.qEngPath = pathQEng;
 		qEng = new Image(qEngPath);
@@ -172,6 +175,7 @@ public class _0CommonLogicDiff extends Application {
 		back.getStyleClass().add("lets_start");
 		back.setPrefSize(60, 60);
 		back.setOnAction(a -> {
+			Category.clickSound.playClickSound();
 			Category.switchToScene1(a, application.Mathematics.MathResult.scV, languageChange);
 			timeLine.stop();
 			MathResultCheck.correct=0;
@@ -227,6 +231,7 @@ public class _0CommonLogicDiff extends Application {
 		forward.setGraphic(forwImg);
 		forward.getStyleClass().add("forward");
 		forward.setOnAction(e->{
+			Category.clickSound.playClickSound();
 			clickForward(e);
 		});
 		StackPane.setMargin(forward, new Insets(0,0,-400,600));

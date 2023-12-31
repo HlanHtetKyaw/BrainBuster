@@ -126,8 +126,8 @@ public class IqResult{
 		back.getStyleClass().add("lets_startR");
 		back.setPrefSize(60, 60);
 		back.setOnAction(a -> {
-			Category cat = new Category();
-			cat.switchToScene1(a, 1, languageChange);
+			Category.clickSound.playClickSound();
+			Category.switchToScene1(a, 1, languageChange);
 			rectangle1.getChildren().clear();
 			rectangle2.getChildren().clear();
 			r1.getChildren().clear();

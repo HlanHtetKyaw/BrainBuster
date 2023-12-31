@@ -1,5 +1,6 @@
 package application.Mathematics;
 
+import application.Category;
 import application.IqQuestions;
 import application.IqResultCheck;
 import application.Main;
@@ -174,9 +175,10 @@ public class _0CommonNor extends Application {
 		back.getStyleClass().add("lets_start");
 		back.setPrefSize(60, 60);
 		back.setOnAction(a -> {
+			Category.clickSound.playClickSound();
 			rectangle1.getChildren().clear();
 			rectangle2.getChildren().clear();
-			cat.switchToScene1(a, application.Mathematics.MathResult.scV, languageChange);
+			Category.switchToScene1(a, application.Mathematics.MathResult.scV, languageChange);
 			MathResultCheck.correct = 0;
 			MathResultCheck.percent = 0;
 			MathResultCheck.result = 0;
@@ -235,6 +237,7 @@ public class _0CommonNor extends Application {
 		forward.setGraphic(forwImg);
 		forward.getStyleClass().add("forward");
 		forward.setOnAction(e -> {
+			Category.clickSound.playClickSound();
 			clickForward(e);
 		});
 		StackPane.setMargin(forward, new Insets(0, 0, -400, 600));

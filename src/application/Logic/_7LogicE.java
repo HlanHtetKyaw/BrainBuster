@@ -16,12 +16,15 @@ public class _7LogicE extends Application {
 		c.seta2("Logic/7LogicAns/a2.png");
 		c.seta3("Logic/7LogicAns/a3.png");
 		c.b1.setOnAction(e->{
+			_0CommonLogicDiff.sound.playWrongSound();
 			c.clickWrong();
 		});
 		c.b2.setOnAction(e->{
+			_0CommonLogicDiff.sound.playWrongSound();
 			c.clickWrong();
 		});
 		c.b3.setOnAction(e->{
+			_0CommonLogicDiff.sound.playCorrectSound();
 			c.clickCorrect();
 		});
 		
@@ -34,12 +37,15 @@ public class _7LogicE extends Application {
 		c.seta2("Logic/7LogicAns/a2.png");
 		c.seta3("Logic/7LogicAns/a3.png");
 		c.b1.setOnAction(e->{
+			_0CommonLogicDiff.sound.playWrongSound();
 			c.clickWrong();
 		});
 		c.b2.setOnAction(e->{
+			_0CommonLogicDiff.sound.playWrongSound();
 			c.clickWrong();
 		});
 		c.b3.setOnAction(e->{
+			_0CommonLogicDiff.sound.playCorrectSound();
 			c.clickCorrect();
 		});
 		

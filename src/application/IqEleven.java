@@ -140,9 +140,10 @@ public class IqEleven{
 		back = new Button();
 		back.getStyleClass().add("lets_start");
 		back.setPrefSize(60, 60);
-		Category cat = new Category();
+		
 		back.setOnAction(a -> {
-			cat.switchToScene1(a, application.Mathematics.MathResult.scV, languageChange);
+			Category.clickSound.playClickSound();
+			Category.switchToScene1(a, application.Mathematics.MathResult.scV, languageChange);
 			timeLine.stop();
 			rt.setAngle(0);
 			rt1.setAngle(0);
@@ -211,6 +212,7 @@ public class IqEleven{
 		submit.setMaxSize(125, 50);
 		StackPane.setMargin(submit, new Insets(350, -800, 0, 0));
 		submit.setOnAction(e -> {
+			Category.clickSound.playClickSound();
 			String eq = ans.getText();
 			if(eq.equals("25")) {
 				IqResultCheck.check();

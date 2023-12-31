@@ -115,8 +115,8 @@ public class IqNinteen{
 		back.getStyleClass().add("lets_start");
 		back.setPrefSize(60, 60);
 		back.setOnAction(a -> {
-			Category cat = new Category();
-			cat.switchToScene1(a, application.Mathematics.MathResult.scV, languageChange);
+			
+			Category.switchToScene1(a, application.Mathematics.MathResult.scV, languageChange);
 			timeLine.stop();
 			rectangle.getChildren().clear();
 			IqResultCheck.correct=0;
@@ -144,18 +144,21 @@ public class IqNinteen{
 		
 		b1.setMaxSize(514, 80);
 		b1.setOnAction(e->{
+			Category.clickSound.playClickSound();
 			timeLine.stop();
 			IqQuestions.switchToIqQuestions(e, languageChange,root);
 			rectangle.getChildren().clear();
 		});
 		b2.setMaxSize(514, 80);
 		b2.setOnAction(e->{
+			Category.clickSound.playClickSound();
 			timeLine.stop();
 			IqQuestions.switchToIqQuestions(e, languageChange,root);
 			rectangle.getChildren().clear();
 		});
 		b3.setMaxSize(514, 80);
 		b3.setOnAction(e->{
+			Category.clickSound.playClickSound();
 			IqResultCheck.check();
 			timeLine.stop();
 			IqQuestions.switchToIqQuestions(e, languageChange,root);
@@ -163,6 +166,7 @@ public class IqNinteen{
 		});
 		b4.setMaxSize(514, 80);
 		b4.setOnAction(e->{
+			Category.clickSound.playClickSound();
 			timeLine.stop();
 			IqQuestions.switchToIqQuestions(e, languageChange,root);
 			rectangle.getChildren().clear();

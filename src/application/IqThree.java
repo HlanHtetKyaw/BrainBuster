@@ -113,9 +113,10 @@ public class IqThree {
 		back = new Button();
 		back.getStyleClass().add("lets_start");
 		back.setPrefSize(60, 60);
-		Category cat = new Category();
+		
 		back.setOnAction(a -> {
-			cat.switchToScene1(a, application.Mathematics.MathResult.scV, languageChange);
+			Category.clickSound.playClickSound();
+			Category.switchToScene1(a, application.Mathematics.MathResult.scV, languageChange);
 			timeLine.stop();
 			rectangle.getChildren().clear();
 			IqResultCheck.correct=0;
@@ -142,6 +143,7 @@ public class IqThree {
 		StackPane.setMargin(John, new Insets(150, 750, 0, 0));
 		John.getStyleClass().add("Ez_Btn");
 		John.setOnAction(e -> {
+			Category.clickSound.playClickSound();
 			IqQuestions.switchToIqQuestions(e, languageChange,root);
 			timeLine.stop();
 			rectangle.getChildren().clear();
@@ -151,6 +153,7 @@ public class IqThree {
 		StackPane.setMargin(Mark, new Insets(150, 0, 0, 0));
 		Mark.getStyleClass().add("Nm_Btn");
 		Mark.setOnAction(e -> {
+			Category.clickSound.playClickSound();
 			IqResultCheck.check();
 			IqQuestions.switchToIqQuestions(e, languageChange,root);
 			timeLine.stop();
@@ -161,6 +164,7 @@ public class IqThree {
 		StackPane.setMargin(Alex, new Insets(150, 0, 0, 750));
 		Alex.getStyleClass().add("Df_Btn");
 		Alex.setOnAction(e -> {
+			Category.clickSound.playClickSound();
 			IqQuestions.switchToIqQuestions(e, languageChange,root);
 			timeLine.stop();
 			rectangle.getChildren().clear();

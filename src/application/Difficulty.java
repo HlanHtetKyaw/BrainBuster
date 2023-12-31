@@ -131,7 +131,7 @@ public class Difficulty {
 		back.getStyleClass().add("lets_start");
 		back.setPrefSize(60, 60);
 		back.setOnAction(a -> {
-			
+			Category.clickSound.playClickSound();
 			Category.switchToScene1(a, application.Mathematics.MathResult.scV, languageChange);
 			root.getChildren().clear();
 		});
@@ -222,6 +222,7 @@ public class Difficulty {
 		StackPane.setAlignment(ez, Pos.CENTER_LEFT);
 		StackPane.setMargin(ez, new Insets(0, 0, 300, 150));
 		ez.setOnAction(e->{
+			Category.clickSound.playClickSound();
 			application.Mathematics.MathResult.lvlFilter(0);
 			if(choose) {
 				if(selectValue<=18 && selectValue>=12) {
@@ -282,6 +283,7 @@ public class Difficulty {
 		nm.getStyleClass().add("Nm_Btn");
 		nm.setPrefSize(370, 94);
 		nm.setOnAction(e->{
+			Category.clickSound.playClickSound();
 			application.Mathematics.MathResult.lvlFilter(1);
 			if(choose) {
 				if(selectValue<=18 && selectValue>=12) {
@@ -345,6 +347,7 @@ public class Difficulty {
 		df.getStyleClass().add("Df_Btn");
 		df.setPrefSize(370, 94);
 		df.setOnAction(e->{
+			Category.clickSound.playClickSound();
 			application.Mathematics.MathResult.lvlFilter(2);
 			if(choose) {
 				if(selectValue<=18 && selectValue>=12) {
@@ -403,6 +406,7 @@ public class Difficulty {
 	}
 
 	void lan_click() {
+		Category.clickSound.playClickSound();
 		languageChange = !languageChange;
 		lan_change();
 	}

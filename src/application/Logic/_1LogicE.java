@@ -124,7 +124,7 @@ public class _1LogicE extends Application {
 		back.getStyleClass().add("lets_start");
 		back.setPrefSize(60, 60);
 		back.setOnAction(a -> {
-
+			Category.clickSound.playClickSound();
 			Category.switchToScene1(a, application.Mathematics.MathResult.scV, languageChange);
 			MathResultCheck.correct=0;
 			MathResultCheck.percent=0;
@@ -163,14 +163,17 @@ public class _1LogicE extends Application {
 		
 		b1.getStyleClass().add("bBut");
 		b1.setOnAction(e->{
+			Category.clickSound.playWrongSound();
 			clickWrong();
 		});
 		b2.getStyleClass().add("bBut");
 		b2.setOnAction(e->{
+			Category.clickSound.playWrongSound();
 			clickWrong();
 		});
 		b3.getStyleClass().add("bBut");
 		b3.setOnAction(e->{
+			Category.clickSound.playCorrectSound();
 			clickCorrect();
 		});
 		
@@ -179,6 +182,7 @@ public class _1LogicE extends Application {
 		forward.setGraphic(forwImg);
 		forward.getStyleClass().add("forward");
 		forward.setOnAction(e->{
+			Category.clickSound.playClickSound();
 			clickForward(e);
 		});
 		StackPane.setMargin(forward, new Insets(0,0,-400,850));
@@ -187,6 +191,7 @@ public class _1LogicE extends Application {
 		tryagain.setMaxSize(118,40);
 		tryagain.getStyleClass().add("forward");
 		tryagain.setOnAction(e->{
+			Category.clickSound.playClickSound();
 			clickTryAgain();
 		});
 		StackPane.setMargin(tryagain, new Insets(0,0,-400,600));

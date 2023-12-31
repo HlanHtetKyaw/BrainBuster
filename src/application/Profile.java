@@ -184,6 +184,7 @@ public class Profile extends Application {
 
 	@FXML
 	private void windowClose() {
+		Category.clickSound.playClickSound();
 		stage = (Stage) cancel.getScene().getWindow();
 		stage.close();
 	}
@@ -193,6 +194,7 @@ public class Profile extends Application {
 	
 	@FXML
 	private void windowOk() {
+		Category.clickSound.playClickSound();
 		stage = (Stage) okBtn.getScene().getWindow();
 		stage.close();
 		
@@ -205,6 +207,7 @@ public class Profile extends Application {
 
 	@FXML
 	void choose(MouseEvent event) {
+		
 		StackPane clickPane = (StackPane) event.getSource();
 		im = (ImageView) ((StackPane) event.getSource()).getChildren().get(0);
 	

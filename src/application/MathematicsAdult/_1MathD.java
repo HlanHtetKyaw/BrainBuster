@@ -1,5 +1,6 @@
 package application.MathematicsAdult;
 
+import application.Category;
 import application.IqQuestions;
 import application.IqResultCheck;
 import application.Mathematics.MathResultCheck;
@@ -142,8 +143,8 @@ public class _1MathD extends Application {
 		back.getStyleClass().add("lets_start");
 		back.setPrefSize(60, 60);
 		back.setOnAction(a -> {
-
-			cat.switchToScene1(a, application.Mathematics.MathResult.scV, languageChange);
+			Category.clickSound.playClickSound();
+			Category.switchToScene1(a, application.Mathematics.MathResult.scV, languageChange);
 			timeLine.stop();
 			MathResultCheck.correct=0;
 			MathResultCheck.percent=0;
@@ -188,18 +189,22 @@ public class _1MathD extends Application {
 		
 		b1.getStyleClass().add("bBut");
 		b1.setOnAction(e->{
+			Category.clickSound.playWrongSound();
 			clickWrong();
 		});
 		b2.getStyleClass().add("bBut");
 		b2.setOnAction(e->{
+			Category.clickSound.playCorrectSound();
 			clickCorrect();
 		});
 		b3.getStyleClass().add("bBut");
 		b3.setOnAction(e->{
+			Category.clickSound.playWrongSound();
 			clickWrong();
 		});
 		b4.getStyleClass().add("bBut");
 		b4.setOnAction(e->{
+			Category.clickSound.playWrongSound();
 			clickWrong();
 		});
 		

@@ -109,8 +109,8 @@ public class IqNine{
 		back.getStyleClass().add("lets_start");
 		back.setPrefSize(60, 60);
 		back.setOnAction(a -> {
-			Category cat = new Category();
-			cat.switchToScene1(a, application.Mathematics.MathResult.scV, languageChange);
+			
+			Category.switchToScene1(a, application.Mathematics.MathResult.scV, languageChange);
 			timeLine.stop();
 			rectangle.getChildren().clear();
 			IqResultCheck.correct=0;
@@ -137,6 +137,7 @@ public class IqNine{
 		yes.setMaxSize(230, 115);
 		StackPane.setMargin(yes, new Insets(300, 700, 0, 0));
 		yes.setOnAction(e->{
+			Category.clickSound.playClickSound();
 			timeLine.stop();
 			IqQuestions.switchToIqQuestions(e, languageChange,root);
 			rectangle.getChildren().clear();
@@ -145,6 +146,7 @@ public class IqNine{
 		no.setMaxSize(230, 115);
 		StackPane.setMargin(no, new Insets(300, -700, 0, 0));
 		no.setOnAction(e -> {
+			Category.clickSound.playClickSound();
 			timeLine.stop();
 			IqResultCheck.check();
 			IqQuestions.switchToIqQuestions(e, languageChange,root);

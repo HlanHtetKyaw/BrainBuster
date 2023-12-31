@@ -1,5 +1,6 @@
 package application.Mathematics;
 import javafx.stage.*;
+import application.Category;
 import javafx.application.*;
 import javafx.event.ActionEvent;
 import javafx.scene.layout.StackPane;
@@ -19,15 +20,19 @@ public void start(Stage stage) throws Exception {
 	c.setA4MM("Math/9MathAns/a4.png");
 	
 	c.b1.setOnAction(e->{
+		Category.clickSound.playWrongSound();
 		c.clickWrong();
 	});
 	c.b2.setOnAction(e->{
+		Category.clickSound.playWrongSound();
 		c.clickWrong();
 	});
 	c.b3.setOnAction(e->{
+		Category.clickSound.playCorrectSound();
 		c.clickCorrect();
 	});
 	c.b4.setOnAction(e->{
+		Category.clickSound.playWrongSound();
 		c.clickWrong();
 	});
 	
