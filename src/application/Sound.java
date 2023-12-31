@@ -15,8 +15,9 @@ import javafx.util.Duration;
 public class Sound {
 	static Clip clip;
 	static Clip Bgclip;
+	static Clip Welclip;
 	static boolean check = true;
-	
+	static boolean cc = true;
 	public void playBgSound() {
 		String soundFile = "/application/Test/bg.wav";
         URL url = getClass().getResource(soundFile);
@@ -40,7 +41,26 @@ public class Sound {
         
         Bgclip.loop(Bgclip.LOOP_CONTINUOUSLY);
 	}
-	 
+	public void playWelcomeSound() {
+		String soundFile = "/application/Test/welcome.wav";
+        URL url = getClass().getResource(soundFile);
+       
+        AudioInputStream audioStream;
+		try {
+			audioStream = AudioSystem.getAudioInputStream(url);
+			Welclip = AudioSystem.getClip();
+	        Welclip.open(audioStream);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+        
+		FloatControl volume = (FloatControl) Welclip.getControl(FloatControl.Type.MASTER_GAIN);
+		float dB = (float) (Math.log(0.2) / Math.log(10.0) * 20.0);
+		volume.setValue(dB);
+			Welclip.start();
+		
+	}
 	 public void playClickSound() {
 	        String soundFile = "/application/Test/click.wav";
 	        URL url = getClass().getResource(soundFile);

@@ -2,6 +2,9 @@ package application;
 
 import java.util.Optional;
 
+import javax.sound.sampled.LineEvent;
+import javax.sound.sampled.LineListener;
+
 import javafx.animation.ParallelTransition;
 import javafx.animation.RotateTransition;
 import javafx.animation.ScaleTransition;
@@ -47,8 +50,7 @@ public class Category {
 	static Button name;
 	static Button soundButton;
 	static Button vfxButton;
-	
-	
+
 	static Text Myanmar;
 	static Text English;
 	static Text Lan;
@@ -85,7 +87,7 @@ public class Category {
 	static Image koala = new Image("Profile/koala.png");
 	static Image soundE = new Image("Sound/soundE.png");
 	static Image soundEC = new Image("Sound/soundEC.png");
-	
+
 	static ImageView soundEImg = new ImageView(soundE);
 	static ImageView soundMImg = new ImageView(new Image("Sound/soundM.png"));
 	static ImageView soundMCImg = new ImageView(new Image("Sound/soundMC.png"));
@@ -94,7 +96,7 @@ public class Category {
 	static ImageView vfxEImg = new ImageView(new Image("Sound/vfxSoundE.png"));
 	static ImageView vfxECImg = new ImageView(new Image("Sound/vfxSoundEC.png"));
 	static ImageView soundECImg = new ImageView(soundEC);
-	
+
 	static ImageView ideaImg = new ImageView(idea);
 	static ImageView fireImg = new ImageView(fire);
 	static ImageView supBoyImg = new ImageView(supBoy);
@@ -133,7 +135,8 @@ public class Category {
 	public static Object cleanup;
 
 	public static void switchToScene1(ActionEvent event, int SelectValue, boolean lanSwap) {
-
+		
+		
 		System.gc();
 		languageChange = lanSwap;
 		application.Mathematics.MathResult.scV = SelectValue;
@@ -147,7 +150,45 @@ public class Category {
 		iq_test();
 		achievement();
 		lan_change();
-
+		if(Sound.cc) {
+			back.setDisable(true);
+			lan_button.setDisable(true);
+        	math_button.setDisable(true);
+        	math_in_button.setDisable(true);
+        	lg_button.setDisable(true);
+        	lg_in_button.setDisable(true);
+        	iq_button.setDisable(true);
+        	iq_in_button.setDisable(true);
+        	ach_button.setDisable(true);
+        	ach_in_button.setDisable(true);
+        	profile.setDisable(true);
+        	name.setDisable(true);
+        	soundButton.setDisable(true);
+        	vfxButton.setDisable(true);
+			clickSound.playWelcomeSound();
+			Sound.Welclip.addLineListener((LineListener) new LineListener() {
+                @Override
+                public void update(LineEvent event) {
+                    if (event.getType() == LineEvent.Type.STOP) {
+                        back.setDisable(false);
+                        lan_button.setDisable(false);
+                    	math_button.setDisable(false);
+                    	math_in_button.setDisable(false);
+                    	lg_button.setDisable(false);
+                    	lg_in_button.setDisable(false);
+                    	iq_button.setDisable(false);
+                    	iq_in_button.setDisable(false);
+                    	ach_button.setDisable(false);
+                    	ach_in_button.setDisable(false);
+                    	profile.setDisable(false);
+                    	name.setDisable(false);
+                    	soundButton.setDisable(false);
+                    	vfxButton.setDisable(false);
+                    }
+                }
+            });
+			Sound.cc = false;
+		}
 		// Retrieve the stage from the event source
 		currentStage = (Stage) ((Button) event.getSource()).getScene().getWindow();
 		scene1 = new Scene(root);
@@ -167,9 +208,10 @@ public class Category {
 		currentStage.show();
 
 	}
+
 	static boolean sClick = true;
 	static boolean sClickM = true;
-	
+
 	private static void profile() {
 		profile = new Button();
 		profile.getStyleClass().add("circular-button");
@@ -177,7 +219,7 @@ public class Category {
 		StackPane.setAlignment(profile, Pos.TOP_RIGHT);
 		StackPane.setMargin(profile, new Insets(25, 330, 0, 0));
 		profile.setOnAction(e -> {
-			
+
 			Stage news = new Stage();
 			Profile p = new Profile();
 			try {
@@ -214,93 +256,93 @@ public class Category {
 				alert.close();
 			}
 		});
-		
+
 		soundButton = new Button();
 		soundButton.getStyleClass().add("name");
-		if(languageChange) {
+		if (languageChange) {
 			soundButton.setGraphic(soundEImg);
-		}else {
+		} else {
 			soundButton.setGraphic(soundMImg);
 		}
-		
+
 		soundButton.setPrefSize(70, 70);
 		StackPane.setAlignment(soundButton, Pos.BOTTOM_LEFT);
 		StackPane.setMargin(soundButton, new Insets(0, 0, 60, 300));
-		//soundButton.setGraphic(restartImg);
+		// soundButton.setGraphic(restartImg);
 		soundButton.setOnAction(e -> {
-			
+
 			clickSound.playClickSound();
-			
+
 		});
-		
-		soundButton.setOnMouseClicked(e->{
-			
-			if(sClick) {
+
+		soundButton.setOnMouseClicked(e -> {
+
+			if (sClick) {
 				Sound.Bgclip.stop();
 				System.out.println("sa win");
-				if(languageChange) {
-					
+				if (languageChange) {
+
 					soundButton.setGraphic(soundECImg);
-				}else {
-					
+				} else {
+
 					soundButton.setGraphic(soundMCImg);
 				}
 				sClick = false;
-			}else {
+			} else {
 				clickSound.playBgSound();
 				System.out.println("win");
-				if(languageChange) {
+				if (languageChange) {
 					soundButton.setGraphic(soundEImg);
-				}else {
+				} else {
 					soundButton.setGraphic(soundMImg);
 				}
 				sClick = true;
 			}
 		});
-		
+
 		vfxButton = new Button();
 		vfxButton.getStyleClass().add("name");
-		if(languageChange) {
+		if (languageChange) {
 			vfxButton.setGraphic(vfxEImg);
-		}else {
+		} else {
 			vfxButton.setGraphic(vfxMImg);
 		}
-		
+
 		vfxButton.setPrefSize(70, 70);
 		StackPane.setAlignment(vfxButton, Pos.BOTTOM_LEFT);
 		StackPane.setMargin(vfxButton, new Insets(0, 0, 60, 400));
-		//vfxButton.setGraphic(restartImg);
+		// vfxButton.setGraphic(restartImg);
 		vfxButton.setOnAction(e -> {
-			
+
 			clickSound.playClickSound();
-			
+
 		});
-		
-		vfxButton.setOnMouseClicked(e->{
-			
-			if(sClickM) {
+
+		vfxButton.setOnMouseClicked(e -> {
+
+			if (sClickM) {
 				Sound.check = false;
 				System.out.println("sa win");
-				if(languageChange) {
-					
+				if (languageChange) {
+
 					vfxButton.setGraphic(vfxECImg);
-				}else {
-					
+				} else {
+
 					vfxButton.setGraphic(vfxMCImg);
 				}
 				sClickM = false;
-			}else {
+			} else {
 				Sound.check = true;
 				System.out.println("win");
-				if(languageChange) {
+				if (languageChange) {
 					vfxButton.setGraphic(vfxEImg);
-				}else {
+				} else {
 					vfxButton.setGraphic(vfxMImg);
 				}
 				sClickM = true;
 			}
 		});
-		
+
 		rookieImg = new ImageView(Rookie);
 		rookieImg.setFitWidth(55);
 		rookieImg.setFitHeight(77);
@@ -342,7 +384,7 @@ public class Category {
 		default:
 			System.out.println("no error");
 		}
-		root.getChildren().addAll(name, profile,soundButton,vfxButton);
+		root.getChildren().addAll(name, profile, soundButton, vfxButton);
 	}
 
 	private static void elements() {
@@ -640,18 +682,18 @@ public class Category {
 			m_Logic.setVisible(false);
 			m_IQ.setVisible(false);
 			m_Ach.setVisible(false);
-			
-			if(sClick) {
+
+			if (sClick) {
 				soundButton.setGraphic(soundEImg);
-			}else {
+			} else {
 				soundButton.setGraphic(soundECImg);
 			}
-			if(sClickM) {
+			if (sClickM) {
 				vfxButton.setGraphic(vfxEImg);
-			}else {
+			} else {
 				vfxButton.setGraphic(vfxECImg);
 			}
-			
+
 			Lan = new Text("Language:");
 			Font lan_font = Font.loadFont(Category.class.getResourceAsStream("/PoppinB.ttf"), 20);
 			Lan.setFont(lan_font);
@@ -703,17 +745,17 @@ public class Category {
 				Ach.setVisible(false);
 				catText.setVisible(false);
 			}
-			if(sClick) {
+			if (sClick) {
 				soundButton.setGraphic(soundMImg);
-			}else {
+			} else {
 				soundButton.setGraphic(soundMCImg);
 			}
-			if(sClickM) {
+			if (sClickM) {
 				vfxButton.setGraphic(vfxMImg);
-			}else {
+			} else {
 				vfxButton.setGraphic(vfxMCImg);
 			}
-			
+
 			langText = new ImageView(Lang);
 			langText.setFitWidth(130);
 			langText.setFitHeight(20);
