@@ -27,8 +27,9 @@ public class switchingQuestionForNormalMath {
 	static boolean checker = true;
 
 	public static void switchToQuestions(ActionEvent e, boolean languageChange,StackPane proot) {
-		point++;
+		
 		if (checker == true) {
+			point = -1;
 			for(int i=1;i<=10;i++) {
 				if(!check.contains(i)) {
 					check.add(i);
@@ -38,6 +39,7 @@ public class switchingQuestionForNormalMath {
 			Collections.shuffle(check);
 			checker = false;
 		}
+		point++;
 		if (point == 5) {
 			checker = true;
 			point = -1;

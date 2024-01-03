@@ -135,8 +135,6 @@ public class Category {
 	public static Object cleanup;
 
 	public static void switchToScene1(ActionEvent event, int SelectValue, boolean lanSwap) {
-		
-		
 		System.gc();
 		languageChange = lanSwap;
 		application.Mathematics.MathResult.scV = SelectValue;
