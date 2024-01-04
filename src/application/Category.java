@@ -148,7 +148,7 @@ public class Category {
 		iq_test();
 		achievement();
 		lan_change();
-		if(Sound.cc) {
+		if(Main.cc) {
 			back.setDisable(true);
 			lan_button.setDisable(true);
         	math_button.setDisable(true);
@@ -185,8 +185,9 @@ public class Category {
                     }
                 }
             });
-			Sound.cc = false;
+			Main.cc = false;
 		}
+		
 		// Retrieve the stage from the event source
 		currentStage = (Stage) ((Button) event.getSource()).getScene().getWindow();
 		scene1 = new Scene(root);
@@ -198,6 +199,7 @@ public class Category {
 	}
 
 	private static void back(ActionEvent event) {
+		Main.cc = true;
 		clickSound.playClickSound();
 		s = currentStage;
 		currentStage.setHeight(s.getHeight());

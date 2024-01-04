@@ -89,7 +89,7 @@ public class Main extends Application {
 	Category cat = new Category();
 	
 	Sound clickSound = new Sound();
-	
+	static boolean cc = true;
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		primaryStage.getIcons().addAll(icon,icon1);

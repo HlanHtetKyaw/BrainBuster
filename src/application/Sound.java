@@ -17,7 +17,7 @@ public class Sound {
 	static Clip Bgclip;
 	static Clip Welclip;
 	static boolean check = true;
-	static boolean cc = true;
+	
 	public void playBgSound() {
 		String soundFile = "/application/Test/bg.wav";
         URL url = getClass().getResource(soundFile);
@@ -43,8 +43,16 @@ public class Sound {
 	}
 	public void playWelcomeSound() {
 		String soundFile = "/application/Test/welcome.wav";
-        URL url = getClass().getResource(soundFile);
-       
+		String soundFileM = "/application/Test/welcomeM.wav";
+		URL url;
+		float dB;
+		if(Main.lanSwap) {
+			url = getClass().getResource(soundFile);
+			dB = (float) (Math.log(0.2) / Math.log(10.0) * 20.0);
+		}else {
+			dB = (float) (Math.log(0.2) / Math.log(10.0) * 20.0);
+			url = getClass().getResource(soundFileM);
+		}
         AudioInputStream audioStream;
 		try {
 			audioStream = AudioSystem.getAudioInputStream(url);
@@ -56,7 +64,7 @@ public class Sound {
 		} 
         
 		FloatControl volume = (FloatControl) Welclip.getControl(FloatControl.Type.MASTER_GAIN);
-		float dB = (float) (Math.log(0.2) / Math.log(10.0) * 20.0);
+		
 		volume.setValue(dB);
 			Welclip.start();
 		
