@@ -33,7 +33,7 @@ public class Sound {
 		} 
         
 		FloatControl volume = (FloatControl) Bgclip.getControl(FloatControl.Type.MASTER_GAIN);
-		float dB = (float) (Math.log(0.1) / Math.log(10.0) * 20.0);
+		float dB = (float) (Math.log(1) / Math.log(10.0) * 20.0);
 		volume.setValue(dB);
 		
 			Bgclip.start();
@@ -48,9 +48,9 @@ public class Sound {
 		float dB;
 		if(Main.lanSwap) {
 			url = getClass().getResource(soundFile);
-			dB = (float) (Math.log(0.2) / Math.log(10.0) * 20.0);
+			dB = (float) (Math.log(1) / Math.log(10.0) * 20.0);
 		}else {
-			dB = (float) (Math.log(0.2) / Math.log(10.0) * 20.0);
+			dB = (float) (Math.log(1) / Math.log(10.0) * 20.0);
 			url = getClass().getResource(soundFileM);
 		}
         AudioInputStream audioStream;
@@ -84,7 +84,7 @@ public class Sound {
 			} 
 	        
 			FloatControl volume = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
-			float dB = (float) (Math.log(0.3) / Math.log(10.0) * 20.0);
+			float dB = (float) (Math.log(1) / Math.log(10.0) * 20.0);
 			volume.setValue(dB);
 			if(check) {
 				clip.start();

@@ -253,7 +253,7 @@ public class Main extends Application {
 		alert.initModality(Modality.APPLICATION_MODAL);
 
 		ComboBox<Integer> ageBox = new ComboBox<>();
-		for (int i = 1; i <= 18; i++) {
+		for (int i = 5; i <= 18; i++) {
 			ageBox.getItems().addAll(i);
 		}
 		ageBox.setPrefSize(75, 25);
