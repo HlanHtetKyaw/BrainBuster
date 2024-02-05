@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
-
+import application.Mathematics.Math11To20.*;
 import javafx.event.ActionEvent;
 import javafx.scene.layout.StackPane;
 
@@ -19,9 +19,9 @@ public class switchingQuestionForEasyMath {
 	static _8MathE eightMath = new _8MathE();
 	static _9MathE nineMath = new _9MathE();
 	static _10MathE tenMath = new _10MathE();
+	static _11MathE elevenMath = new _11MathE();
 
-
-	static int NOQ = 10;
+	static int NOQ = 11;
 	static Random random = new Random();
 	static int point = -1;
 	static List<Integer> check = new ArrayList<>();
@@ -31,17 +31,18 @@ public class switchingQuestionForEasyMath {
 		
 		if (checker == true) {
 			point = -1;
-			for(int i=1;i<=10;i++) {
+			for(int i=1;i<=NOQ;i++) {
 				if(!check.contains(i)) {
 					check.add(i);
 				}	
 			}
 			// Shuffle the list to get random order
-			Collections.shuffle(check);
+			//Collections.shuffle(check);
+			Collections.sort(check);
 			checker = false;
 		}
 		point++;
-		if (point == 5) {
+		if (point == 11) {
 			checker = true;
 			point = -1;
 			if (conditionToStopLoop()) {
@@ -83,6 +84,9 @@ public class switchingQuestionForEasyMath {
 				break;
 			case 10:
 				tenMath.switchToDifficulty(e, languageChange, proot);
+				break;
+			case 11:
+				elevenMath.switchToDifficulty(e, languageChange, proot);
 				break;
 			default:
 				System.out.println("error generated");
