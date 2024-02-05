@@ -97,7 +97,7 @@ public class _0CommonLogicDiff extends Application {
 	
 	int mark=0;
 	
-	static Sound sound = new Sound();
+	public static Sound sound = new Sound();
 	
 	public void setQEng(String pathQEng) {
 		this.qEngPath = pathQEng;

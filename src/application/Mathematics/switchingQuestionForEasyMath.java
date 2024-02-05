@@ -20,8 +20,17 @@ public class switchingQuestionForEasyMath {
 	static _9MathE nineMath = new _9MathE();
 	static _10MathE tenMath = new _10MathE();
 	static _11MathE elevenMath = new _11MathE();
+	static _12MathE twelveMath = new _12MathE();
+	static _13MathE thirteenMath = new _13MathE();
+	static _14MathE fourteenMath = new _14MathE();
+	static _15MathE fifthteenMath = new _15MathE();
+	static _16MathE sixteenMath = new _16MathE();
+	static _17MathE seventeenMath = new _17MathE();
+	static _18MathE eighteenMath = new _18MathE();
+	static _19MathE ninteenMath = new _19MathE();
+	static _20MathE twentyMath = new _20MathE();
 
-	static int NOQ = 11;
+	static int NOQ = 20;
 	static Random random = new Random();
 	static int point = -1;
 	static List<Integer> check = new ArrayList<>();
@@ -37,12 +46,11 @@ public class switchingQuestionForEasyMath {
 				}	
 			}
 			// Shuffle the list to get random order
-			//Collections.shuffle(check);
-			Collections.sort(check);
+			Collections.shuffle(check);
 			checker = false;
 		}
 		point++;
-		if (point == 11) {
+		if (point == 5) {
 			checker = true;
 			point = -1;
 			if (conditionToStopLoop()) {
@@ -87,6 +95,33 @@ public class switchingQuestionForEasyMath {
 				break;
 			case 11:
 				elevenMath.switchToDifficulty(e, languageChange, proot);
+				break;
+			case 12:
+				twelveMath.switchToDifficulty(e, languageChange, proot);
+				break;
+			case 13:
+				thirteenMath.switchToDifficulty(e, languageChange, proot);
+				break;
+			case 14:
+				fourteenMath.switchToDifficulty(e, languageChange, proot);
+				break;
+			case 15:
+				fifthteenMath.switchToDifficulty(e, languageChange, proot);
+				break;
+			case 16:
+				sixteenMath.switchToDifficulty(e, languageChange, proot);
+				break;
+			case 17:
+				seventeenMath.switchToDifficulty(e, languageChange, proot);
+				break;
+			case 18:
+				eighteenMath.switchToDifficulty(e, languageChange, proot);
+				break;
+			case 19:
+				ninteenMath.switchToDifficulty(e, languageChange, proot);
+				break;
+			case 20:
+				twentyMath.switchToDifficulty(e, languageChange, proot);
 				break;
 			default:
 				System.out.println("error generated");

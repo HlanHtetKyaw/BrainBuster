@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Random;
 
 import application.Mathematics.MathResult;
+import application.MathematicsAdult.Math11To20.*;
 import javafx.event.ActionEvent;
 import javafx.scene.layout.StackPane;
 
@@ -20,8 +21,18 @@ public class switchingQuestionForEasyMathA {
 	static _8MathE eightMath = new _8MathE();
 	static _9MathE nineMath = new _9MathE();
 	static _10MathE tenMath = new _10MathE();
+	static _11MathE elevenMath = new _11MathE();
+	static _12MathE twelveMath = new _12MathE();
+	static _13MathE thirteenMath = new _13MathE();
+	static _14MathE fourteenMath = new _14MathE();
+	static _15MathE fifthteenMath = new _15MathE();
+	static _16MathE sixteenMath = new _16MathE();
+	static _17MathE seventeenMath = new _17MathE();
+	static _18MathE eighteenMath = new _18MathE();
+	static _19MathE ninteenMath = new _19MathE();
+	static _20MathE twentyMath = new _20MathE();
 	
-	static int NOQ = 10;
+	static int NOQ = 20;
 	static Random random = new Random();
 	static int point = -1;
 	public static List<Integer> check = new ArrayList<>();
@@ -31,7 +42,7 @@ public class switchingQuestionForEasyMathA {
 		
 		if (checker == true) {
 			point = -1;
-			for(int i=1;i<=10;i++) {
+			for(int i=1;i<=NOQ;i++) {
 				if(!check.contains(i)) {
 					check.add(i);
 				}	
@@ -71,6 +82,36 @@ public class switchingQuestionForEasyMathA {
 			case 9:nineMath.switchToDifficulty(e, languageChange, proot);
 				break;
 			case 10:tenMath.switchToDifficulty(e, languageChange, proot);
+				break;
+			case 11:
+				elevenMath.switchToDifficulty(e, languageChange, proot);
+				break;
+			case 12:
+				twelveMath.switchToDifficulty(e, languageChange, proot);
+				break;
+			case 13:
+				thirteenMath.switchToDifficulty(e, languageChange, proot);
+				break;
+			case 14:
+				fourteenMath.switchToDifficulty(e, languageChange, proot);
+				break;
+			case 15:
+				fifthteenMath.switchToDifficulty(e, languageChange, proot);
+				break;
+			case 16:
+				sixteenMath.switchToDifficulty(e, languageChange, proot);
+				break;
+			case 17:
+				seventeenMath.switchToDifficulty(e, languageChange, proot);
+				break;
+			case 18:
+				eighteenMath.switchToDifficulty(e, languageChange, proot);
+				break;
+			case 19:
+				ninteenMath.switchToDifficulty(e, languageChange, proot);
+				break;
+			case 20:
+				twentyMath.switchToDifficulty(e, languageChange, proot);
 				break;
 			default:
 				System.out.println("error generated");

@@ -7,6 +7,7 @@ import java.util.Random;
 
 import javafx.event.ActionEvent;
 import javafx.scene.layout.StackPane;
+import application.LogicAdult.Logic11To20.*;
 import application.Mathematics.*;
 
 public class switchingQuestionForEasyLogicAdult {
@@ -20,8 +21,18 @@ public class switchingQuestionForEasyLogicAdult {
 	static _8LogicE eightLogic = new _8LogicE();
 	static _9LogicE nineLogic = new _9LogicE();
 	static _10LogicE tenLogic = new _10LogicE();
+	static _11LogicE elevenLogic = new _11LogicE();
+	static _12LogicE twelveLogic = new _12LogicE();
+	static _13LogicE thirteenLogic = new _13LogicE();
+	static _14LogicE fourteenLogic = new _14LogicE();
+	static _15LogicE fifthteenLogic = new _15LogicE();
+	static _16LogicE sixteenLogic = new _16LogicE();
+	static _17LogicE seventeenLogic = new _17LogicE();
+	static _18LogicE eighteenLogic = new _18LogicE();
+	static _19LogicE ninteenLogic = new _19LogicE();
+	static _20LogicE twentyLogic = new _20LogicE();
 
-	static int NOQ = 10;
+	static int NOQ = 20;
 	static Random random = new Random();
 	static int point = -1;
 	public static List<Integer> check = new ArrayList<>();
@@ -31,7 +42,7 @@ public class switchingQuestionForEasyLogicAdult {
 		
 		if (checker == true) {
 			point = -1;
-			for(int i=1;i<=10;i++) {
+			for(int i=1;i<=NOQ;i++) {
 				if(!check.contains(i)) {
 					check.add(i);
 				}	
@@ -81,6 +92,36 @@ public class switchingQuestionForEasyLogicAdult {
 				break;
 			case 10:
 				tenLogic.switchToDifficulty(e, languageChange, proot);
+				break;
+			case 11:
+				elevenLogic.switchToDifficulty(e, languageChange, proot);
+				break;
+			case 12:
+				twelveLogic.switchToDifficulty(e, languageChange, proot);
+				break;
+			case 13:
+				thirteenLogic.switchToDifficulty(e, languageChange, proot);
+				break;
+			case 14:
+				fourteenLogic.switchToDifficulty(e, languageChange, proot);
+				break;
+			case 15:
+				fifthteenLogic.switchToDifficulty(e, languageChange, proot);
+				break;
+			case 16:
+				sixteenLogic.switchToDifficulty(e, languageChange, proot);
+				break;
+			case 17:
+				seventeenLogic.switchToDifficulty(e, languageChange, proot);
+				break;
+			case 18:
+				eighteenLogic.switchToDifficulty(e, languageChange, proot);
+				break;
+			case 19:
+				ninteenLogic.switchToDifficulty(e, languageChange, proot);
+				break;
+			case 20:
+				twentyLogic.switchToDifficulty(e, languageChange, proot);
 				break;
 			default:
 				System.out.println("error generated");
