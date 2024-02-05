@@ -61,7 +61,7 @@ public class IqQuestions {
 			Collections.shuffle(check);
 			checker = false;
 		}
-		if (point == NOQ) {
+		if (point == 7) {
 			checker = true;
 			point = -1;
 			if (conditionToStopLoop()) {

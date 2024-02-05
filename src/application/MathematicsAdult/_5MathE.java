@@ -323,6 +323,9 @@ public class _5MathE extends Application {
 		b4.setDisable(false);
 	}
 	private void clickForward(ActionEvent e) {
+		if(checker) {
+			MathResultCheck.check();
+		}
 		rectangle1.getChildren().clear();
 		rectangle2.getChildren().clear();
 		switchingQuestionForEasyMathA.switchToQuestions(e, languageChange, root);

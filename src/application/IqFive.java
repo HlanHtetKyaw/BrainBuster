@@ -401,6 +401,7 @@ public class IqFive {
 		pause.setOnFinished(e -> up.play());
 		down.play();
 		up.setOnFinished(e -> {
+			submit.setDisable(false);
 			IqQuestions.switchToIqQuestions(ea, languageChange,root);
 			timeLine.stop();
 			parallelTransition.stop();

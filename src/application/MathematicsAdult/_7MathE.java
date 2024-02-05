@@ -57,15 +57,19 @@ c.setQEng("Math/MathQ/_7MathQA.png");
 	c.setA4MM("Math/7MathAnsAdult/a4.png");
 	
 	c.b1.setOnAction(e->{
+		Category.clickSound.playWrongSound();
 		c.clickWrong();
 	});
 	c.b2.setOnAction(e->{
+		Category.clickSound.playWrongSound();
 		c.clickWrong();
 	});
 	c.b3.setOnAction(e->{
+		Category.clickSound.playCorrectSound();
 		c.clickCorrect();
 	});
 	c.b4.setOnAction(e->{
+		Category.clickSound.playWrongSound();
 		c.clickWrong();
 	});
 	c.switchToDifficulty(ea, languageChange, sp);
