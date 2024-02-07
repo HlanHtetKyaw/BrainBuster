@@ -10,7 +10,7 @@ public class IqResultCheck {
 		System.out.println("result: "+correct);
 	}
 	static double getScore() {
-		correct = (correct/20) * 100;
+		correct = (correct/7) * 100;
 		percent = correct;
 		correct = correct/100;
 		return correct;
