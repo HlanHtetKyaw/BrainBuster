@@ -11,10 +11,10 @@ public class _20MathE {
 
 
 		c.setQEng("Math/MathQ/_20MathQA.png");
-		c.a1Eng = "21 and 23";
-		c.a2Eng = "22 and 22";
-		c.a3Eng = "44 and 00";
-		c.a4Eng = "11 and 23";
+		c.a1Eng = "81";
+		c.a2Eng = "49";
+		c.a3Eng = "55";
+		c.a4Eng = "63";
 		
 		c.setQMM("Math/MathQ/_20MathQMMA.png");
 		c.setA1MM("Math/20MathAnsAdult/a1.png");
@@ -23,8 +23,8 @@ public class _20MathE {
 		c.setA4MM("Math/20MathAnsAdult/a4.png");
 		
 		c.b1.setOnAction(e->{
-			Category.clickSound.playCorrectSound();
-			c.clickCorrect();
+			Category.clickSound.playWrongSound();
+			c.clickWrong();
 		});
 		c.b2.setOnAction(e->{
 			Category.clickSound.playWrongSound();
@@ -35,8 +35,8 @@ public class _20MathE {
 			c.clickWrong();
 		});
 		c.b4.setOnAction(e->{
-			Category.clickSound.playWrongSound();
-			c.clickWrong();
+			Category.clickSound.playCorrectSound();
+			c.clickCorrect();
 		});
 		
 		

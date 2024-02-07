@@ -11,10 +11,10 @@ public class _17MathE {
 
 
 		c.setQEng("Math/MathQ/_17MathQA.png");
-		c.a1Eng = "10";
-		c.a2Eng = "7";
-		c.a3Eng = "5";
-		c.a4Eng = "30";
+		c.a1Eng = "32";
+		c.a2Eng = "22";
+		c.a3Eng = "100";
+		c.a4Eng = "999999";
 		
 		c.setQMM("Math/MathQ/_17MathQMMA.png");
 		c.setA1MM("Math/17MathAnsAdult/a1.png");
@@ -23,16 +23,16 @@ public class _17MathE {
 		c.setA4MM("Math/17MathAnsAdult/a4.png");
 		
 		c.b1.setOnAction(e->{
-			Category.clickSound.playWrongSound();
-			c.clickWrong();
+			Category.clickSound.playCorrectSound();
+			c.clickCorrect();
 		});
 		c.b2.setOnAction(e->{
 			Category.clickSound.playWrongSound();
 			c.clickWrong();
 		});
 		c.b3.setOnAction(e->{
-			Category.clickSound.playCorrectSound();
-			c.clickCorrect();
+			Category.clickSound.playWrongSound();
+			c.clickWrong();
 		});
 		c.b4.setOnAction(e->{
 			Category.clickSound.playWrongSound();

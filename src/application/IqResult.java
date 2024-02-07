@@ -228,16 +228,16 @@ public class IqResult{
 		
 		if(resultValue<=20 && resultValue>=15) {
 		result.setText(" Congratulation!\n"
-				+ "    You correct "+resultValue+"\n\tout of 20\n       questions.");
+				+ "    You correct "+resultValue+"\n\tout of 7\n       questions.");
 		}else if(resultValue<=15 && resultValue>=10) {
 			result.setText(" Nice!Not bad at all.\n"
-					+ "    You correct "+resultValue+"\n\tout of 20\n       questions.");
+					+ "    You correct "+resultValue+"\n\tout of 7\n       questions.");
 		}else if(resultValue<=10 && resultValue>=5) {
 			result.setText(" Try it harder!Kiddo.\n"
-					+ "    You correct "+resultValue+"\n\tout of 20\n       questions.");
+					+ "    You correct "+resultValue+"\n\tout of 7\n       questions.");
 		}else {
 			result.setText("Oops!Don't worry,\nyou still have\nroom for improvement\n"
-					+ "You correct "+resultValue+" out of 20\nquestions.");
+					+ "You correct "+resultValue+" out of 7\nquestions.");
 		}
 
 		if(percentValue<=100 && percentValue>=90) {

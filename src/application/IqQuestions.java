@@ -40,6 +40,7 @@ public class IqQuestions {
 	static boolean checker = true;
 
 	static void switchToIqQuestions(ActionEvent e, boolean languageChange,StackPane proot) {
+
 		point++;
 		System.out.println("checker "+checker);
 		if (checker == true) {
@@ -59,6 +60,7 @@ public class IqQuestions {
 
 			// Shuffle the list to get random order
 			Collections.shuffle(check);
+			
 			checker = false;
 		}
 		if (point == 7) {

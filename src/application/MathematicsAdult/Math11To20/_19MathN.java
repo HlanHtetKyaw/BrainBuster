@@ -10,10 +10,10 @@ public class _19MathN {
 		_0CommonNor c = new _0CommonNor();
 
 		c.setQEng("Math/MathQ/_19MathQA.png");
-		c.a1Eng = "81";
-		c.a2Eng = "49";
-		c.a3Eng = "55";
-		c.a4Eng = "63";
+		c.a1Eng = "600,000 cm square";
+		c.a2Eng = "60 cm square";
+		c.a3Eng = "600 cm square";
+		c.a4Eng = "6 cm square";
 		
 		c.setQMM("Math/MathQ/_19MathQMMA.png");
 		c.setA1MM("Math/19MathAnsAdult/a1.png");
@@ -22,8 +22,8 @@ public class _19MathN {
 		c.setA4MM("Math/19MathAnsAdult/a4.png");
 		
 		c.b1.setOnAction(e->{
-			Category.clickSound.playWrongSound();
-			c.clickWrong();
+			Category.clickSound.playCorrectSound();
+			c.clickCorrect();
 		});
 		c.b2.setOnAction(e->{
 			Category.clickSound.playWrongSound();
@@ -34,8 +34,8 @@ public class _19MathN {
 			c.clickWrong();
 		});
 		c.b4.setOnAction(e->{
-			Category.clickSound.playCorrectSound();
-			c.clickCorrect();
+			Category.clickSound.playWrongSound();
+			c.clickWrong();
 		});
 		
 		

@@ -37,7 +37,6 @@ public class switchingQuestionForEasyMathA {
 	static int point = -1;
 	public static List<Integer> check = new ArrayList<>();
 	public static boolean checker = true;
-
 	public static void switchToQuestions(ActionEvent e, boolean languageChange,StackPane proot) {
 		
 		if (checker == true) {
@@ -49,6 +48,7 @@ public class switchingQuestionForEasyMathA {
 			}
 			// Shuffle the list to get random order
 			Collections.shuffle(check);
+			//Collections.sort(check);
 			checker = false;
 		}
 		point++;

@@ -10,10 +10,10 @@ public class _15MathD {
 		_0CommonDiff c = new _0CommonDiff();
 
 		c.setQEng("Math/MathQ/_15MathQA.png");
-		c.a1Eng = "7";
-		c.a2Eng = "3";
-		c.a3Eng = "4";
-		c.a4Eng = "12";
+		c.a1Eng = "27";
+		c.a2Eng = "17";
+		c.a3Eng = "25";
+		c.a4Eng = "77";
 		
 		c.setQMM("Math/MathQ/_15MathQMMA.png");
 		c.setA1MM("Math/15MathAnsAdult/a1.png");
@@ -22,16 +22,16 @@ public class _15MathD {
 		c.setA4MM("Math/15MathAnsAdult/a4.png");
 		
 		c.b1.setOnAction(e->{
-			Category.clickSound.playCorrectSound();
-			c.clickCorrect();
+			Category.clickSound.playWrongSound();
+			c.clickWrong();
 		});
 		c.b2.setOnAction(e->{
 			Category.clickSound.playWrongSound();
 			c.clickWrong();
 		});
 		c.b3.setOnAction(e->{
-			Category.clickSound.playWrongSound();
-			c.clickWrong();
+			Category.clickSound.playCorrectSound();
+			c.clickCorrect();
 		});
 		c.b4.setOnAction(e->{
 			Category.clickSound.playWrongSound();

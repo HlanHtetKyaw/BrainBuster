@@ -11,10 +11,10 @@ public class _16MathE {
 
 
 		c.setQEng("Math/MathQ/_16MathQA.png");
-		c.a1Eng = "32";
-		c.a2Eng = "22";
-		c.a3Eng = "100";
-		c.a4Eng = "999999";
+		c.a1Eng = "7";
+		c.a2Eng = "3";
+		c.a3Eng = "4";
+		c.a4Eng = "12";
 		
 		c.setQMM("Math/MathQ/_16MathQMMA.png");
 		c.setA1MM("Math/16MathAnsAdult/a1.png");

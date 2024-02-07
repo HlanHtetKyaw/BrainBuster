@@ -10,10 +10,10 @@ public class _14MathN {
 		_0CommonNor c = new _0CommonNor();
 
 		c.setQEng("Math/MathQ/_14MathQA.png");
-		c.a1Eng = "27";
-		c.a2Eng = "17";
-		c.a3Eng = "25";
-		c.a4Eng = "77";
+		c.a1Eng = "22";
+		c.a2Eng = "11";
+		c.a3Eng = "32";
+		c.a4Eng = "33";
 		
 		c.setQMM("Math/MathQ/_14MathQMMA.png");
 		c.setA1MM("Math/14MathAnsAdult/a1.png");
@@ -22,16 +22,16 @@ public class _14MathN {
 		c.setA4MM("Math/14MathAnsAdult/a4.png");
 		
 		c.b1.setOnAction(e->{
-			Category.clickSound.playWrongSound();
-			c.clickWrong();
+			Category.clickSound.playCorrectSound();
+			c.clickCorrect();
 		});
 		c.b2.setOnAction(e->{
 			Category.clickSound.playWrongSound();
 			c.clickWrong();
 		});
 		c.b3.setOnAction(e->{
-			Category.clickSound.playCorrectSound();
-			c.clickCorrect();
+			Category.clickSound.playWrongSound();
+			c.clickWrong();
 		});
 		c.b4.setOnAction(e->{
 			Category.clickSound.playWrongSound();
