@@ -77,6 +77,7 @@ public class MathResult extends Application{
 	ImageView medalImg = new ImageView(medal);
 	ImageView mathMMImg = new ImageView(mathMM);
 	ImageView logicMMImg = new ImageView(logicMM);
+	ImageView geoMMImg = new ImageView(new Image("GeoMB.png"));
 	ImageView ezMMImg = new ImageView(ezMM);
 	ImageView norMMImg = new ImageView(norMM);
 	ImageView diffMMImg = new ImageView(diffMM);
@@ -119,10 +120,12 @@ public class MathResult extends Application{
 		root = new StackPane();
 		root.setStyle("-fx-background-color: #66676D");
 		
-		if(through) {
+		if(through=='m') {
 			math();
-		}else {
+		}else if(through=='l'){
 			log();
+		}else if(through=='g') {
+			geo();
 		}
 		
 		if(filt==0) {
@@ -150,10 +153,12 @@ public class MathResult extends Application{
 	public void start(Stage primaryStage) throws Exception {
 		root = new StackPane();
 		root.setStyle("-fx-background-color: #66676D");
-		if(through) {
+		if(through=='m') {
 			math();
-		}else {
+		}else if(through=='l'){
 			log();
+		}else if(through=='g') {
+			geo();
 		}
 		if(filt==0) {
 			ez();
@@ -317,14 +322,8 @@ public class MathResult extends Application{
         rectangle2.getChildren().add(r3Label);
         timeline.play();
 	}
-	static boolean through;
-	public static void modeFilter(boolean filter) {
-		if(filter) {
-				through = true;
-		}else {
-			through = false;
-		}
-	}
+	public static char through;
+
 	static int filt;
 	public static void lvlFilter(int filter) {
 		filt = filter;
@@ -372,6 +371,11 @@ public class MathResult extends Application{
 			logicMMImg.setFitHeight(30);
 			modeDis.setGraphic(logicMMImg);
 		}
+	}
+	void geo() {
+			geoMMImg.setFitWidth(150);
+			geoMMImg.setFitHeight(30);
+			modeDis.setGraphic(geoMMImg);
 	}
 	void ez() {
 		if(languageChange) {

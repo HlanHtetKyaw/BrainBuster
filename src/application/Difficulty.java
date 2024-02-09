@@ -29,6 +29,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import application.GeoAndHis.*;
 
 public class Difficulty {
 	Scene scene1;
@@ -82,9 +83,9 @@ public class Difficulty {
 
 	boolean languageChange;///////////////////////// to delete true
 	boolean nonesense = false;
-	boolean choose;
+	char choose;
 	int selectValue;
-	public void switchToDifficulty(ActionEvent event, boolean languageChange,StackPane proot,boolean choose,int SelectValue) {
+	public void switchToDifficulty(ActionEvent event, boolean languageChange,StackPane proot,char choose,int SelectValue) {
 		this.languageChange = languageChange;
 		this.choose = choose;
 		this.selectValue = SelectValue;
@@ -224,7 +225,7 @@ public class Difficulty {
 		ez.setOnAction(e->{
 			Category.clickSound.playClickSound();
 			application.Mathematics.MathResult.lvlFilter(0);
-			if(choose) {
+			if(choose=='m') {
 				if(selectValue<=18 && selectValue>=12) {
 					System.out.println("Adult");
 					switchingQuestionForEasyMathA.switchToQuestions(e, languageChange, root);
@@ -233,7 +234,7 @@ public class Difficulty {
 					switchingQuestionForEasyMath.switchToQuestions(e, languageChange, root);
 				}
 			}
-			else {
+			else if(choose=='l'){
 				if(selectValue<=18 && selectValue>=12) {
 					System.out.println("Adult");
 					switchingQuestionForEasyLogicAdult.switchToQuestions(e, languageChange, root);
@@ -241,6 +242,8 @@ public class Difficulty {
 					System.out.println("child");
 					switchingQuestionForEasyLogic.switchToQuestions(e, languageChange, root);
 				}
+			}else if(choose=='g'){
+				switchingQuestionForEasyGeoAndHis.switchToQuestions(e, false, root);
 			}
 		});
 		Rectangle line = new Rectangle();
@@ -285,7 +288,7 @@ public class Difficulty {
 		nm.setOnAction(e->{
 			Category.clickSound.playClickSound();
 			application.Mathematics.MathResult.lvlFilter(1);
-			if(choose) {
+			if(choose=='m') {
 				if(selectValue<=18 && selectValue>=12) {
 					System.out.println("Adult");
 					switchingQuestionForNormalMathA.switchToQuestions(e, languageChange, root);
@@ -294,7 +297,7 @@ public class Difficulty {
 					switchingQuestionForNormalMath.switchToQuestions(e, languageChange, root);
 				}
 			}
-			else {
+			else if(choose=='l'){
 				if(selectValue<=18 && selectValue>=12) {
 					System.out.println("Adult");
 					switchingQuestionForNormalLogicAdult.switchToQuestions(e, languageChange, root);
@@ -302,6 +305,8 @@ public class Difficulty {
 					System.out.println("child");
 					switchingQuestionForNormalLogic.switchToQuestions(e, languageChange, root);
 				}
+			}else if(choose=='g') {
+				switchingQuestionForNormalGeoAndHis.switchToQuestions(e, false, root);
 			}
 		});
 		StackPane.setAlignment(nm, Pos.CENTER_LEFT);
@@ -349,7 +354,7 @@ public class Difficulty {
 		df.setOnAction(e->{
 			Category.clickSound.playClickSound();
 			application.Mathematics.MathResult.lvlFilter(2);
-			if(choose) {
+			if(choose=='m') {
 				if(selectValue<=18 && selectValue>=12) {
 					System.out.println("Adult");
 					switchingQuestionForDiffMathA.switchToQuestions(e, languageChange, root);
@@ -358,7 +363,7 @@ public class Difficulty {
 					switchingQuestionForDiffMath.switchToQuestions(e, languageChange, root);
 				}
 			}
-			else {
+			else if(choose=='l'){
 				if(selectValue<=18 && selectValue>=12) {
 					System.out.println("Adult");
 					switchingQuestionForDiffLogicAdult.switchToQuestions(e, languageChange, root);
@@ -366,6 +371,8 @@ public class Difficulty {
 					System.out.println("child");
 					switchingQuestionForDiffLogic.switchToQuestions(e, languageChange, root);
 				}
+			}else if(choose=='g') {
+				switchingQuestionForDiffGeoAndHis.switchToQuestions(e, false, root);
 			}
 		});
 		StackPane.setAlignment(df, Pos.CENTER_LEFT);

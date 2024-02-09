@@ -9,6 +9,7 @@ import javafx.animation.ParallelTransition;
 import javafx.animation.RotateTransition;
 import javafx.animation.ScaleTransition;
 import javafx.animation.TranslateTransition;
+import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
@@ -29,7 +30,7 @@ import javafx.scene.*;
 import javafx.scene.control.*;
 import javafx.scene.control.Alert.*;
 
-public class Category {
+public class Category{
 
 	static Scene scene1;
 	static Stage currentStage;
@@ -50,6 +51,7 @@ public class Category {
 	static Button name;
 	static Button soundButton;
 	static Button vfxButton;
+	static Button achButton;
 
 	static Text Myanmar;
 	static Text English;
@@ -70,11 +72,11 @@ public class Category {
 	static Image M_Math = new Image("m_math.png");
 	static Image M_Logic = new Image("m_logic.png");
 	static Image M_IQ = new Image("m_iq.png");
-	static Image M_Ach = new Image("m_ach.png");
+	static Image M_Ach = new Image("GeoM.png");
 	static Image M_MathB = new Image("m_mathB.png");
 	static Image M_LogicB = new Image("m_logicB.png");
 	static Image M_IQB = new Image("m_iqB.png");
-	static Image M_AchB = new Image("m_achB.png");
+	static Image M_AchB = new Image("GeoMB.png");
 	static Image Moon = new Image("moon.png");
 	static Image Cone = new Image("cone.png");
 	static Image Pyramid = new Image("pyramid.png");
@@ -95,6 +97,8 @@ public class Category {
 	static ImageView vfxMCImg = new ImageView(new Image("Sound/vfxSoundMC.png"));
 	static ImageView vfxEImg = new ImageView(new Image("Sound/vfxSoundE.png"));
 	static ImageView vfxECImg = new ImageView(new Image("Sound/vfxSoundEC.png"));
+	static ImageView achImg = new ImageView(new Image("trophy.png"));
+	
 	static ImageView soundECImg = new ImageView(soundEC);
 
 	static ImageView ideaImg = new ImageView(idea);
@@ -146,7 +150,7 @@ public class Category {
 		mathematics();
 		logic();
 		iq_test();
-		achievement();
+		geoAndHis();
 		lan_change();
 		if(Main.cc) {
 			back.setDisable(true);
@@ -163,6 +167,7 @@ public class Category {
         	name.setDisable(true);
         	soundButton.setDisable(true);
         	vfxButton.setDisable(true);
+        	achButton.setDisable(true);
 			clickSound.playWelcomeSound();
 			Sound.Welclip.addLineListener((LineListener) new LineListener() {
                 @Override
@@ -182,6 +187,7 @@ public class Category {
                     	name.setDisable(false);
                     	soundButton.setDisable(false);
                     	vfxButton.setDisable(false);
+                    	achButton.setDisable(false);
                     }
                 }
             });
@@ -197,7 +203,6 @@ public class Category {
 		currentStage.setScene(scene1);
 		currentStage.show();
 	}
-
 	private static void back(ActionEvent event) {
 		Main.cc = true;
 		clickSound.playClickSound();
@@ -342,7 +347,26 @@ public class Category {
 				sClickM = true;
 			}
 		});
+		
+		achButton = new Button();
+		achButton.getStyleClass().add("name");
+		achButton.setPrefSize(70, 70);
+		achImg.setFitWidth(40);
+		achImg.setFitHeight(40);
+		achButton.setGraphic(achImg);
+		achButton.setOnAction(e->{
+			clickSound.playClickSound();
+			Stage news = new Stage();
+			AchievementController ac = new AchievementController();
+			try {
+				ac.start(news, languageChange);
+			} catch (Exception a) {
 
+			}
+		});
+		StackPane.setAlignment(achButton, Pos.BOTTOM_LEFT);
+		StackPane.setMargin(achButton, new Insets(0, 0, 60, 500));
+		
 		rookieImg = new ImageView(Rookie);
 		rookieImg.setFitWidth(55);
 		rookieImg.setFitHeight(77);
@@ -384,7 +408,7 @@ public class Category {
 		default:
 			System.out.println("no error");
 		}
-		root.getChildren().addAll(name, profile, soundButton, vfxButton);
+		root.getChildren().addAll(name, profile, soundButton, vfxButton,achButton);
 	}
 
 	private static void elements() {
@@ -508,10 +532,12 @@ public class Category {
 		languageChange = !languageChange;
 		lan_change();
 	}
-
+	static int butL = 410;
+	static int butH = 65;
+	
 	private static void mathematics() {
 		math_in_button = new Button();
-		math_in_button.setPrefSize(410, 65);
+		math_in_button.setPrefSize(butL, butH);
 		math_in_button.getStyleClass().add("category_in_button");
 
 		math_button = new Button();
@@ -543,8 +569,8 @@ public class Category {
 		math_button.setOnAction(event -> {
 			clickSound.playClickSound();
 			Difficulty d = new Difficulty();
-			d.switchToDifficulty(event, languageChange, root, true, selectValue);
-			application.Mathematics.MathResult.modeFilter(true);
+			d.switchToDifficulty(event, languageChange, root, 'm', selectValue);
+			application.Mathematics.MathResult.through = 'm';
 			root.getChildren().clear();
 		});
 		root.getChildren().addAll(math_button);
@@ -552,7 +578,7 @@ public class Category {
 
 	private static void logic() {
 		lg_in_button = new Button();
-		lg_in_button.setPrefSize(410, 65);
+		lg_in_button.setPrefSize(butL, butH);
 		lg_in_button.getStyleClass().add("category_in_button");
 
 		lg_button = new Button();
@@ -584,9 +610,9 @@ public class Category {
 		lg_button.setOnAction(event -> {
 			clickSound.playClickSound();
 			Difficulty d = new Difficulty();
-			d.switchToDifficulty(event, languageChange, root, false, selectValue);
+			d.switchToDifficulty(event, languageChange, root, 'l', selectValue);
+			application.Mathematics.MathResult.through = 'l';
 			root.getChildren().clear();
-			application.Mathematics.MathResult.modeFilter(false);
 		});
 
 		root.getChildren().addAll(lg_button);
@@ -594,7 +620,7 @@ public class Category {
 
 	private static void iq_test() {
 		iq_in_button = new Button();
-		iq_in_button.setPrefSize(410, 65);
+		iq_in_button.setPrefSize(butL, butH);
 		iq_in_button.getStyleClass().add("category_in_button");
 
 		iq_button = new Button();
@@ -630,9 +656,9 @@ public class Category {
 		root.getChildren().addAll(iq_button);
 	}
 
-	private static void achievement() {
+	private static void geoAndHis() {
 		ach_in_button = new Button();
-		ach_in_button.setPrefSize(410, 65);
+		ach_in_button.setPrefSize(butL, butH);
 		ach_in_button.getStyleClass().add("category_in_button");
 
 		ach_button = new Button();
@@ -645,8 +671,8 @@ public class Category {
 				Ach.setFill(Color.BLACK);
 			} else {
 				m_AchB = new ImageView(M_AchB);
-				m_AchB.setFitWidth(120);
-				m_AchB.setFitHeight(55);
+				m_AchB.setFitWidth(150);
+				m_AchB.setFitHeight(50);
 				ach_in_button.setGraphic(m_AchB);
 			}
 		});
@@ -658,15 +684,12 @@ public class Category {
 				ach_in_button.setGraphic(m_Ach);
 			}
 		});
-		ach_button.setOnAction(e -> {
+		ach_button.setOnAction(event -> {
 			clickSound.playClickSound();
-			Stage news = new Stage();
-			AchievementController ac = new AchievementController();
-			try {
-				ac.start(news, languageChange);
-			} catch (Exception a) {
-
-			}
+			Difficulty d = new Difficulty();
+			d.switchToDifficulty(event, languageChange, root, 'g', selectValue);
+			application.Mathematics.MathResult.through = 'g';
+			root.getChildren().clear();
 		});
 		StackPane.setAlignment(ach_button, Pos.CENTER_RIGHT);
 		StackPane.setMargin(ach_button, new Insets(0, 150, -525, 0));
@@ -723,7 +746,7 @@ public class Category {
 			IQ.setFill(Color.WHITE);
 			iq_in_button.setGraphic(IQ);
 
-			Ach = new Text("ACHIEVEMENT");
+			Ach = new Text("Geography and History");
 			Ach.setFont(Mathematics_font);
 			Ach.setFill(Color.WHITE);
 			ach_in_button.setGraphic(Ach);
@@ -790,8 +813,8 @@ public class Category {
 			iq_in_button.setGraphic(m_IQ);
 
 			m_Ach = new ImageView(M_Ach);
-			m_Ach.setFitWidth(120);
-			m_Ach.setFitHeight(55);
+			m_Ach.setFitWidth(150);
+			m_Ach.setFitHeight(50);
 			ach_in_button.setGraphic(m_Ach);
 
 			root.getChildren().addAll(langText, catTextM);
