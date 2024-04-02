@@ -13,6 +13,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Background;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -42,6 +43,8 @@ public class _0CommonEz extends Application {
 	Label b2Label = new Label();
 	Label b3Label = new Label();
 	Label b4Label = new Label();
+	
+	public Label qMMQues = new Label();
 	
 	Image Arrow = new Image("arrow.png");
 	Image forw = new Image("Math/forward.png");
@@ -153,6 +156,14 @@ public class _0CommonEz extends Application {
 	/*This is only for developing part*/
 	public void start(Stage primaryStage) throws Exception {
 		root = new StackPane();
+		qMMQues.setWrapText(true);
+		qMMQues.setPadding(new Insets(50)); // Add padding for better appearance
+	   qMMQues.setStyle("-fx-text-align: center;"); // Center text
+	   Font b_font1 = Font.loadFont(getClass().getResourceAsStream("/MMF.ttf"), 32);
+	   qMMQues.setFont(b_font1);
+		qMMQues.setStyle("-fx-color:black;");
+		rectangle1.getChildren().add(qMMQues);
+		
 		root.setStyle("-fx-background-color: #F79630");
 		elements();
 		lan_change();
@@ -259,8 +270,11 @@ public class _0CommonEz extends Application {
 		StackPane.setAlignment(brainImg, Pos.TOP_RIGHT);
 		StackPane.setAlignment(boyImg, Pos.BOTTOM_LEFT);
 		
+
 		root.getChildren().addAll( back,rectangle1,b1,b2,b3,b4,rectangle2,forward,tryagain,teacherImg,brainImg,boyImg);
 	}
+	
+	
 	private void lan_change() {
 		if (languageChange) {
 			tryAgainImg.setVisible(false);
@@ -281,8 +295,19 @@ public class _0CommonEz extends Application {
 			if(!rectangle1.getChildren().contains(qEngImg)) {
 				rectangle1.getChildren().add(qEngImg);
 			}
-			
 			Font b_font = Font.loadFont(getClass().getResourceAsStream("/Poppin.ttf"), 30);
+			
+			
+//			qEngQues.setText("If seven cats catch seven rats\n"
+//					+ "\t\tin 7 minutes,\n"
+//					+ "how many cats would be\n"
+//					+ "	\tneeded\n"
+//					+ "to catch one hundred rats\n"
+//					+ "\t\tin 50 minutes?");
+			
+			
+			
+			
 			b1Label.setText(a1Eng);
 			b1Label.setTextFill(Color.BLACK);
 			b1Label.setFont(b_font);

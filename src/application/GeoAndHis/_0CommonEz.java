@@ -63,6 +63,7 @@ public class _0CommonEz extends Application {
 	public String a2Eng = "100";
 	public String a3Eng = "100";
 	public String a4Eng = "100";
+	public Label qMMQues = new Label();
 	
 	Image qEng = new Image(qEngPath);
 	
@@ -134,6 +135,14 @@ public class _0CommonEz extends Application {
 	public void switchToDifficulty(ActionEvent event, boolean languageChange,StackPane proot) {
 		this.languageChange = languageChange;
 		root = new StackPane();
+		qMMQues.setWrapText(true);
+		qMMQues.setPadding(new Insets(50)); // Add padding for better appearance
+	   qMMQues.setStyle("-fx-text-align: center;"); // Center text
+	   Font b_font1 = Font.loadFont(getClass().getResourceAsStream("/MMF.ttf"), 32);
+	   qMMQues.setFont(b_font1);
+		qMMQues.setStyle("-fx-color:black;");
+		rectangle1.getChildren().add(qMMQues);
+		
 		root.setStyle("-fx-background-color: #7ED957");
 
 		elements();
@@ -152,6 +161,14 @@ public class _0CommonEz extends Application {
 	/*This is only for developing part*/
 	public void start(Stage primaryStage) throws Exception {
 		root = new StackPane();
+		qMMQues.setWrapText(true);
+		qMMQues.setPadding(new Insets(50)); // Add padding for better appearance
+	   qMMQues.setStyle("-fx-text-align: center;"); // Center text
+	   Font b_font1 = Font.loadFont(getClass().getResourceAsStream("/MMF.ttf"), 32);
+	   qMMQues.setFont(b_font1);
+		qMMQues.setStyle("-fx-color:black;");
+		rectangle1.getChildren().add(qMMQues);
+		
 		root.setStyle("-fx-background-color: #7ED957");
 		elements();
 		lan_change();
@@ -303,7 +320,9 @@ public class _0CommonEz extends Application {
 				wroMMImg.setVisible(true);
 			}
 			tryagain.setGraphic(tryAgainImg);
-			rectangle1.getChildren().add(qMMImg);
+			if(qMMQues.getText().isEmpty()) {
+				rectangle1.getChildren().add(qMMImg);
+			}
 			b1.setGraphic(a1Img);
 			b2.setGraphic(a2Img);
 			b3.setGraphic(a3Img);

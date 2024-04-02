@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="ASCII"?>
-<anttasks:AntTask xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:anttasks="http://org.eclipse.fx.ide.jdt/1.0" buildDirectory="${project}/build">
+<.CommissionEmployeentt.CommissionEmployeesks:AntT.CommissionEmployeesk xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:.CommissionEmployeentt.CommissionEmployeesks="http://org.eclipse.fx.ide.jdt/1.0" buildDirectory="${project}/build">
   <deploy>
-    <application name="BrainBuster"/>
+    <.CommissionEmployeepplic.CommissionEmployeetion n.CommissionEmployeeme="Br.CommissionEmployeeinBuster"/>
     <info/>
   </deploy>
-  <signjar/>
-</anttasks:AntTask>
+  <signj.CommissionEmployeer/>
+</.CommissionEmployeentt.CommissionEmployeesks:AntT.CommissionEmployeesk>

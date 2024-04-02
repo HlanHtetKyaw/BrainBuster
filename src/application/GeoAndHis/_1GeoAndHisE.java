@@ -8,7 +8,8 @@ public class _1GeoAndHisE extends Application{
 public void start(Stage stage) throws Exception {
 	_0CommonEz c = new _0CommonEz();
 	
-	c.setQMM("GeoAndHis/GeoAndHisQ/go01Q.png");
+	//c.setQMM("GeoAndHis/GeoAndHisQ/go01Q.png");
+	c.qMMQues.setText("     မြန်မာနိုင်ငံတော်အလံမာ အရောင်ဘယ်နှစ်ရောင် ပါလဲ?");
 	c.setA1MM("GeoAndHis/go01Ans/a1.png");
 	c.setA2MM("GeoAndHis/go01Ans/a2.png");
 	c.setA3MM("GeoAndHis/go01Ans/a3.png");
@@ -37,7 +38,8 @@ public void start(Stage stage) throws Exception {
 public void switchToDifficulty(ActionEvent ea,boolean languageChange,StackPane sp) {
 	_0CommonEz c = new _0CommonEz();
 	
-	c.setQMM("GeoAndHis/GeoAndHisQ/go01Q.png");
+	//c.setQMM("GeoAndHis/GeoAndHisQ/go01Q.png");
+		c.qMMQues.setText("     မြန်မာနိုင်ငံတော်အလံမာ အရောင်ဘယ်နှစ်ရောင် ပါလဲ?");
 	c.setA1MM("GeoAndHis/go01Ans/a1.png");
 	c.setA2MM("GeoAndHis/go01Ans/a2.png");
 	c.setA3MM("GeoAndHis/go01Ans/a3.png");
